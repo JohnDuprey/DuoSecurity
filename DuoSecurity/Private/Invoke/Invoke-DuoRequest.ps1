@@ -38,7 +38,7 @@ function Invoke-DuoRequest {
     # Check credentials exists
     if (!$ApiHost -or !$IntegrationKey -or !$SecretKey) {
         Write-Error 'API Credentials not set, run Set-DuoApiAuth'
-        exit
+        return $false
     }
 
     # RFC 2822 date format in UTC
