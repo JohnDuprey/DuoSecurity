@@ -17,9 +17,9 @@ Install-Module DuoSecurity
 
 ### Supported Duo APIs
 
-- [Accounts API](https://duo.com/docs/accountsapi)
-- [Admin API](https://duo.com/docs/adminapi)
-- Auth API (Planned)
+- [X] [Accounts API](https://duo.com/docs/accountsapi)
+- [X] [Admin API](https://duo.com/docs/adminapi)
+- [ ] [Auth API](https://duo.com/docs/authapi)
 
 # Examples
 
