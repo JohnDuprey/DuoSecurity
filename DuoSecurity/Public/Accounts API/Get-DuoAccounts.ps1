@@ -1,4 +1,15 @@
 function Get-DuoAccounts {
+    <#
+    .SYNOPSIS
+    List Duo child accounts
+    
+    .DESCRIPTION
+    Calls the Accounts API to retrieve Duo Accounts under parent
+    
+    .EXAMPLE
+    Get-DuoAccounts
+    
+    #>
     [CmdletBinding()]
     Param()
 

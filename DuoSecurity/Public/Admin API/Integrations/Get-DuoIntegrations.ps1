@@ -1,4 +1,17 @@
 function Get-DuoIntegrations {
+    <#
+    .SYNOPSIS
+    Retrieve Integrations
+    
+    .DESCRIPTION
+    Returns a single integration or a paged list of integrations. Requires "Grant read resource" API permission.
+    
+    .PARAMETER IntegrationKey
+    Integration Key to retrieve
+    
+    .EXAMPLE
+    Get-DuoIntegrations
+    #>
     [CmdletBinding()]
     Param(
         [string]$IntegrationKey

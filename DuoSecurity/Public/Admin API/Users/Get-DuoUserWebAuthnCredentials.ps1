@@ -1,4 +1,17 @@
 function Get-DuoUserWebAuthnCredentials {
+    <#
+    .SYNOPSIS
+    Retrieve WebAuthn Credentials by User ID
+    
+    .DESCRIPTION
+    Returns a list of WebAuthn credentials associated with the user with ID user_id. Requires "Grant read resource" API permission.
+    
+    .PARAMETER UserId
+    The User ID to use
+    
+    .EXAMPLE
+    Get-DuoUserWebAuthnCredentials -UserId SOMEUSERID
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]

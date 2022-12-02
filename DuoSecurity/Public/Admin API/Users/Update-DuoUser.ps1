@@ -1,5 +1,42 @@
 function Update-DuoUser {
-    [CmdletBinding()]
+    <#
+    .SYNOPSIS
+    Modify User
+    
+    .DESCRIPTION
+    Change the username, username aliases, full name, status, and/or notes section of the user with ID user_id. Requires "Grant write resource" API permission.
+    
+    .PARAMETER UserId
+    The ID of the User
+    
+    .PARAMETER Username
+    The new username.
+    
+    .PARAMETER Aliases
+    Username aliases for the user. Up to eight aliases may be specified with this parameter as a set of URL-encoded key-value pairs e.g. alias1=joe.smith&alias2=jsmith@example.com. Ignores alias position values not specified. Remove the value for an existing alias by specifying a blank value e.g. alias1=. Aliases must be unique amongst users.
+    
+    .PARAMETER FullName
+    The new real name (or full name).
+    
+    .PARAMETER Email
+    The new email address.
+    
+    .PARAMETER Status
+    The new status. Must be one of "active", "disabled", or "bypass". See Retrieve Users for an explanation of these fields.
+    
+    .PARAMETER Notes
+    The new notes field.
+    
+    .PARAMETER FirstName
+    The user's new given name.
+    
+    .PARAMETER LastName
+    The user's new surname.
+    
+    .EXAMPLE
+    Update-DuoUser -UserId SOMEUSERID -Status Disabled
+    #>
+    [CmdletBinding(SupportsShouldProcess)]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('user_id')]
@@ -49,12 +86,14 @@ function Update-DuoUser {
             Params = $Params
         }
 
-        $Request = Invoke-DuoRequest @DuoRequest
-        if ($Request.stat -ne 'OK') {
-            $Request
-        }
-        else {
-            $Request.response
+        if ($PSCmdlet.ShouldProcess($UserId)) {
+            $Request = Invoke-DuoRequest @DuoRequest
+            if ($Request.stat -ne 'OK') {
+                $Request
+            }
+            else {
+                $Request.response
+            }
         }
     }
 }

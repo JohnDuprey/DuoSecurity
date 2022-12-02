@@ -1,4 +1,17 @@
 function Send-DuoPhoneSmsPasscodes {
+    <#
+    .SYNOPSIS
+    Send Passcodes via SMS
+    
+    .DESCRIPTION
+    Generate a new batch of SMS passcodes send them to the phone in a single SMS message. Requires "Grant write resource" API permission.
+    
+    .PARAMETER PhoneId
+    Id of phone
+    
+    .EXAMPLE
+    Send-DuoPhoneSmsPasscodes -PhoneId SOMEDUOID
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]

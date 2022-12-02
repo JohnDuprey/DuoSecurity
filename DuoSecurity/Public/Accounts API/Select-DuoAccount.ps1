@@ -1,9 +1,31 @@
 function Select-DuoAccount {
+    <#
+    .SYNOPSIS
+    Select Duo Account to use for Admin API
+    
+    .DESCRIPTION
+    Takes values from the account list and creates API credentials for sub account
+    
+    .PARAMETER AccountId
+    Duo Account Id
+    
+    .PARAMETER Name
+    Duo Account name
+    
+    .PARAMETER Clear
+    Clear credentials
+    
+    .PARAMETER Quiet
+    Suppress output
+    
+    .EXAMPLE
+    Select-DuoAccount -Name 'Some Company Name'
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory = $true, ParameterSetName = 'AccountId')]
         [string]$AccountId,
-        
+
         [Parameter(Mandatory = $true, ParameterSetName = 'AccountName')]
         [string]$Name,
 

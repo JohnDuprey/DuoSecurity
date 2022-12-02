@@ -1,7 +1,20 @@
 function New-DuoAccount {
-    [CmdletBinding()]
+    <#
+    .SYNOPSIS
+    Creates Duo Account
+    
+    .DESCRIPTION
+    Calls Accounts API to create a new account
+    
+    .PARAMETER Name
+    Name of account
+    
+    .EXAMPLE
+    New-DuoAccount -Name 'Some Company'
+    #>
+    [CmdletBinding(SupportsShouldProcess)]
     Param(
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         $Name
     )
     $DuoRequest = @{
@@ -11,6 +24,7 @@ function New-DuoAccount {
             name = $Name
         }
     }
-    Invoke-DuoRequest @DuoRequest
-
+    if ($PSCmdlet.ShouldProcess($Name)) {
+        Invoke-DuoRequest @DuoRequest
+    }
 }

@@ -1,5 +1,27 @@
 function Update-DuoGroup {
-    [CmdletBinding()]
+    <#
+    .SYNOPSIS
+    Update Group
+    
+    .DESCRIPTION
+    Update information about a group. Requires "Grant write resource" API permission.
+    
+    .PARAMETER GroupId
+    Group Id to update
+    
+    .PARAMETER Name
+    Update the name of the group.
+    
+    .PARAMETER Description
+    Update the description of the group.
+    
+    .PARAMETER Status
+    The authentication status of the group.
+    
+    .EXAMPLE
+    Update-DuoGroup -GroupId 'SOMEDUOID' -Status 'Disabled'
+    #>
+    [CmdletBinding(SupportsShouldProcess)]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('group_id')]
@@ -25,12 +47,14 @@ function Update-DuoGroup {
             Params = $Params
         }
 
-        $Request = Invoke-DuoRequest @DuoRequest
-        if ($Request.stat -ne 'OK') {
-            $Request
-        }
-        else {
-            $Request.response
+        if ($PSCmdlet.ShouldProcess($GroupId)) {
+            $Request = Invoke-DuoRequest @DuoRequest
+            if ($Request.stat -ne 'OK') {
+                $Request
+            }
+            else {
+                $Request.response
+            }
         }
     }
 }

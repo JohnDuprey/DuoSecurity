@@ -1,11 +1,30 @@
 function Invoke-DuoRequest {
+    <#
+    .SYNOPSIS
+    Main Duo API function
+    
+    .DESCRIPTION
+    Calls Duo API with signed token for request
+    
+    .PARAMETER Method
+    GET,POST,DELETE
+    
+    .PARAMETER Path
+    Path to API endpoint
+    
+    .PARAMETER Params
+    Hashtable of parameters
+    
+    .EXAMPLE
+    Invoke-DuoRequest -Path '/admin/v1/users' -Method GET
+    #>
     [CmdletBinding()]
     Param(
         [string]$Method = 'GET',
 
         [ValidateNotNullOrEmpty()]
         [string]$Path,
-        $Params = @{}
+        [hashtable]$Params = @{}
     )
 
     # Get API credentials
@@ -48,10 +67,14 @@ function Invoke-DuoRequest {
     $ParamCollection = [System.Web.HttpUtility]::ParseQueryString([String]::Empty)
 
     if ($AccountId) {
+        Write-Verbose "account_id = $AccountId"
         $ParamCollection.Add('account_id', $AccountId)
     }
-
-    foreach ($Key in $Params.Keys | Sort-Object) {
+    
+    # Sort parameters
+    $Params = $Params | Sort-Object -Property @{e = { $_.name }}
+    foreach ($Key in $Params.Keys) {
+        Write-Verbose "$Key = $($Params.$Key)"
         $ParamCollection.Add($key, $Params.$key)
     }
 

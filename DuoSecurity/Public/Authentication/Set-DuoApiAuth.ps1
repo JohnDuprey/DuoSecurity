@@ -1,4 +1,23 @@
 function Set-DuoApiAuth {
+    <#
+    .SYNOPSIS
+    Sets credentials for Duo
+    
+    .DESCRIPTION
+    Saves credentials as script scoped variables for use in the module
+    
+    .PARAMETER ApiHost
+    Hostname (excluding https:\\)
+    
+    .PARAMETER IntegrationKey
+    Integration key
+    
+    .PARAMETER SecretKey
+    Secret key
+    
+    .PARAMETER Type
+    Type of credential
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]

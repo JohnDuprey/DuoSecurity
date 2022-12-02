@@ -1,4 +1,17 @@
 function Remove-DuoGroup {
+    <#
+    .SYNOPSIS
+    Delete Group
+    
+    .DESCRIPTION
+    Delete a group. Requires "Grant write resource" API permission.
+    
+    .PARAMETER GroupId
+    Group Id to remove
+    
+    .EXAMPLE
+    Remove-DuoGroup -GroupId SOMEDUOID
+    #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]

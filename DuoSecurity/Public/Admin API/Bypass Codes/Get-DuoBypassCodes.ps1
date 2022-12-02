@@ -1,4 +1,17 @@
 function Get-DuoBypassCodes {
+    <#
+    .SYNOPSIS
+    Retrieve Bypass Codes
+    
+    .DESCRIPTION
+    Returns information about a single bypass code or a paged list of information about all bypass codes. Output does not include the actual bypass codes. Requires "Grant read resource" API permission.
+    
+    .PARAMETER BypassCodeId
+    Bypass Code Id to retrieve
+    
+    .EXAMPLE
+    Get-DuoBypassCodes
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true)]
@@ -19,19 +32,17 @@ function Get-DuoBypassCodes {
             Path   = $Path
         }
 
-        switch ($PSCmdlet.ParameterSetName) {
-            'Single' {
-                $Request = Invoke-DuoRequest @DuoRequest
-                if ($Request.stat -ne 'OK') {
-                    $Request
-                }
-                else {
-                    $Request.response
-                } 
+        if ($BypassCodeId) {
+            $Request = Invoke-DuoRequest @DuoRequest
+            if ($Request.stat -ne 'OK') {
+                $Request
             }
-            default { 
-                Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest 
-            }
+            else {
+                $Request.response
+            } 
+        }
+        else { 
+            Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest 
         }
     }
 } 
