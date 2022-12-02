@@ -63,3 +63,100 @@ Set-DuoApiAuth @Auth
 Get-DuoUsers
 ```
 
+# Cmdlet Help
+
+## Accounts API
+- [Get-DuoAccountEdition](./Docs/Get-DuoAccountEdition.md)
+- [Get-DuoAccounts](./Docs/Get-DuoAccounts.md)
+- [Get-DuoAccountTelephonyCredits](./Docs/Get-DuoAccountTelephonyCredits.md)
+- [New-DuoAccount](./Docs/New-DuoAccount.md)
+- [Remove-DuoAccount](./Docs/Remove-DuoAccount.md)
+- [Select-DuoAccount](./Docs/Select-DuoAccount.md)
+- [Set-DuoAccountEdition](./Docs/Set-DuoAccountEdition.md)
+- [Set-DuoAccountTelephonyCredits](./Docs/Set-DuoAccountTelephonyCredits.md)
+## Admin API
+- Administrative Units
+  - [Get-DuoAdminUnits](./Docs/Get-DuoAdminUnits.md)
+  - [New-DuoAdminUnit](./Docs/New-DuoAdminUnit.md)
+- Administrators
+  - [Clear-DuoAdminInactivity](./Docs/Clear-DuoAdminInactivity.md)
+  - [Get-DuoAdminActivations](./Docs/Get-DuoAdminActivations.md)
+  - [Get-DuoAdminAuthFactors](./Docs/Get-DuoAdminAuthFactors.md)
+  - [Get-DuoAdminPasswordManagement](./Docs/Get-DuoAdminPasswordManagement.md)
+  - [Get-DuoAdmins](./Docs/Get-DuoAdmins.md)
+  - [New-DuoAdmin](./Docs/New-DuoAdmin.md)
+  - [New-DuoAdminActivation](./Docs/New-DuoAdminActivation.md)
+  - [New-DuoAdminActivationLink](./Docs/New-DuoAdminActivationLink.md)
+  - [Remove-DuoAdmin](./Docs/Remove-DuoAdmin.md)
+  - [Remove-DuoAdminActivation](./Docs/Remove-DuoAdminActivation.md)
+  - [Remove-DuoAdminActivationLink](./Docs/Remove-DuoAdminActivationLink.md)
+  - [Reset-DuoAdminAuthAttempts](./Docs/Reset-DuoAdminAuthAttempts.md)
+  - [Send-DuoAdminActivationEmail](./Docs/Send-DuoAdminActivationEmail.md)
+  - [Set-DuoAdminAuthFactors](./Docs/Set-DuoAdminAuthFactors.md)
+  - [Update-DuoAdmin](./Docs/Update-DuoAdmin.md)
+- Bypass Codes
+  - [Get-DuoBypassCodes](./Docs/Get-DuoBypassCodes.md)
+  - [Remove-DuoBypassCode](./Docs/Remove-DuoBypassCode.md)
+- Custom Branding
+- Endpoints
+  - [Get-DuoEndpoints](./Docs/Get-DuoEndpoints.md)
+- Groups
+  - [Get-DuoGroups](./Docs/Get-DuoGroups.md)
+  - [Get-DuoGroupUsers](./Docs/Get-DuoGroupUsers.md)
+  - [New-DuoGroup](./Docs/New-DuoGroup.md)
+  - [Remove-DuoGroup](./Docs/Remove-DuoGroup.md)
+  - [Update-DuoGroup](./Docs/Update-DuoGroup.md)
+- Info
+  - [Get-DuoAccountSummary](./Docs/Get-DuoAccountSummary.md)
+  - [Get-DuoAuthenticationAttempts](./Docs/Get-DuoAuthenticationAttempts.md)
+  - [Get-DuoTelephonyCreditsUsed](./Docs/Get-DuoTelephonyCreditsUsed.md)
+  - [Get-DuoUserAuthenticationAttempts](./Docs/Get-DuoUserAuthenticationAttempts.md)
+- Integrations
+  - [Get-DuoIntegrations](./Docs/Get-DuoIntegrations.md)
+  - [New-DuoIntegration](./Docs/New-DuoIntegration.md)
+  - [Remove-DuoIntegration](./Docs/Remove-DuoIntegration.md)
+  - [Update-DuoIntegration](./Docs/Update-DuoIntegration.md)
+- Logs
+- Phones
+  - [Get-DuoPhones](./Docs/Get-DuoPhones.md)
+  - [New-DuoPhone](./Docs/New-DuoPhone.md)
+  - [New-DuoPhoneActivationCode](./Docs/New-DuoPhoneActivationCode.md)
+  - [Remove-DuoPhone](./Docs/Remove-DuoPhone.md)
+  - [Send-DuoPhoneActivationSms](./Docs/Send-DuoPhoneActivationSms.md)
+  - [Send-DuoPhoneInstallationSms](./Docs/Send-DuoPhoneInstallationSms.md)
+  - [Send-DuoPhoneSmsPasscodes](./Docs/Send-DuoPhoneSmsPasscodes.md)
+  - [Update-DuoPhone](./Docs/Update-DuoPhone.md)
+- Settings
+  - [Get-DuoSettings](./Docs/Get-DuoSettings.md)
+- Tokens
+  - [Get-DuoTokens](./Docs/Get-DuoTokens.md)
+  - [New-DuoToken](./Docs/New-DuoToken.md)
+  - [Remove-DuoToken](./Docs/Remove-DuoToken.md)
+  - [Sync-DuoToken](./Docs/Sync-DuoToken.md)
+- Trust Monitor
+- Users
+  - [Add-DuoUserPhone](./Docs/Add-DuoUserPhone.md)
+  - [Add-DuoUserToGroup](./Docs/Add-DuoUserToGroup.md)
+  - [Add-DuoUserToken](./Docs/Add-DuoUserToken.md)
+  - [Get-DuoUserBypassCodes](./Docs/Get-DuoUserBypassCodes.md)
+  - [Get-DuoUserGroups](./Docs/Get-DuoUserGroups.md)
+  - [Get-DuoUserPhones](./Docs/Get-DuoUserPhones.md)
+  - [Get-DuoUsers](./Docs/Get-DuoUsers.md)
+  - [Get-DuoUserTokens](./Docs/Get-DuoUserTokens.md)
+  - [Get-DuoUserWebAuthnCredentials](./Docs/Get-DuoUserWebAuthnCredentials.md)
+  - [New-DuoUser](./Docs/New-DuoUser.md)
+  - [New-DuoUserBypassCodes](./Docs/New-DuoUserBypassCodes.md)
+  - [Register-DuoUser](./Docs/Register-DuoUser.md)
+  - [Remove-DuoUser](./Docs/Remove-DuoUser.md)
+  - [Remove-DuoUserFromGroup](./Docs/Remove-DuoUserFromGroup.md)
+  - [Remove-DuoUserPhone](./Docs/Remove-DuoUserPhone.md)
+  - [Remove-DuoUserToken](./Docs/Remove-DuoUserToken.md)
+  - [Update-DuoUser](./Docs/Update-DuoUser.md)
+- WebAuthn
+  - [Get-DuoWebAuthnCredentials](./Docs/Get-DuoWebAuthnCredentials.md)
+  - [Remove-DuoWebAuthnCredential](./Docs/Remove-DuoWebAuthnCredential.md)
+## Auth API
+## Authentication
+- [Set-DuoApiAuth](./Docs/Set-DuoApiAuth.md)
+## Misc
+- [New-DuoTokenTotpSecret](./Docs/New-DuoTokenTotpSecret.md)
