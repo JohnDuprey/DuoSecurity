@@ -37,7 +37,11 @@ function New-DuoToken {
     $Secret = New-DuoTokenTotpSecret
     New-DuoToken -Serial 001 -Type t6 -Secret $Secret.Hex
 
-    See New-DuoTokenTotpSecret for more info
+    .LINK
+    https://duo.com/docs/adminapi#create-hardware-token
+
+    .NOTES
+    See New-DuoTokenTotpSecret for more info about generating TOTP secrets
     
     #>
     [CmdletBinding()]

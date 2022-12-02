@@ -55,6 +55,10 @@ function New-DuoIntegration {
     
     .EXAMPLE
     New-DuoIntegration -Type adminapi -AdminApiReadLog 1 -Name 'SIEM logging' -Notes 'This integration is for ingesting logs for SIEM'
+
+    .LINK
+    https://duo.com/docs/adminapi#create-integration
+    
     #>
     [CmdletBinding()]
     Param(

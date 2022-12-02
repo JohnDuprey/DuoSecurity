@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version:
+online version: https://duo.com/docs/adminapi#users-with-authentication-attempts-report
 schema: 2.0.0
 ---
 
@@ -25,7 +25,7 @@ Requires "Grant read information" API permission.
 
 ### EXAMPLE 1
 ```
-An example
+Get-DuoUserAuthenticationAttempts
 ```
 
 ## PARAMETERS
@@ -70,6 +70,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-General notes
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#users-with-authentication-attempts-report](https://duo.com/docs/adminapi#users-with-authentication-attempts-report)
+

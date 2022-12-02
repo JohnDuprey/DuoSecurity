@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#send-activation-code-via-sms
 schema: 2.0.0
 ---
 
@@ -129,3 +129,6 @@ Activation URLs are typically about 60 characters long.
 Installation URLs are between 50 and 75 characters long.
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#send-activation-code-via-sms](https://duo.com/docs/adminapi#send-activation-code-via-sms)
+

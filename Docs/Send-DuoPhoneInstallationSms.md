@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#send-installation-url-via-sms
 schema: 2.0.0
 ---
 
@@ -78,3 +78,6 @@ The exact length available for custom text varies depending on the device's plat
 Installation URLs are between 50 and 75 characters long.
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#send-installation-url-via-sms](https://duo.com/docs/adminapi#send-installation-url-via-sms)
+

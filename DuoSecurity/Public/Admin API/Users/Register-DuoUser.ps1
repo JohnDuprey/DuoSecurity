@@ -18,8 +18,11 @@ function Register-DuoUser {
     .EXAMPLE
     Register-DuoUser -Username 'bill' -Email 'bill.lumbergh@initech.com'
     
+    .LINK
+    https://duo.com/docs/adminapi#enroll-user
+
     .NOTES
-    General notes
+    
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

@@ -11,6 +11,10 @@ function Remove-DuoPhone {
     
     .EXAMPLE
     Remove-DuoPhone -PhoneId SOMEDUOID
+
+    .LINK
+    https://duo.com/docs/adminapi#delete-phone
+    
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

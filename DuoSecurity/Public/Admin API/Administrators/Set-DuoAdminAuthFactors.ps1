@@ -26,6 +26,10 @@ function Set-DuoAdminAuthFactors {
     
     .EXAMPLE
     Set-DuoAdminAuthFactors -HardwareTokenEnabled -MobileOtpEnabled -PushEnabled -YubiKeyEnabled
+
+    .LINK
+    https://duo.com/docs/adminapi#restrict-administrator-authentication-factors
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

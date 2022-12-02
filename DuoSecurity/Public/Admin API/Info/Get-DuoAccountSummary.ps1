@@ -8,6 +8,10 @@ function Get-DuoAccountSummary {
     
     .EXAMPLE
     Get-DuoAccountSummary
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-summary
+
     #>
     [CmdletBinding()]
     Param()

@@ -8,6 +8,10 @@ function Get-DuoAdminAuthFactors {
 
     .EXAMPLE
     Get-DuoAdminAuthFactors
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-administrator-authentication-factors
+
     #>
     [CmdletBinding()]
     Param()

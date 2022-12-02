@@ -15,6 +15,9 @@ function Send-DuoPhoneInstallationSms {
     .EXAMPLE
     Send-DuoPhoneInstallationSms -PhoneId SOMEDUOID -InstallationMsg 'Install Duo Mobile! <insturl> - Your friendly IT department'
     
+    .LINK
+    https://duo.com/docs/adminapi#send-installation-url-via-sms
+
     .NOTES
     SMS Size Limits
     The recommended maximum length for installation_msg is 80 characters.
@@ -26,7 +29,7 @@ function Send-DuoPhoneInstallationSms {
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('phone_id')]
         [string]$PhoneId,
-        
+
         [Parameter()]
         [string]$InstallationMsg
     )

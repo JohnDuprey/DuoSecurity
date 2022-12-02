@@ -8,6 +8,10 @@ function Get-DuoAdminPasswordManagement {
 
     .EXAMPLE
     Get-DuoAdminPasswordManagement
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-admin-external-password-management-status
+
     #>
     [CmdletBinding()]
     Param(

@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version:
+online version: https://duo.com/docs/adminapi#retrieve-integrations
 schema: 2.0.0
 ---
 
@@ -54,3 +54,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#retrieve-integrations](https://duo.com/docs/adminapi#retrieve-integrations)
+
+[https://duo.com/docs/adminapi#retrieve-integration-by-integration-key](https://duo.com/docs/adminapi#retrieve-integration-by-integration-key)
+

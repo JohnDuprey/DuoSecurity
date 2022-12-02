@@ -11,6 +11,10 @@ function Get-DuoUserPhones {
     
     .EXAMPLE
     Get-DuoUserPhones -UserId SOMEUSERID
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-phones-by-user-id
+    
     #>
     [CmdletBinding()]
     Param(

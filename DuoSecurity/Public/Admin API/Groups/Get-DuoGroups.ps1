@@ -11,6 +11,12 @@ function Get-DuoGroups {
     
     .EXAMPLE
     Get-DuoGroups
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-groups
+
+    .LINK
+    https://duo.com/docs/adminapi#get-group-info
     
     #>
     [CmdletBinding()]

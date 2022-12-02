@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#retrieve-webauthn-credentials
 schema: 2.0.0
 ---
 
@@ -28,12 +28,10 @@ Requires "Grant read resource" API permission.
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### EXAMPLE 1
 ```
-
-{{ Add example description here }}
+Get-DuoWebAuthnCredentials
+```
 
 ## PARAMETERS
 
@@ -62,3 +60,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#retrieve-webauthn-credentials](https://duo.com/docs/adminapi#retrieve-webauthn-credentials)
+
+[https://duo.com/docs/adminapi#retrieve-webauthn-credentials-by-key](https://duo.com/docs/adminapi#retrieve-webauthn-credentials-by-key)
+

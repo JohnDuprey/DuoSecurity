@@ -8,6 +8,12 @@ function Remove-DuoWebAuthnCredential {
     
     .PARAMETER WebAuthnKey
     WebAuthn Key
+
+    .EXAMPLE
+    Remove-DuoWebAuthnCredential -WebAuthnKey SOMEWEBAUTHNKEY
+
+    .LINK
+    https://duo.com/docs/adminapi#delete-webauthn-credential
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

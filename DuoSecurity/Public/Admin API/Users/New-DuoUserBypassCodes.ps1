@@ -26,6 +26,9 @@ Object limits: 100 bypass codes per user.
     .EXAMPLE
     New-DuoUserBypassCodes -UserId SOMEUSERID -Count 1 -ValidSecs 30
 
+    .LINK
+    https://duo.com/docs/adminapi#create-bypass-codes-for-user
+
     #>
     [CmdletBinding(DefaultParameterSetName = 'Count')]
     Param(

@@ -1,14 +1,14 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version:
+online version: https://duo.com/docs/accountsapi#retrieve-accounts
 schema: 2.0.0
 ---
 
 # Get-DuoAccounts
 
 ## SYNOPSIS
-List Duo child accounts
+Retrieve Accounts
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-DuoAccounts [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Calls the Accounts API to retrieve Duo Accounts under parent
+Returns a list of child accounts.
 
 ## EXAMPLES
 
@@ -38,3 +38,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/accountsapi#retrieve-accounts](https://duo.com/docs/accountsapi#retrieve-accounts)
+

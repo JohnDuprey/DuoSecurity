@@ -16,7 +16,10 @@ function New-DuoPhoneActivationCode {
     Specify 1 to also return an installation URL for Duo Mobile; 0 to not return a URL. Default: 0.
     
     .EXAMPLE
-    An example
+    New-DuoPhoneActivationCode -PhoneId SOMEPHONEID
+
+    .LINK
+    https://duo.com/docs/adminapi#create-activation-code
     
     #>
     [CmdletBinding()]

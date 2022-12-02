@@ -64,6 +64,9 @@ function Update-DuoIntegration {
     
     .EXAMPLE
     Update-DuoIntegration -IntegrationKey SOMEDUOKEY -Greeting 'Welcome to Duo.'
+
+    .LINK
+    https://duo.com/docs/adminapi#modify-integration
     
     .NOTES
     General notes

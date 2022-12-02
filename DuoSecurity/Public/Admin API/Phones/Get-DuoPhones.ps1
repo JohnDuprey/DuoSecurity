@@ -17,6 +17,13 @@ function Get-DuoPhones {
     
     .EXAMPLE
     Get-DuoPhones
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-phones
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-phone-by-id
+
     #>
     [CmdletBinding()]
     Param(

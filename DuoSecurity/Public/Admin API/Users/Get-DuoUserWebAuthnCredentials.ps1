@@ -11,6 +11,10 @@ function Get-DuoUserWebAuthnCredentials {
     
     .EXAMPLE
     Get-DuoUserWebAuthnCredentials -UserId SOMEUSERID
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-webauthn-credentials-by-user-id
+    
     #>
     [CmdletBinding()]
     Param(

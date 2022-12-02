@@ -20,6 +20,10 @@ function Update-DuoGroup {
     
     .EXAMPLE
     Update-DuoGroup -GroupId 'SOMEDUOID' -Status 'Disabled'
+
+    .LINK
+    https://duo.com/docs/adminapi#update-group
+    
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

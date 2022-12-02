@@ -8,6 +8,10 @@ function Get-DuoAdminActivations {
 
     .EXAMPLE
     Get-DuoAdminActivations
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-pending-administrator-activations
+    
     #>
     [CmdletBinding()]
     Param()

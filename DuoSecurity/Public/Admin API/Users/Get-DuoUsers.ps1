@@ -18,6 +18,9 @@ function Get-DuoUsers {
     .LINK 
     https://duo.com/docs/adminapi#retrieve-users
 
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-user-by-id
+
     #>
     [CmdletBinding(DefaultParameterSetName = 'List')]
     Param(

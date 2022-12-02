@@ -24,6 +24,9 @@ function Send-DuoPhoneActivationSms {
     .EXAMPLE
     Send-DuoPhoneActivationSms -PhoneId SOMEDUOID -ValidSecs 3600 -Install 1
     
+    .LINK
+    https://duo.com/docs/adminapi#send-activation-code-via-sms
+
     .NOTES
     SMS Size Limits
     The recommended maximum length for activation_msg and installation_msg is 80 characters.

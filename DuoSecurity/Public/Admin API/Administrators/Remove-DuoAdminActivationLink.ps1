@@ -11,6 +11,10 @@ function Remove-DuoAdminActivationLink {
     
     .EXAMPLE
     Remove-DuoAdminActivationLink -AdminId SOMEADMINID
+
+    .LINK
+    https://duo.com/docs/adminapi#delete-activation-link-from-administrator-pending-activation
+    
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

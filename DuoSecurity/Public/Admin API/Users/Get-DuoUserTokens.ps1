@@ -11,6 +11,10 @@ function Get-DuoUserTokens {
     
     .EXAMPLE
     Get-DuoUserTokens -UserId SOMEUSERID
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-hardware-tokens-by-user-id
+    
     #>
     [CmdletBinding()]
     Param(

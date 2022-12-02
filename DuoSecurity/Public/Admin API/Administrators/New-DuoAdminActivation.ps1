@@ -23,6 +23,9 @@ function New-DuoAdminActivation {
     
     .EXAMPLE
     New-DuoAdminActivation -Email peter.gibbons@initech.com
+
+    .LINK
+    https://duo.com/docs/adminapi#create-administrator-activation-link
     
     #>
     [CmdletBinding(SupportsShouldProcess)]

@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version:
+online version: https://duo.com/docs/adminapi#retrieve-hardware-tokens
 schema: 2.0.0
 ---
 
@@ -103,3 +103,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#retrieve-hardware-tokens](https://duo.com/docs/adminapi#retrieve-hardware-tokens)
+
+[https://duo.com/docs/adminapi#retrieve-hardware-token-by-id](https://duo.com/docs/adminapi#retrieve-hardware-token-by-id)
+

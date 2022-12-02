@@ -16,6 +16,10 @@ function Add-DuoUserToGroup {
     
     .EXAMPLE
     Add-DuoUserToGroup -UserId SOMEUSERID -GroupId SOMEGROUPID
+
+    .LINK
+    https://duo.com/docs/adminapi#associate-group-with-user
+    
     #>
     [CmdletBinding()]
     Param(

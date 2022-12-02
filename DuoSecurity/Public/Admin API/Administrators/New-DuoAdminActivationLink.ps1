@@ -11,6 +11,9 @@ function New-DuoAdminActivationLink {
     
     .EXAMPLE
     New-DuoAdminActivationLink -AdminId SOMEADMINID
+
+    .LINK
+    https://duo.com/docs/adminapi#create-activation-link-for-administrator-pending-activation
     
     #>
     [CmdletBinding(SupportsShouldProcess)]

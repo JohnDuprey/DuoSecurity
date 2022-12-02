@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#create-hardware-token
 schema: 2.0.0
 ---
 
@@ -28,8 +28,6 @@ Requires "Grant write resource" API permission.
 $Secret = New-DuoTokenTotpSecret
 New-DuoToken -Serial 001 -Type t6 -Secret $Secret.Hex
 ```
-
-See New-DuoTokenTotpSecret for more info
 
 ## PARAMETERS
 
@@ -146,5 +144,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+See New-DuoTokenTotpSecret for more info about generating TOTP secrets
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#create-hardware-token](https://duo.com/docs/adminapi#create-hardware-token)
+

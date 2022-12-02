@@ -34,6 +34,9 @@ function Update-DuoAdmin {
     
     .EXAMPLE
     Update-DuoAdmin -AdminId SOMEADMINID -Status Disabled
+
+    .LINK
+    https://duo.com/docs/adminapi#modify-administrator
     
     #>
     [CmdletBinding(SupportsShouldProcess)]

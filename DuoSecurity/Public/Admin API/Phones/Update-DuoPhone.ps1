@@ -32,6 +32,9 @@ function Update-DuoPhone {
     
     .EXAMPLE
     Update-DuoPhone -PhoneId SOMEDUOID -Name 'New phone name'
+
+    .LINK
+    https://duo.com/docs/adminapi#modify-phone
     
     #>
     [CmdletBinding(SupportsShouldProcess)]

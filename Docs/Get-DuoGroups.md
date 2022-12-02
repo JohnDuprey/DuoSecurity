@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version:
+online version: https://duo.com/docs/adminapi#retrieve-groups
 schema: 2.0.0
 ---
 
@@ -54,3 +54,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#retrieve-groups](https://duo.com/docs/adminapi#retrieve-groups)
+
+[https://duo.com/docs/adminapi#get-group-info](https://duo.com/docs/adminapi#get-group-info)
+

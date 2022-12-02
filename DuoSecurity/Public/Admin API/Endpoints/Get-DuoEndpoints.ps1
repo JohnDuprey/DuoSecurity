@@ -15,6 +15,13 @@ function Get-DuoEndpoints {
    
     .EXAMPLE
     Get-DuoEndpoints
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-endpoints
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-endpoint-by-id
+    
     #>
     [CmdletBinding()]
     Param(

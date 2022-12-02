@@ -11,6 +11,13 @@ function Get-DuoBypassCodes {
     
     .EXAMPLE
     Get-DuoBypassCodes
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-bypass-codes
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-bypass-code-by-id
+
     #>
     [CmdletBinding()]
     Param(

@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#delete-user
 schema: 2.0.0
 ---
 
@@ -21,9 +21,6 @@ Delete the user with ID user_id from the system.
 The API will not automatically delete phones associated with the user; remove them permanently with Delete Phone.
 This method returns 200 if the phone was found or if no such phone exists.
 Requires "Grant write resource" API permission.
-
-Users deleted by the API do not get moved into the Trash view as "Pending Deletion" as they would if removed by directory sync, inactive user expiration, or interactively from the Duo Admin Panel, and therefore are not available for restoration.
-Users deleted via the API are immediately and permanently removed from Duo.
 
 ## EXAMPLES
 
@@ -88,6 +85,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-General notes
+Users deleted by the API do not get moved into the Trash view as "Pending Deletion" as they would if removed by directory sync, inactive user expiration, or interactively from the Duo Admin Panel, and therefore are not available for restoration.
+Users deleted via the API are immediately and permanently removed from Duo.
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#delete-user](https://duo.com/docs/adminapi#delete-user)
+

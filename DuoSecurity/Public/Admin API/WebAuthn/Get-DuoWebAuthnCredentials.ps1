@@ -8,6 +8,16 @@ function Get-DuoWebAuthnCredentials {
     
     .PARAMETER WebAuthnKey
     WebAuthn Key
+
+    .EXAMPLE
+    Get-DuoWebAuthnCredentials
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-webauthn-credentials
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-webauthn-credentials-by-key
+
     #>
     [CmdletBinding(DefaultParameterSetName='List')]
     Param(

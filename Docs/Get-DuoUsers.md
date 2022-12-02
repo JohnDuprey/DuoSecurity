@@ -80,3 +80,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://duo.com/docs/adminapi#retrieve-users](https://duo.com/docs/adminapi#retrieve-users)
 
+[https://duo.com/docs/adminapi#retrieve-user-by-id](https://duo.com/docs/adminapi#retrieve-user-by-id)
+

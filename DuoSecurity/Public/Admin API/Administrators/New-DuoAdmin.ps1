@@ -36,6 +36,9 @@ function New-DuoAdmin {
     
     .EXAMPLE
     New-DuoAdmin -Email peter.gibbons@initech.com -Name 'Peter Gibbons'
+
+    .LINK
+    https://duo.com/docs/adminapi#create-administrator
     
     #>
     [CmdletBinding(SupportsShouldProcess)]

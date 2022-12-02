@@ -28,6 +28,12 @@ function Get-DuoTokens {
     .EXAMPLE
     Get-DuoTokens
 
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-hardware-tokens
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-hardware-token-by-id
+
     #>
     [CmdletBinding(DefaultParameterSetName='List')]
     Param(

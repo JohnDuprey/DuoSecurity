@@ -14,9 +14,12 @@ function Remove-DuoUserToken {
     
     .EXAMPLE
     Remove-DuoUserToken -UserId SOMEUSERID -TokenId SOMETOKENID
+
+    .LINK
+    https://duo.com/docs/adminapi#disassociate-hardware-token-from-user
     
     .NOTES
-    General notes
+    
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

@@ -11,6 +11,10 @@ function Remove-DuoBypassCode {
     
     .EXAMPLE
     Remove-DuoBypassCode -BypassCodeId SOMEDUOID
+
+    .LINK
+    https://duo.com/docs/adminapi#delete-bypass-code
+    
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

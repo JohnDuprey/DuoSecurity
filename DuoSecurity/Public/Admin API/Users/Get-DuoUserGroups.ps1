@@ -11,6 +11,10 @@ function Get-DuoUserGroups {
     
     .EXAMPLE
     Get-DuoUserGroups -UserId SOME USERID
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-groups-by-user-id
+    
     #>
     [CmdletBinding()]
     Param(

@@ -14,6 +14,10 @@ function Remove-DuoUserFromGroup {
     
     .EXAMPLE
     Remove-DuoUserFromGroup -UserId SOMEUSERID -GroupId SOMEGROUPID
+
+    .LINK
+    https://duo.com/docs/adminapi#disassociate-group-from-user
+
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

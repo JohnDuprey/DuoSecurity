@@ -11,6 +11,10 @@ function Send-DuoPhoneSmsPasscodes {
     
     .EXAMPLE
     Send-DuoPhoneSmsPasscodes -PhoneId SOMEDUOID
+
+    .LINK
+    https://duo.com/docs/adminapi#send-passcodes-via-sms
+    
     #>
     [CmdletBinding()]
     Param(

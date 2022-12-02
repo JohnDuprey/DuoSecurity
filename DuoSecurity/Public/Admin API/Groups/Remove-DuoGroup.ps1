@@ -11,6 +11,10 @@ function Remove-DuoGroup {
     
     .EXAMPLE
     Remove-DuoGroup -GroupId SOMEDUOID
+
+    .LINK
+    https://duo.com/docs/adminapi#delete-group
+    
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

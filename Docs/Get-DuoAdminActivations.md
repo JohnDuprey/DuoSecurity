@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version:
+online version: https://duo.com/docs/adminapi#retrieve-pending-administrator-activations
 schema: 2.0.0
 ---
 
@@ -39,3 +39,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#retrieve-pending-administrator-activations](https://duo.com/docs/adminapi#retrieve-pending-administrator-activations)
+

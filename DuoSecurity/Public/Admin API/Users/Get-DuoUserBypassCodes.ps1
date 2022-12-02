@@ -11,9 +11,12 @@ function Get-DuoUserBypassCodes {
     
     .EXAMPLE
     Get-DuoUserBypassCodes -UserId SOMEUSERID
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-bypass-codes-by-user-id
     
     .NOTES
-    General notes
+    
     #>
     [CmdletBinding()]
     Param(

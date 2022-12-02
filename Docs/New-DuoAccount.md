@@ -1,14 +1,14 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/accountsapi#create-account
 schema: 2.0.0
 ---
 
 # New-DuoAccount
 
 ## SYNOPSIS
-Creates Duo Account
+Create Account
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ New-DuoAccount [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Calls Accounts API to create a new account
+Create a new child account.
 
 ## EXAMPLES
 
@@ -29,7 +29,7 @@ New-DuoAccount -Name 'Some Company'
 ## PARAMETERS
 
 ### -Name
-Name of account
+Name for the new customer.
 
 ```yaml
 Type: String
@@ -84,3 +84,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/accountsapi#create-account](https://duo.com/docs/accountsapi#create-account)
+

@@ -14,6 +14,10 @@ function Remove-DuoUserPhone {
     
     .EXAMPLE
     Remove-DuoUserPhone -UserId SOMEUSERID -PhoneId SOMEPHONEID
+
+    .LINK
+    https://duo.com/docs/adminapi#disassociate-phone-from-user
+    
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

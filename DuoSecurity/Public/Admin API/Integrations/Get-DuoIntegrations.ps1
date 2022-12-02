@@ -11,6 +11,13 @@ function Get-DuoIntegrations {
     
     .EXAMPLE
     Get-DuoIntegrations
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-integrations
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-integration-by-integration-key
+
     #>
     [CmdletBinding()]
     Param(

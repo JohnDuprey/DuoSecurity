@@ -38,6 +38,10 @@ function New-DuoUser {
     
     .EXAMPLE
     New-DuoUser -Username bob -Aliases @{alias1='bobby'; alias2='robert'} -Status Active
+
+    .LINK
+    https://duo.com/docs/adminapi#create-user
+
     #>
     [CmdletBinding()]
     Param(

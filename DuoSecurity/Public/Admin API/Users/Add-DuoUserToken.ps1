@@ -17,8 +17,11 @@ function Add-DuoUserToken {
     .EXAMPLE
     Add-DuoUserToken -UserId SOMEUSERID -TokenId SOMETOKENID
     
+    .LINK
+    https://duo.com/docs/adminapi#associate-hardware-token-with-user
+
     .NOTES
-    General notes
+    
     #>
     [CmdletBinding()]
     Param(

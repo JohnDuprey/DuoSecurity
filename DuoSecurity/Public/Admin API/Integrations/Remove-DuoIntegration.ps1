@@ -12,6 +12,9 @@ function Remove-DuoIntegration {
     .EXAMPLE
     Remove-DuoIntegration -IntegrationKey SOMEDUOKEY
 
+    .LINK
+    https://duo.com/docs/adminapi#delete-integration
+
     .NOTES
     WARNING: Deleting an integration from Duo can block user logins!
     

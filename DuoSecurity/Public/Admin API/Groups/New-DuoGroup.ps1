@@ -18,8 +18,11 @@ function New-DuoGroup {
     .EXAMPLE
     New-DuoGroup -Name 'Testing Group' -Description 'This is for testing purposes' -Status 'Active'
     
+    .LINK
+    https://duo.com/docs/adminapi#create-group
+    
     .NOTES
-    General notes
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

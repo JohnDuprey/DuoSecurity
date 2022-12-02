@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version:
+online version: https://duo.com/docs/adminapi#retrieve-bypass-codes-by-user-id
 schema: 2.0.0
 ---
 
@@ -53,6 +53,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-General notes
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#retrieve-bypass-codes-by-user-id](https://duo.com/docs/adminapi#retrieve-bypass-codes-by-user-id)
+

@@ -13,10 +13,11 @@ function Get-DuoAuthenticationAttempts {
     Limit report to events after this Unix timestamp. Defaults to thirty days before maxtime.
     
     .EXAMPLE
-    An example
+    Get-DuoAuthenticationAttempts
     
-    .NOTES
-    General notes
+    .LINK
+    https://duo.com/docs/adminapi#authentication-attempts-report
+    
     #>
     [CmdletBinding()]
     Param(

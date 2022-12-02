@@ -6,7 +6,7 @@ function Add-DuoUserPhone {
     .DESCRIPTION
     Associate a phone with the user with ID user_id. Requires "Grant write resource" API permission.
 
-Object limits: 100 phones per user; 100 users per phone.
+    Object limits: 100 phones per user; 100 users per phone.
     
     .PARAMETER UserId
     The ID of the user
@@ -16,6 +16,9 @@ Object limits: 100 phones per user; 100 users per phone.
     
     .EXAMPLE
     Add-DuoUserPhone -UserId SOMEUSERID -PhoneId SOMEPHONEID
+
+    .LINK
+    https://duo.com/docs/adminapi#associate-phone-with-user
 
     #>
     [CmdletBinding()]

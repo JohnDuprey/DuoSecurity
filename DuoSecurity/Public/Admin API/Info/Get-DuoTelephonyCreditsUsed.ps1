@@ -14,6 +14,10 @@ function Get-DuoTelephonyCreditsUsed {
     
     .EXAMPLE
     Get-DuoTelephonyCreditsUsed
+
+    .LINK
+    https://duo.com/docs/adminapi#telephony-credits-used-report
+    
     #>
     [CmdletBinding()]
     Param(

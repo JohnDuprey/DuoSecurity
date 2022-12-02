@@ -11,6 +11,10 @@ function Remove-DuoToken {
     
     .EXAMPLE
     Remove-DuoToken -TokenId SOMEDUOID
+
+    .LINK
+    https://duo.com/docs/adminapi#delete-hardware-token
+    
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

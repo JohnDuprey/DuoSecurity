@@ -8,6 +8,10 @@ function Get-DuoSettings {
     
     .EXAMPLE
     Get-DuoSettings
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-settings
+
     #>
     [CmdletBinding()]
     Param()

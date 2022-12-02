@@ -11,6 +11,10 @@ function Send-DuoAdminActivationEmail {
     
     .EXAMPLE
     Send-DuoAdminActivationEmail -AdminId SOMEADMINID
+
+    .LINK
+    https://duo.com/docs/adminapi#email-activation-link-to-administrator-pending-activation
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

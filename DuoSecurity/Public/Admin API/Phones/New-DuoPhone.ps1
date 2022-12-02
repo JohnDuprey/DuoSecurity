@@ -31,6 +31,10 @@ function New-DuoPhone {
     
     .EXAMPLE
     New-DuoPhone -Name 'TestPhone -Number '+15558675309' -Type Mobile -Platform 'Apple iOS'
+
+    .LINK
+    https://duo.com/docs/adminapi#create-phone
+
     #>
     [CmdletBinding()]
     Param(
@@ -53,7 +57,7 @@ function New-DuoPhone {
 
         [Parameter()]
         [int]$PostDelay,
-        
+
         [Parameter()]
         [int]$PreDelay
     )

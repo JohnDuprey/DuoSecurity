@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#delete-integration
 schema: 2.0.0
 ---
 
@@ -93,3 +93,6 @@ Depending on the application this could mean uninstalling Duo software from your
 There is no way to restore an integration deleted in error with Admin API.
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#delete-integration](https://duo.com/docs/adminapi#delete-integration)
+

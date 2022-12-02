@@ -20,6 +20,9 @@ function Select-DuoAccount {
     
     .EXAMPLE
     Select-DuoAccount -Name 'Some Company Name'
+
+    .EXAMPLE
+    Select-DuoAccount -AccountId SOMEACCOUNTID
     #>
     [CmdletBinding()]
     Param(
@@ -61,5 +64,8 @@ function Select-DuoAccount {
         if (!$Quiet) {
             Write-Host "Account: $($Account.name) ($($Account.account_id))" 
         }
+    }
+    else {
+        Write-Error "Invalid Account specified"
     }
 }

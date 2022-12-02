@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#delete-webauthn-credential
 schema: 2.0.0
 ---
 
@@ -22,12 +22,10 @@ Requires "Grant write resource" API permission.
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### EXAMPLE 1
 ```
-
-{{ Add example description here }}
+Remove-DuoWebAuthnCredential -WebAuthnKey SOMEWEBAUTHNKEY
+```
 
 ## PARAMETERS
 
@@ -87,3 +85,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#delete-webauthn-credential](https://duo.com/docs/adminapi#delete-webauthn-credential)
+

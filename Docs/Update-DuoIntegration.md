@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#modify-integration
 schema: 2.0.0
 ---
 
@@ -361,3 +361,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 General notes
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#modify-integration](https://duo.com/docs/adminapi#modify-integration)
+

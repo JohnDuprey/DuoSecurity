@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#create-activation-code
 schema: 2.0.0
 ---
 
@@ -25,7 +25,7 @@ Requires "Grant write resource" API permission.
 
 ### EXAMPLE 1
 ```
-An example
+New-DuoPhoneActivationCode -PhoneId SOMEPHONEID
 ```
 
 ## PARAMETERS
@@ -88,3 +88,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#create-activation-code](https://duo.com/docs/adminapi#create-activation-code)
+

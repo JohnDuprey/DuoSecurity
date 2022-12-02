@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#reset-administrator-authentication-attempts
 schema: 2.0.0
 ---
 
@@ -35,6 +35,11 @@ Takes values from the account list and creates API credentials for sub account
 ### EXAMPLE 1
 ```
 Select-DuoAccount -Name 'Some Company Name'
+```
+
+### EXAMPLE 2
+```
+Select-DuoAccount -AccountId SOMEACCOUNTID
 ```
 
 ## PARAMETERS

@@ -11,6 +11,10 @@ function Reset-DuoAdminAuthAttempts {
     
     .EXAMPLE
     Reset-DuoAdminAuthAttempts -AdminId SOMEADMINID
+
+    .LINK
+    https://duo.com/docs/adminapi#reset-administrator-authentication-attempts
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

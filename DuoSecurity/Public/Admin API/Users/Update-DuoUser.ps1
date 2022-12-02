@@ -35,6 +35,10 @@ function Update-DuoUser {
     
     .EXAMPLE
     Update-DuoUser -UserId SOMEUSERID -Status Disabled
+
+    .LINK
+    https://duo.com/docs/adminapi#modify-user
+    
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

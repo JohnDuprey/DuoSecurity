@@ -11,6 +11,9 @@ function Remove-DuoAdmin {
     
     .EXAMPLE
     Remove-DuoAdmin -AdminId SOMEADMINID
+
+    .LINK
+    https://duo.com/docs/adminapi#delete-administrator
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

@@ -20,6 +20,10 @@ function Sync-DuoToken {
     
     .EXAMPLE
     Sync-DuoToken -TokenId SOMEDUOID -Code1 123456 -Code2 789012 -Code3 345678
+
+    .LINK
+    https://duo.com/docs/adminapi#resync-hardware-token
+    
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

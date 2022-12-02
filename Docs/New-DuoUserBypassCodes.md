@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#retrieve-users
+online version: https://duo.com/docs/adminapi#create-bypass-codes-for-user
 schema: 2.0.0
 ---
 
@@ -130,3 +130,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#create-bypass-codes-for-user](https://duo.com/docs/adminapi#create-bypass-codes-for-user)
+

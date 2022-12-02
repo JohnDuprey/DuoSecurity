@@ -11,6 +11,12 @@ function Clear-DuoAdminInactivity {
     
     .EXAMPLE
     Clear-DuoAdminInactivity -AdminId SOMEADMINID
+
+    .LINK
+    https://duo.com/docs/adminapi#clear-administrator-expiration
+
+    .NOTES
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(

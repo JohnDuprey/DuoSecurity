@@ -11,6 +11,10 @@ function Get-DuoAdmins {
     
     .EXAMPLE
     Get-DuoAdmins
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-administrators
+
     #>
     [CmdletBinding()]
     Param(
