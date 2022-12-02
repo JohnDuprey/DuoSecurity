@@ -27,10 +27,13 @@ function Update-DuoGroup {
         [Alias('group_id')]
         [string]$GroupId,
 
+        [Parameter()]
         [string]$Name,
 
+        [Parameter()]
         [string]$Description,
 
+        [Parameter()]
         [ValidateSet('Active', 'Bypass', 'Disabled')]
         [string]$Status
     )

@@ -15,14 +15,18 @@ function Get-DuoUsers {
     .EXAMPLE
     Get-DuoUser -Username bob
 
+    .LINK 
+    https://duo.com/docs/adminapi#retrieve-users
+
     #>
     [CmdletBinding(DefaultParameterSetName = 'List')]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true, ParameterSetName = 'Single')]
         [Alias('user_id')]
-        $UserId,
+        [string]$UserId,
+
         [Parameter(ParameterSetName = 'List')]
-        $Username
+        [string]$Username
     )
 
     process {

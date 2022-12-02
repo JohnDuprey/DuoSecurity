@@ -73,48 +73,65 @@ function Update-DuoIntegration {
         [Parameter(Mandatory = $true)]
         [string]$IntegrationKey,
 
+        [Parameter()]
         [string]$Name,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiAdmins,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiInfo,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiIntegrations,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiReadLog,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiReadResource,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiSettings,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiWriteResource,
 
+        [Parameter()]
         [string]$Greeting,
 
+        [Parameter()]
         [string[]]$GroupsAllowed,
 
+        [Parameter()]
         [string[]]$NetworksForApiAccess,
 
+        [Parameter()]
         [string]$Notes,
 
+        [Parameter()]
         [string]$PolicyKey,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$PromptV4Enabled,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$ResetSecretKey,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$SelfServiceAllowed,
 
+        [Parameter()]
         [ValidateSet('None', 'Simple')]
         [string]$UsernameNormalizationPolicy
     )

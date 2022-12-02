@@ -17,8 +17,10 @@ function Get-DuoTelephonyCreditsUsed {
     #>
     [CmdletBinding()]
     Param(
+        [Parameter()]
         [int]$MaxTime,
 
+        [Parameter()]
         [int]$MinTime
     )
 

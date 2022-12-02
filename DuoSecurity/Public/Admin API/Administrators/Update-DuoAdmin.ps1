@@ -42,20 +42,27 @@ function Update-DuoAdmin {
         [Alias('admin_id')]
         [string]$AdminId,
 
+        [Parameter()]
         [string]$Name,
         
+        [Parameter()]
         [string]$Phone,
 
+        [Parameter()]
         [switch]$PasswordChangeRequested,
 
+        [Parameter()]
         [ValidateSet('Owner', 'Administrator', 'Application Manager', 'User Manager', 'Help Desk', 'Billing', 'Phishing Manager', 'Read-Only')]
         [string]$Role,
 
+        [Parameter()]
         [switch]$RestrictedByAdminUnits,
 
+        [Parameter()]
         [ValidateSet('Active', 'Disabled')]
         [string]$Status,
 
+        [Parameter()]
         [string]$TokenId
     )
 

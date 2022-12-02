@@ -44,19 +44,26 @@ function New-DuoUser {
         [Parameter(Mandatory = $true)]
         [string]$Username,
 
+        [Parameter()]
         [hashtable]$Aliases = @{},
 
+        [Parameter()]
         [string]$FullName = '',
 
+        [Parameter()]
         [string]$Email = '',
 
+        [Parameter()]
         [ValidateSet('Active', 'Bypass', 'Disabled')]
         [string]$Status = 'Active',
 
+        [Parameter()]
         [string]$Notes = '',
 
+        [Parameter()]
         [string]$FirstName = '',
 
+        [Parameter()]
         [string]$LastName = ''
     )
 

@@ -26,6 +26,8 @@ function Send-DuoPhoneInstallationSms {
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('phone_id')]
         [string]$PhoneId,
+        
+        [Parameter()]
         [string]$InstallationMsg
     )
 

@@ -30,14 +30,18 @@ function New-DuoAdminActivation {
         [Parameter(Mandatory = $true)]
         [string]$Email,
 
+        [Parameter()]
         [string]$AdminName,
 
+        [Parameter()]
         [ValidateSet('Owner', 'Administrator', 'Application Manager', 'User Manager', 'Help Desk', 'Billing', 'Phishing Manager', 'Read-Only')]
         [string]$AdminRole,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$SendEmail,
 
+        [Parameter()]
         [ValidateRange(1, 31)]
         [int]$ValidDays
     )

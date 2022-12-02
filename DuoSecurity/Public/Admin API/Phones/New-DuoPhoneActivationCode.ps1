@@ -25,8 +25,10 @@ function New-DuoPhoneActivationCode {
         [Alias('phone_id')]
         [string]$PhoneId,
 
+        [Parameter()]
         [int]$ValidSecs = 86400,
 
+        [Parameter()]
         [int]$Install = 0
     )
 

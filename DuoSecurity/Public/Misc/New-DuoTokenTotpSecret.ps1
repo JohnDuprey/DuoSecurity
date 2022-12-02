@@ -19,6 +19,7 @@ function New-DuoTokenTotpSecret {
     #>
     [CmdletBinding()]
     Param(
+        [Parameter()]
         [int]$SecretLength = 15
     )
 

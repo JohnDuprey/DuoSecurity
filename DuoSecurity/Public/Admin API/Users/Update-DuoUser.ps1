@@ -42,21 +42,29 @@ function Update-DuoUser {
         [Alias('user_id')]
         [string]$UserId,
 
+        [Parameter()]
         [string]$Username,
 
+        [Parameter()]
         [string[]]$Aliases,
 
+        [Parameter()]
         [string]$FullName,
 
+        [Parameter()]
         [string]$Email,
 
+        [Parameter()]
         [ValidateSet('Active', 'Bypass', 'Disabled')]
         [string]$Status,
 
+        [Parameter()]
         [string]$Notes,
 
+        [Parameter()]
         [string]$FirstName,
 
+        [Parameter()]
         [string]$LastName
     )
 

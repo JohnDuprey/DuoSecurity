@@ -40,7 +40,10 @@ Object limits: 100 bypass codes per user.
         [Parameter(ParameterSetName = 'Codes')]
         [string[]]$Codes = @(),
 
+        [Parameter()]
         [int]$ReuseCount = 1,
+
+        [Parameter()]
         [int]$ValidSecs = 0
     )
 

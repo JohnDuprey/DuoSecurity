@@ -26,8 +26,10 @@ function New-DuoGroup {
         [Parameter(Mandatory = $true)]
         [string]$Name,
 
+        [Parameter()]
         [string]$Description = '',
 
+        [Parameter()]
         [ValidateSet('Active', 'Bypass', 'Disabled')]
         [string]$Status = 'Active'
     )

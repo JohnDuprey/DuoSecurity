@@ -49,12 +49,16 @@ function New-DuoToken {
         [Parameter(Mandatory = $true)]
         [string]$Serial,
 
+        [Parameter()]
         [string]$Secret,
 
+        [Parameter()]
         [int]$Counter,
 
+        [Parameter()]
         [string]$PrivateId,
 
+        [Parameter()]
         [string]$AesKey
     )
 

@@ -9,6 +9,9 @@ function Get-DuoEndpoints {
     Information for a given endpoint is purged after 30 days of inactivity.
 
     Endpoint information retrievable by Duo Beyond and Duo Access customers. In addition, some response information is available only with Duo Beyond.
+
+    .PARAMETER EndpointKey
+    The key for the endpoint
    
     .EXAMPLE
     Get-DuoEndpoints

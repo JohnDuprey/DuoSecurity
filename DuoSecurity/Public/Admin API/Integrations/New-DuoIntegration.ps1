@@ -64,38 +64,51 @@ function New-DuoIntegration {
         [Parameter(Mandatory = $true)]
         [string]$Type,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiAdmins,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiInfo,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiIntegrations,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiReadLog,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiReadResource,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiSettings,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$AdminApiWriteResource,
 
+        [Parameter()]
         [string]$Greeting,
 
+        [Parameter()]
         [string[]]$GroupsAllowed,
 
+        [Parameter()]
         [string[]]$NetworksForApiAccess,
 
+        [Parameter()]
         [string]$Notes,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$SelfServiceAllowed,
 
+        [Parameter()]
         [ValidateSet('None', 'Simple')]
         [string]$UsernameNormalizationPolicy
     )

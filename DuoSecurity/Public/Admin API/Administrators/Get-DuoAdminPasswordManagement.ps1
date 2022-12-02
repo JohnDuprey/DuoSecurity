@@ -1,4 +1,4 @@
-function Get-DuoAdminsPasswordManagement {
+function Get-DuoAdminPasswordManagement {
     <#
     .SYNOPSIS
     Retrieve Admin External Password Management Status
@@ -7,7 +7,7 @@ function Get-DuoAdminsPasswordManagement {
     Returns a paged list of administrators indicating whether they have been configured for external password management. Requires "Grant administrators" API permission.
 
     .EXAMPLE
-    Get-DuoAdminsPasswordManagement
+    Get-DuoAdminPasswordManagement
     #>
     [CmdletBinding()]
     Param(
@@ -43,4 +43,3 @@ function Get-DuoAdminsPasswordManagement {
     }
 } 
 
-Set-Alias -Name Get-DuoAdminPasswordManagement -Value Get-DuoAdminsPasswordManagement

@@ -20,8 +20,10 @@ function Get-DuoUserAuthenticationAttempts {
     #>
     [CmdletBinding()]
     Param(
+        [Parameter()]
         [int]$MaxTime,
 
+        [Parameter()]
         [int]$MinTime
     )
 

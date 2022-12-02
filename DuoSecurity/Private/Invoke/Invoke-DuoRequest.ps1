@@ -20,10 +20,14 @@ function Invoke-DuoRequest {
     #>
     [CmdletBinding()]
     Param(
+        [Parameter()]
         [string]$Method = 'GET',
 
+        [Parameter()]
         [ValidateNotNullOrEmpty()]
         [string]$Path,
+        
+        [Parameter()]
         [hashtable]$Params = @{}
     )
 

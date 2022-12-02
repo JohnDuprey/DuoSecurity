@@ -1,4 +1,4 @@
-function Get-DuoAdminsActivations {
+function Get-DuoAdminActivations {
     <#
     .SYNOPSIS
     Retrieve Pending Administrator Activations
@@ -7,7 +7,7 @@ function Get-DuoAdminsActivations {
     Returns a paged list of pending administrator activations. Requires "Grant administrators" API permission.
 
     .EXAMPLE
-    Get-DuoAdminsActivations
+    Get-DuoAdminActivations
     #>
     [CmdletBinding()]
     Param()

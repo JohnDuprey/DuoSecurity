@@ -29,6 +29,7 @@ function Register-DuoUser {
         [Parameter(Mandatory = $true)]
         [string]$Email,
 
+        [Parameter()]
         [int]$ValidSecs = 2592000
     )
 

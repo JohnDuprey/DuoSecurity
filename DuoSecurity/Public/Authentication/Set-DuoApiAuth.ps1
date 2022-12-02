@@ -22,15 +22,15 @@ function Set-DuoApiAuth {
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('api_hostname')]
-        $ApiHost,
+        [string]$ApiHost,
 
         [Parameter(ValueFromPipelineByPropertyName=$true, Mandatory = $true)]
         [Alias('integration_key')]
-        $IntegrationKey,
+        [string]$IntegrationKey,
 
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('secret_key')]
-        $SecretKey,
+        [string]$SecretKey,
 
         [ValidateSet('Accounts', 'Admin', 'Auth')]
         [string]$Type = 'Admin'

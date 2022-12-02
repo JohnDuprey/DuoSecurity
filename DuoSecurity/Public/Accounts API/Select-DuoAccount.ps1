@@ -32,6 +32,7 @@ function Select-DuoAccount {
         [Parameter(ParameterSetName = 'Clear')]
         [switch]$Clear,
 
+        [Parameter()]
         [switch]$Quiet
     )
     

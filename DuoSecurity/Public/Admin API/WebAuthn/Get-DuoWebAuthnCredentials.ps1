@@ -12,7 +12,6 @@ function Get-DuoWebAuthnCredentials {
     [CmdletBinding(DefaultParameterSetName='List')]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, ParameterSetName='Single')]
-        [Alias('webauthnkey')]
         [string]$WebAuthnKey
     )
 

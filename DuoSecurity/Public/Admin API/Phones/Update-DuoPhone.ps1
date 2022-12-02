@@ -40,19 +40,27 @@ function Update-DuoPhone {
         [Alias('phone_id')]
         [string]$PhoneId,
 
+        [Parameter()]
         [string]$Number,
 
+        [Parameter()]
         [string]$Name,
 
+        [Parameter()]
         [string]$Extension,
 
+        [Parameter()]
         [ValidateSet('Unknown', 'Mobile', 'Landline')]
         [string]$Type = 'Mobile',
 
+        [Parameter()]
         [ValidateSet('Unknown', 'Google Android', 'Apple iOS', 'Windows Phone', 'RIM Blackberry', 'Java J2me', 'Palm WebOS', 'Symbian OS', 'Windows Mobile', 'Generic Smartphone')]
         [string]$Platform = 'Generic Smartphone',
 
+        [Parameter()]
         [int]$PostDelay,
+
+        [Parameter()]
         [int]$PreDelay
     )
 

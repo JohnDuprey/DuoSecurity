@@ -17,7 +17,7 @@ function Get-DuoGroups {
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true)]
         [Alias('group_id')]
-        $GroupId
+        [string]$GroupId
     )
 
     process {

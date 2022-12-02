@@ -14,6 +14,7 @@ function Get-DuoIntegrations {
     #>
     [CmdletBinding()]
     Param(
+        [Parameter()]
         [string]$IntegrationKey
     )
 

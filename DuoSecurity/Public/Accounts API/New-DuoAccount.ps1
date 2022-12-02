@@ -15,7 +15,7 @@ function New-DuoAccount {
     [CmdletBinding(SupportsShouldProcess)]
     Param(
         [Parameter(Mandatory = $true)]
-        $Name
+        [string]$Name
     )
     $DuoRequest = @{
         Method = 'POST'

@@ -1,4 +1,4 @@
-function Get-DuoAdminsAuthFactors {
+function Get-DuoAdminAuthFactors {
     <#
     .SYNOPSIS
     Retrieve Administrator Authentication Factors
@@ -7,7 +7,7 @@ function Get-DuoAdminsAuthFactors {
     Retrieve a list of the secondary authentication methods permitted for administrator log on to the Duo Admin Panel. Requires "Grant administrators" API permission.
 
     .EXAMPLE
-    Get-DuoAdminsAuthFactors
+    Get-DuoAdminAuthFactors
     #>
     [CmdletBinding()]
     Param()

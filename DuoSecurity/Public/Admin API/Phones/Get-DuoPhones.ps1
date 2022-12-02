@@ -24,8 +24,10 @@ function Get-DuoPhones {
         [Alias('phone_id')]
         [string]$PhoneId,
 
+        [Parameter()]
         [string]$Number,
 
+        [Parameter()]
         [int]$Extension
     )
 

@@ -46,18 +46,24 @@ function New-DuoAdmin {
         [Parameter(Mandatory = $true)]
         [string]$Name,
         
+        [Parameter()]
         [string]$Phone,
 
+        [Parameter()]
         [ValidateSet('Owner','Administrator','Application Manager','User Manager','Help Desk','Billing','Phishing Manager','Read-Only')]
         [string]$Role,
 
+        [Parameter()]
         [switch]$RestrictedByAdminUnits,
 
+        [Parameter()]
         [ValidateRange(0, 1)]
         [int]$SendEmail,
 
+        [Parameter()]
         [string]$TokenId,
 
+        [Parameter()]
         [ValidateRange(1, 31)]
         [int]$ValidDays
     )
