@@ -17,15 +17,15 @@ function Get-DuoAuthenticationAttempts {
     
     .LINK
     https://duo.com/docs/adminapi#authentication-attempts-report
-    
+
     #>
     [CmdletBinding()]
     Param(
         [Parameter()]
-        [int]$MaxTime,
+        [string]$MaxTime,
 
         [Parameter()]
-        [int]$MinTime
+        [string]$MinTime
     )
 
     $Params = @{}

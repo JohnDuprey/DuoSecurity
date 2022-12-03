@@ -22,10 +22,10 @@ function Get-DuoUserAuthenticationAttempts {
     [CmdletBinding()]
     Param(
         [Parameter()]
-        [int]$MaxTime,
+        [string]$MaxTime,
 
         [Parameter()]
-        [int]$MinTime
+        [string]$MinTime
     )
 
     $Params = @{}

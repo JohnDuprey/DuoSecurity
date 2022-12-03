@@ -17,15 +17,15 @@ function Get-DuoTelephonyCreditsUsed {
 
     .LINK
     https://duo.com/docs/adminapi#telephony-credits-used-report
-    
+
     #>
     [CmdletBinding()]
     Param(
         [Parameter()]
-        [int]$MaxTime,
+        [string]$MaxTime,
 
         [Parameter()]
-        [int]$MinTime
+        [string]$MinTime
     )
 
     $Params = @{}
