@@ -10,6 +10,12 @@ function Get-DuoAdministrativeUnits {
     
     .PARAMETER AdminUnitId
     The ID of the Adminstrative Unit
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-administrative-units
+    
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-administrative-unit-details
     
     .EXAMPLE
     Get-DuoAdminUnits

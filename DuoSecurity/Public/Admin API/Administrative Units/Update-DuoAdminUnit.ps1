@@ -1,22 +1,25 @@
-function New-DuoAdminUnit {
+function Update-DuoAdminUnit {
     <#
     .SYNOPSIS
-    Add Administrative Unit
+    Modify Administrative Unit
     
     .DESCRIPTION
-    Add a new administrative unit with specified administrators, groups, or other parameters. Requires "Grant administrators" API permission.
+    Change the name, description, assigned administrators, groups, and/or integrations of the administrative unit with admin_unit_id. Requires "Grant administrators" API permission.
+
+    .PARAMETER AdminUnitId
+    The ID of the Administrative Unit
     
     .PARAMETER Name
-    The name of the new administrative unit. Must be unique amongst all administrative units.
+    The new name of the administrative unit. Must be unique amongst all administrative units.
     
     .PARAMETER Description
-    A description of the new administrative unit.
+    An updated description of the administrative unit.
     
     .PARAMETER RestrictByGroups
-    Does the new administrative unit specify groups? Default: false.
+    Change whether the administrative unit specifies groups. Default: false.
     
     .PARAMETER RestrictByIntegrations
-    Does the new administrative unit specify integrations? Default: false.
+    Change whether the administrative unit specifies integrations. Default: false.
     
     .PARAMETER Admins
     One or more admin_id values to assign administrators to the new administrative unit. The administrator user must have restricted_by_admin_units set to true before attempting to assign them to an administrative unit via the API.
@@ -28,19 +31,22 @@ function New-DuoAdminUnit {
     One or more integration_key values to assign integrations to the new administrative unit.
     
     .EXAMPLE
-    New-DuoAdminUnit -Name 'Accounts Payable Admins' -RestrictByGroups -Groups 'ACCTSPAYABLEGROUPID'
+    Update-DuoAdminUnit -AdminUnitId SOMEADMINUNITID -Name 'Accounts Payable Admins' -RestrictByGroups -Groups 'ACCTSPAYABLEGROUPID'
 
     .LINK
-    https://duo.com/docs/adminapi#add-administrative-unit
+    https://duo.com/docs/adminapi#modify-administrative-unit
 
     #>
     
     [CmdletBinding(SupportsShouldProcess)]
     Param(
         [Parameter(Mandatory = $true)]
+        [string]$AdminUnitId,
+
+        [Parameter()]
         [string]$Name,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter()]
         [string]$Description,
         
         [Parameter()]
@@ -59,30 +65,27 @@ function New-DuoAdminUnit {
         [string[]]$Integrations
     )
 
-    $Params = @{
-        name               = $Name
-        description        = $Description
-        restrict_by_groups = $RestrictByGroups.IsPresent
-    }
-
-    if ($Admins) { $Params.admins = $Admins }
+    $Params = @{}
+    if ($Name) { $Params.name = $Name }
+    if ($Description) { $Params.description = $Description }
 
     if ($RestrictByGroups.IsPresent) { 
+        $Params.restrict_by_groups = $RestrictByGroups.IsPresent 
         if ($Groups) { $Params.groups = $Groups }
     }
-
+    if ($Admins) { $Params.admins = $Admins }
     if ($RestrictByIntegrations.IsPresent) { 
         $Params.restrict_by_integrations = $RestrictByIntegrations.IsPresent 
-        if ($Integrations) { $Params.integrations = $Integrations}
+        if ($Integrations) { $Params.integrations = $Integrations }
     }
 
     $DuoRequest = @{
         Method = 'POST'
-        Path   = '/admin/v1/admins'
+        Path   = '/admin/v1/admins/{0}' -f $AdminUnitId
         Params = $Params
     }
 
-    if ($PSCmdlet.ShouldProcess($Name)) {
+    if ($PSCmdlet.ShouldProcess($AdminUnitId)) {
         $Request = Invoke-DuoRequest @DuoRequest
         if ($Request.stat -ne 'OK') {
             $Request

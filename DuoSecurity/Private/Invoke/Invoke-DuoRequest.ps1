@@ -26,7 +26,7 @@ function Invoke-DuoRequest {
         [Parameter()]
         [ValidateNotNullOrEmpty()]
         [string]$Path,
-        
+
         [Parameter()]
         [hashtable]$Params = @{}
     )
@@ -76,10 +76,8 @@ function Invoke-DuoRequest {
     }
     
     # Sort parameters
-    $Params = $Params | Sort-Object -Property @{e = { $_.name }}
-    foreach ($Key in $Params.Keys) {
-        Write-Verbose "$Key = $($Params.$Key)"
-        $ParamCollection.Add($key, $Params.$key)
+    foreach ($Item in ($Params.GetEnumerator() | Sort-Object -Property Key)) {
+        $ParamCollection.Add($Item.Key, $Item.Value)
     }
 
     # Query string

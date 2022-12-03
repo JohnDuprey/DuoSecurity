@@ -1,39 +1,38 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#add-administrative-unit
+online version: https://duo.com/docs/adminapi#modify-administrative-unit
 schema: 2.0.0
 ---
 
-# New-DuoAdminUnit
+# Update-DuoAdminUnit
 
 ## SYNOPSIS
-Add Administrative Unit
+Modify Administrative Unit
 
 ## SYNTAX
 
 ```
-New-DuoAdminUnit [-Name] <String> [-Description] <String> [-RestrictByGroups] [-RestrictByIntegrations]
- [[-Admins] <String[]>] [[-Groups] <String[]>] [[-Integrations] <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-DuoAdminUnit [-AdminUnitId] <String> [[-Name] <String>] [[-Description] <String>] [-RestrictByGroups]
+ [-RestrictByIntegrations] [[-Admins] <String[]>] [[-Groups] <String[]>] [[-Integrations] <String[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Add a new administrative unit with specified administrators, groups, or other parameters.
+Change the name, description, assigned administrators, groups, and/or integrations of the administrative unit with admin_unit_id.
 Requires "Grant administrators" API permission.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-New-DuoAdminUnit -Name 'Accounts Payable Admins' -RestrictByGroups -Groups 'ACCTSPAYABLEGROUPID'
+Update-DuoAdminUnit -AdminUnitId SOMEADMINUNITID -Name 'Accounts Payable Admins' -RestrictByGroups -Groups 'ACCTSPAYABLEGROUPID'
 ```
 
 ## PARAMETERS
 
-### -Name
-The name of the new administrative unit.
-Must be unique amongst all administrative units.
+### -AdminUnitId
+The ID of the Administrative Unit
 
 ```yaml
 Type: String
@@ -47,23 +46,39 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Description
-A description of the new administrative unit.
+### -Name
+The new name of the administrative unit.
+Must be unique amongst all administrative units.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Description
+An updated description of the administrative unit.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RestrictByGroups
-Does the new administrative unit specify groups?
+Change whether the administrative unit specifies groups.
 Default: false.
 
 ```yaml
@@ -79,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -RestrictByIntegrations
-Does the new administrative unit specify integrations?
+Change whether the administrative unit specifies integrations.
 Default: false.
 
 ```yaml
@@ -104,7 +119,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -119,7 +134,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -134,7 +149,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -182,5 +197,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://duo.com/docs/adminapi#add-administrative-unit](https://duo.com/docs/adminapi#add-administrative-unit)
+[https://duo.com/docs/adminapi#modify-administrative-unit](https://duo.com/docs/adminapi#modify-administrative-unit)
 
