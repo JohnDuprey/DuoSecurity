@@ -24,20 +24,15 @@ function Get-DuoTrustMonitorEvents {
     .PARAMETER MaxTime
     Return records that have a 13 character Unix timestamp in milliseconds of maxtime or earlier. This value must be strictly greater then mintime.
     
-  
-    
     .LINK
     https://duo.com/docs/adminapi#retrieve-events
 
     .EXAMPLE
-    Get-DuoAuthLogs -Days 30 -EventTypes authentication -Factors duo_push -Results denied
+    Get-DuoTrustMonitorEvents -Days 30 
     
     .NOTES
-    There is an intentional two minute delay in availability of new authentications in the API response. Duo operates a large scale distributed system, and this two minute buffer period ensures that calls will return consistent results. Querying for results more recent than two minutes will return as empty.
-
-    We recommend requesting logs no more than once per minute.
-
-    The v2 handler provides new filtering and querying capabilities unavailable in the legacy v1 handler. This includes the ability to filter on users, groups, applications, authentication results, factors, and time ranges.
+    We recommend requesting Trust Monitor events no more than once per minute.
+    
     #>
     [CmdletBinding()]
     Param(
