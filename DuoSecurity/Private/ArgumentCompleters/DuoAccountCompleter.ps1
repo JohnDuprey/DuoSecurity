@@ -9,9 +9,10 @@ $DuoAccountCompleter = {
     if (!$script:DuoAccountsList) {
         Get-DuoAccounts | Out-Null
     }
-    ($script:DuoAccountsList).name | Where-Object { $_ -like "$AccountName*" } | ForEach-Object { "'$_'" }
-}
 
+    $AccountName = $AccountName -replace "'",''
+    ($script:DuoAccountsList).name | Where-Object { $_ -match "$AccountName" } | ForEach-Object { "'$_'" }
+}
 $DuoAccountIdCompleter = {
     param (
         $CommandName,

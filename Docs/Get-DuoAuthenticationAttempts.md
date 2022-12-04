@@ -13,7 +13,7 @@ Authentication Attempts Report
 ## SYNTAX
 
 ```
-Get-DuoAuthenticationAttempts [[-MaxTime] <Int32>] [[-MinTime] <Int32>] [<CommonParameters>]
+Get-DuoAuthenticationAttempts [[-MaxTime] <String>] [[-MinTime] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,13 +34,13 @@ Limit report to events before this Unix timestamp.
 Defaults to the current time.
 
 ```yaml
-Type: Int32
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -50,13 +50,13 @@ Limit report to events after this Unix timestamp.
 Defaults to thirty days before maxtime.
 
 ```yaml
-Type: Int32
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
