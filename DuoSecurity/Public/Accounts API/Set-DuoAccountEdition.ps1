@@ -1,4 +1,4 @@
-function Get-DuoAccountEdition {
+function Set-DuoAccountEdition {
     <#
     .SYNOPSIS
     Set Edition
