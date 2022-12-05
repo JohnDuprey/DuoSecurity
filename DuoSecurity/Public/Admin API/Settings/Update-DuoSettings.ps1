@@ -212,7 +212,7 @@ function Update-DuoSettings {
     if ($UserTelephonyCostMax) { $Params.user_telephony_cost_max = $UserTelephonyCostMax }  
 
     $DuoRequest = @{
-        Method = 'GET'
+        Method = 'POST'
         Path   = '/admin/v1/settings'
         Params = $Params
     }
