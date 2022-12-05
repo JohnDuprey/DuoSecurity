@@ -12,12 +12,19 @@ function Remove-DuoAccount {
     .EXAMPLE
     Remove-DuoAccount -AccountId SOMEACCOUNTID
 
+    .INPUTS
+    PSCustomObject. Duo Accounts object
+
+    .OUTPUTS
+    PSCustomObject. Returns a Duo Response object.
+
     .LINK
     https://duo.com/docs/accountsapi#delete-account
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
-        [Parameter(Mandatory = $true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [Alias('account_id')]
         [string]$AccountId
     )
 

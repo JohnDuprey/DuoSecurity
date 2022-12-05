@@ -12,6 +12,12 @@ function Get-DuoAccountTelephonyCredits {
     .EXAMPLE
     Get-DuoAccounts | Select-Object name,account_id, @{n='credits'; e={($_ | Get-DuoAccountTelephonyCredits).credits}}
 
+    .INPUTS
+    PSCustomObject. Duo Accounts object
+
+    .OUTPUTS
+    PSCustomObject. Returns a Duo Response object.
+
     .LINK
     https://duo.com/docs/accountsapi#get-telephony-credits
     

@@ -7,17 +7,28 @@ function Get-DuoCustomBranding {
     Returns custom branding settings. These settings can also be viewed and set in the Duo Admin Panel. Requires "Grant settings" API permission.
     
     .PARAMETER Draft
-    Use this switch to retreieve the draft branding
+    Use this switch to retreieve the draft branding instead of live.
 
     .PARAMETER OutputDirectory
-    Path to save the branding images to
+    Path to save the branding images to. If the directory does not exist, it will be created.
 
     .EXAMPLE
     Get-DuoCustomBranding
 
+    .INPUTS
+    None
+
+    .OUTPUTS
+    PSCustomObject. Returns a Duo Response object.
+
     .LINK
     https://duo.com/docs/adminapi#retrieve-live-custom-branding
 
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-draft-custom-branding
+
+    .NOTES
+    This commandlet supports both Draft and Live branding options.
     #>
     [CmdletBinding()]
     Param(
@@ -45,6 +56,9 @@ function Get-DuoCustomBranding {
         $Request
 
         if ($OutputDirectory) {
+            if (!Test-Path $OutputDirectory) {
+                New-Item -ItemType Directory $OutputDirectory | Out-Null
+            }
             if ($Request.background_image) {
                 $ImageFile = Join-Path $OutputDirectory '/background_image.png'
                 ConvertFrom-Base64 -Base64 $Request.background_image -Path $ImageFile

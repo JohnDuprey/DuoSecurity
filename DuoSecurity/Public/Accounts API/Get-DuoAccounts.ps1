@@ -9,6 +9,12 @@ function Get-DuoAccounts {
     .EXAMPLE
     Get-DuoAccounts
 
+    .INPUTS
+    None
+
+    .OUTPUTS
+    PSCustomObject. Returns a Duo Response object.
+
     .LINK
     https://duo.com/docs/accountsapi#retrieve-accounts
     

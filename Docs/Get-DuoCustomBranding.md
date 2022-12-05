@@ -31,7 +31,7 @@ Get-DuoCustomBranding
 ## PARAMETERS
 
 ### -Draft
-Use this switch to retreieve the draft branding
+Use this switch to retreieve the draft branding instead of live.
 
 ```yaml
 Type: SwitchParameter
@@ -46,7 +46,8 @@ Accept wildcard characters: False
 ```
 
 ### -OutputDirectory
-Path to save the branding images to
+Path to save the branding images to.
+If the directory does not exist, it will be created.
 
 ```yaml
 Type: String
@@ -65,11 +66,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
 ## OUTPUTS
 
+### PSCustomObject. Returns a Duo Response object.
 ## NOTES
+This commandlet supports both Draft and Live branding options.
 
 ## RELATED LINKS
 
 [https://duo.com/docs/adminapi#retrieve-live-custom-branding](https://duo.com/docs/adminapi#retrieve-live-custom-branding)
+
+[https://duo.com/docs/adminapi#retrieve-draft-custom-branding](https://duo.com/docs/adminapi#retrieve-draft-custom-branding)
 

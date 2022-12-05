@@ -49,8 +49,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### PSCustomObject. Duo Accounts object
 ## OUTPUTS
 
+### PSCustomObject. Returns a Duo Response object.
 ## NOTES
 
 ## RELATED LINKS

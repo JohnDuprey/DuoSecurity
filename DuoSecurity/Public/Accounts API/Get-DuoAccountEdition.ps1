@@ -12,11 +12,17 @@ function Get-DuoAccountEdition {
     .EXAMPLE
     Get-DuoAccounts | Select-Object name,account_id, @{n='edition'; e={($_ | Get-DuoAccountEdition).edition}}
 
+    .INPUTS
+    PSCustomObject. Duo Accounts object
+
+    .OUTPUTS
+    PSCustomObject. Returns a Duo Response object.
+
     .LINK
     https://duo.com/docs/accountsapi#get-edition
     
     #>
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('account_id')]
@@ -31,12 +37,14 @@ function Get-DuoAccountEdition {
             Path   = '/admin/v1/billing/edition'
         }
 
-        $Response = Invoke-DuoRequest @DuoRequest
-        if ($Response.stat -eq 'OK') {
-            $Response.response
-        }
-        else { 
-            $Response
+        if ($PSCmdlet.ShouldProcess()) {
+            $Response = Invoke-DuoRequest @DuoRequest
+            if ($Response.stat -eq 'OK') {
+                $Response.response
+            }
+            else { 
+                $Response
+            }
         }
     }
 }

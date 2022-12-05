@@ -35,12 +35,12 @@ This is a 20 character string, for example DA9VZOC5X63I2W72NRP9.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: account_id
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -80,8 +80,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### PSCustomObject. Duo Accounts object
 ## OUTPUTS
 
+### PSCustomObject. Returns a Duo Response object.
 ## NOTES
 
 ## RELATED LINKS

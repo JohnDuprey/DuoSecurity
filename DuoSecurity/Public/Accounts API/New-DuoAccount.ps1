@@ -12,6 +12,12 @@ function New-DuoAccount {
     .EXAMPLE
     New-DuoAccount -Name 'Some Company'
 
+    .INPUTS
+    None
+    
+    .OUTPUTS
+    PSCustomObject. Returns a Duo Response object.
+
     .LINK
     https://duo.com/docs/accountsapi#create-account
     #>
