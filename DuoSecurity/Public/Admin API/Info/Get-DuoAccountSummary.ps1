@@ -1,4 +1,18 @@
 function Get-DuoAccountSummary {
+    <#
+    .SYNOPSIS
+    Retrieve Summary
+    
+    .DESCRIPTION
+    Returns a summary of account utilization information. Requires "Grant read information" API permission.
+    
+    .EXAMPLE
+    Get-DuoAccountSummary
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-summary
+
+    #>
     [CmdletBinding()]
     Param()
 
@@ -7,9 +21,6 @@ function Get-DuoAccountSummary {
         Path   = '/admin/v1/info/summary'
     }
 
-    if ($Username) {
-        $DuoRequest.Params = @{username = $Username }
-    }
     $Request = Invoke-DuoRequest @DuoRequest
     
     if ($Request.stat -ne 'OK') {

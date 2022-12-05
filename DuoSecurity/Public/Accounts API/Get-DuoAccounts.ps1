@@ -1,4 +1,24 @@
 function Get-DuoAccounts {
+    <#
+    .SYNOPSIS
+    Retrieve Accounts
+    
+    .DESCRIPTION
+    Returns a list of child accounts.
+    
+    .EXAMPLE
+    Get-DuoAccounts
+
+    .INPUTS
+    None
+
+    .OUTPUTS
+    PSCustomObject. Returns a Duo Response object.
+
+    .LINK
+    https://duo.com/docs/accountsapi#retrieve-accounts
+    
+    #>
     [CmdletBinding()]
     Param()
 

@@ -1,11 +1,34 @@
 function Add-DuoUserPhone {
+    <#
+    .SYNOPSIS
+    Associate Phone with User
+    
+    .DESCRIPTION
+    Associate a phone with the user with ID user_id. Requires "Grant write resource" API permission.
+
+    Object limits: 100 phones per user; 100 users per phone.
+    
+    .PARAMETER UserId
+    The ID of the user
+    
+    .PARAMETER PhoneId
+    The ID of the phone to associate with the user.
+    
+    .EXAMPLE
+    Add-DuoUserPhone -UserId SOMEUSERID -PhoneId SOMEPHONEID
+
+    .LINK
+    https://duo.com/docs/adminapi#associate-phone-with-user
+
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('user_id')]
         [string]$UserId,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [Alias('phone_id')]
         [string]$PhoneId
     )
 

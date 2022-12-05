@@ -1,9 +1,29 @@
 function Get-DuoGroups {
+    <#
+    .SYNOPSIS
+    Retrieve Groups
+    
+    .DESCRIPTION
+    Returns a single group or a paged list of groups. Requires "Grant read resource" API permission.
+    
+    .PARAMETER GroupId
+    Group Id to retrieve
+    
+    .EXAMPLE
+    Get-DuoGroups
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-groups
+
+    .LINK
+    https://duo.com/docs/adminapi#get-group-info
+    
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true)]
         [Alias('group_id')]
-        $GroupId
+        [string]$GroupId
     )
 
     process {

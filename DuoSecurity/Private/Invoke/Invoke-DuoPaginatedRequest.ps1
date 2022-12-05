@@ -1,4 +1,15 @@
 function Invoke-DuoPaginatedRequest {
+    <#
+    .SYNOPSIS
+    Paginated requests to Duo API
+    
+    .DESCRIPTION
+    Wraps Invoke-DuoRequest setting offset to next_offset
+    
+    .PARAMETER DuoRequest
+    Request to paginate
+    
+    #>
     [CmdletBinding()]
     Param(
         $DuoRequest

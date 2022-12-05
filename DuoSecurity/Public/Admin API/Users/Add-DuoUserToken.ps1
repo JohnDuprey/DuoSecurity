@@ -1,11 +1,36 @@
 function Add-DuoUserToken {
+    <#
+    .SYNOPSIS
+    Associate Hardware Token with User
+    
+    .DESCRIPTION
+    Associate a hardware token with the user with ID user_id. Requires "Grant write resource" API permission.
+
+    Object limits: 100 tokens per user.
+    
+    .PARAMETER UserId
+    The ID of the user
+    
+    .PARAMETER TokenId
+    The ID of the hardware token to associate with the user.
+    
+    .EXAMPLE
+    Add-DuoUserToken -UserId SOMEUSERID -TokenId SOMETOKENID
+    
+    .LINK
+    https://duo.com/docs/adminapi#associate-hardware-token-with-user
+
+    .NOTES
+    
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('user_id')]
         [string]$UserId,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [Alias('token_id')]
         [string]$TokenId
     )
 

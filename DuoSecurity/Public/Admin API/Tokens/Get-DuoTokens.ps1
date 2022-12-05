@@ -1,4 +1,40 @@
 function Get-DuoTokens {
+    <#
+    .SYNOPSIS
+    Retrieve Hardware Tokens
+    
+    .DESCRIPTION
+    Returns a single hardware token or a paged list of OTP hardware tokens. If no type and serial parameters are provided, the list will contain all hardware tokens. Otherwise, the list will contain either a single hardware token (if a match was found) or no hardware tokens. Requires "Grant read resource" API permission.
+    
+    .PARAMETER TokenId
+    Id of token
+    
+    .PARAMETER Type
+    Specify a type and serial number to look up a single hardware token. One of:
+
+    Type	Description
+    "t6"    TOTP-6 hardware token
+    "t8"    TOTP-8 hardware token
+    "h6"	HOTP-6 hardware token
+    "h8"	HOTP-8 hardware token
+    "yk"	YubiKey AES hardware token
+    "d1"	Duo-D100 hardware token
+    * This option is required if serial is present.
+    
+    .PARAMETER Serial
+    The serial number of the hardware token.
+    * This option is required if type is present.
+    
+    .EXAMPLE
+    Get-DuoTokens
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-hardware-tokens
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-hardware-token-by-id
+
+    #>
     [CmdletBinding(DefaultParameterSetName='List')]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, ParameterSetName = 'Single')]

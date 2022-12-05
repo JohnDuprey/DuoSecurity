@@ -1,6 +1,25 @@
 function New-DuoTokenTotpSecret {
+    <#
+    .SYNOPSIS
+    Creates TOTP secret in Duo format
+    
+    .DESCRIPTION
+    Creates both Base32 and Hex formatted secret keys for Duo token and TOTP app
+    
+    .PARAMETER SecretLength
+    Length of secret
+    
+    .EXAMPLE
+    New-DuoTokenTotpSecret
+
+    Base32                   Hex
+    ------                   ---
+    EMFJSRYQRRWYXX6ME5T3DYZH 230a9947108c6d8bdfcc2767b1e327
+    
+    #>
     [CmdletBinding()]
     Param(
+        [Parameter()]
         [int]$SecretLength = 15
     )
 

@@ -1,4 +1,21 @@
 function Get-DuoGroupUsers {
+    <#
+    .SYNOPSIS
+    Retrieve Group Members
+    
+    .DESCRIPTION
+    Returns a paged list of members of a specified group.
+    
+    .PARAMETER GroupId
+    Group Id to get member list for
+    
+    .EXAMPLE
+    Get-DuoGroupUsers -GroupId SOMEDUOID
+
+    .LINK
+    https://duo.com/docs/adminapi#get-group-info
+
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]

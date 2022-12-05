@@ -1,12 +1,37 @@
 function New-DuoPhoneActivationCode {
+    <#
+    .SYNOPSIS
+    Create Activation Code
+    
+    .DESCRIPTION
+    Generate a Duo Mobile activation code. This method will fail if the phone's type or platform are Unknown. Requires "Grant write resource" API permission.
+    
+    .PARAMETER PhoneId
+    Id of phone
+    
+    .PARAMETER ValidSecs
+    The number of seconds this activation code remains valid. Default: 86400 (one day). Expiration not supported for legacy phone platforms that support passcode generation only (not Duo Push).
+    
+    .PARAMETER Install
+    Specify 1 to also return an installation URL for Duo Mobile; 0 to not return a URL. Default: 0.
+    
+    .EXAMPLE
+    New-DuoPhoneActivationCode -PhoneId SOMEPHONEID
+
+    .LINK
+    https://duo.com/docs/adminapi#create-activation-code
+    
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('phone_id')]
         [string]$PhoneId,
 
+        [Parameter()]
         [int]$ValidSecs = 86400,
 
+        [Parameter()]
         [int]$Install = 0
     )
 

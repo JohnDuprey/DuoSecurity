@@ -1,4 +1,21 @@
 function Remove-DuoToken {
+    <#
+    .SYNOPSIS
+    Delete Hardware Token
+    
+    .DESCRIPTION
+    Delete the hardware token with ID token_id from the system. Requires "Grant write resource" API permission.
+    
+    .PARAMETER TokenId
+    Id of token
+    
+    .EXAMPLE
+    Remove-DuoToken -TokenId SOMEDUOID
+
+    .LINK
+    https://duo.com/docs/adminapi#delete-hardware-token
+    
+    #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]

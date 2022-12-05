@@ -1,4 +1,18 @@
 function Get-DuoSettings {
+    <#
+    .SYNOPSIS
+    Retrieve Settings
+    
+    .DESCRIPTION
+    Returns global Duo settings. These settings can also be viewed and set in the Duo Admin Panel. Requires "Grant settings" API permission.
+    
+    .EXAMPLE
+    Get-DuoSettings
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-settings
+
+    #>
     [CmdletBinding()]
     Param()
 

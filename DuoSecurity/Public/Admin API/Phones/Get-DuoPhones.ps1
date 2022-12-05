@@ -1,9 +1,41 @@
 function Get-DuoPhones {
+    <#
+    .SYNOPSIS
+    Retrieve Phones
+    
+    .DESCRIPTION
+    Returns a single phone or a paged list of phones. If no number or extension parameters are provided, the list will contain all phones. Otherwise, the list will contain either single phone (if a match was found), or no phones. Requires "Grant read resource" API permission.
+    
+    .PARAMETER PhoneId
+    Id of phone
+
+    .PARAMETER Number
+    Specify a phone number in E.164 format to look up a single phone.
+
+    .PARAMETER Extension
+    The extension, if necessary.
+    
+    .EXAMPLE
+    Get-DuoPhones
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-phones
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-phone-by-id
+
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true)]
         [Alias('phone_id')]
-        $PhoneId
+        [string]$PhoneId,
+
+        [Parameter()]
+        [string]$Number,
+
+        [Parameter()]
+        [int]$Extension
     )
 
     process {
@@ -12,7 +44,9 @@ function Get-DuoPhones {
         }
         else {
             $Path = '/admin/v1/phones'
-            $Params = @{ offset = 0 }
+            $Params = @{}
+            if ($Number) { $Params.number = $Number }
+            if ($Extension) { $Params.extension = $Extension }
         }
     
         $DuoRequest = @{

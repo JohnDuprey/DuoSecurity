@@ -1,15 +1,41 @@
 function Select-DuoAccount {
+    <#
+    .SYNOPSIS
+    Select Duo Account to use for Admin API
+    
+    .DESCRIPTION
+    Takes values from the account list and creates API credentials for sub account
+    
+    .PARAMETER AccountId
+    Duo Account Id
+    
+    .PARAMETER Name
+    Duo Account name
+    
+    .PARAMETER Clear
+    Clear credentials
+    
+    .PARAMETER Quiet
+    Suppress output
+    
+    .EXAMPLE
+    Select-DuoAccount -Name 'Some Company Name'
+
+    .EXAMPLE
+    Select-DuoAccount -AccountId SOMEACCOUNTID
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory = $true, ParameterSetName = 'AccountId')]
         [string]$AccountId,
-        
+
         [Parameter(Mandatory = $true, ParameterSetName = 'AccountName')]
         [string]$Name,
 
         [Parameter(ParameterSetName = 'Clear')]
         [switch]$Clear,
 
+        [Parameter()]
         [switch]$Quiet
     )
     
@@ -38,5 +64,8 @@ function Select-DuoAccount {
         if (!$Quiet) {
             Write-Host "Account: $($Account.name) ($($Account.account_id))" 
         }
+    }
+    else {
+        Write-Error "Invalid Account specified"
     }
 }

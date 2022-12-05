@@ -1,11 +1,35 @@
 function Get-DuoUsers {
+    <#
+    .SYNOPSIS
+    Retrieve Users
+    
+    .DESCRIPTION
+    Returns a single user or a paged list of users. If username is not provided, the list will contain all users. If username is provided, the list will either contain a single user (if a match was found) or no users. Requires "Grant read resource" API permission.
+    
+    .PARAMETER UserId
+    Specify a user id
+    
+    .PARAMETER Username
+    Specify a user name (or username alias) to look up a single user.
+    
+    .EXAMPLE
+    Get-DuoUser -Username bob
+
+    .LINK 
+    https://duo.com/docs/adminapi#retrieve-users
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-user-by-id
+
+    #>
     [CmdletBinding(DefaultParameterSetName = 'List')]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true, ParameterSetName = 'Single')]
         [Alias('user_id')]
-        $UserId,
+        [string]$UserId,
+
         [Parameter(ParameterSetName = 'List')]
-        $Username
+        [string]$Username
     )
 
     process {

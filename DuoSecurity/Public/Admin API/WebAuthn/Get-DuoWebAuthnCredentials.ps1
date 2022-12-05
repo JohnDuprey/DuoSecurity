@@ -1,29 +1,39 @@
 function Get-DuoWebAuthnCredentials {
-    [CmdletBinding()]
+    <#
+    .SYNOPSIS
+    Retrieve WebAuthn Credentials by Key
+    
+    .DESCRIPTION
+    Return the single WebAuthn credential with webauthnkey. Requires "Grant read resource" API permission.
+    
+    .PARAMETER WebAuthnKey
+    WebAuthn Key
+
+    .EXAMPLE
+    Get-DuoWebAuthnCredentials
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-webauthn-credentials
+
+    .LINK
+    https://duo.com/docs/adminapi#retrieve-webauthn-credentials-by-key
+
+    #>
+    [CmdletBinding(DefaultParameterSetName='List')]
     Param(
-        [Parameter(ValueFromPipelineByPropertyName = $true)]
-        [Alias('webauthnkey')]
+        [Parameter(ValueFromPipelineByPropertyName = $true, ParameterSetName='Single')]
         [string]$WebAuthnKey
     )
 
     process {
-        switch ($PSCmdlet.ParameterSetName) {
-            'Single' {
-                $Path = '/admin/v1/webauthncredentials/{0}' -f $TokenId
-            }
-            'List' {
-                $Path = '/admin/v1/webauthncredentials'
-            }
-        }
-    
         $DuoRequest = @{
             Method = 'GET'
-            Path   = $Path
             Params = $Params
         }
 
         switch ($PSCmdlet.ParameterSetName) {
             'Single' {
+                $DuoRequest.Path = '/admin/v1/webauthncredentials/{0}' -f $WebAuthnKey
                 $Request = Invoke-DuoRequest @DuoRequest
                 if ($Request.stat -ne 'OK') {
                     $Request
@@ -32,7 +42,8 @@ function Get-DuoWebAuthnCredentials {
                     $Request.response
                 } 
             }
-            default { 
+            'List' {
+                $DuoRequest.Path = '/admin/v1/webauthncredentials'
                 Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest 
             }
         }

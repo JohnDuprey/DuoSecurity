@@ -16,7 +16,6 @@ jobs:
         with:
           path: .\DuoSecurity
           recurse: true
-          includeRule: '"PSAvoidGlobalAliases", "PSAvoidUsingConvertToSecureStringWithPlainText"'
           output: results.sarif
 
       - name: Upload SARIF results file
