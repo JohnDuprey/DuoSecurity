@@ -64,7 +64,6 @@ Get-DuoUsers
 ```
 
 # Cmdlet Help
-
 ## Accounts API
 - [Get-DuoAccountEdition](./Docs/Get-DuoAccountEdition.md)
 - [Get-DuoAccounts](./Docs/Get-DuoAccounts.md)
@@ -84,7 +83,7 @@ Get-DuoUsers
   - [Remove-DuoAdminFromAdminUnit](./Docs/Remove-DuoAdminFromAdminUnit.md)
   - [Remove-DuoGroup](./Docs/Remove-DuoGroup.md)
   - [Remove-DuoGroupFromAdminUnit](./Docs/Remove-DuoGroupFromAdminUnit.md)
-  - [Remove-DuoIntegrationFromAdminUnit](./Docs/Remove-DuoIntegrationFromAdminUnit.md) 
+  - [Remove-DuoIntegrationFromAdminUnit](./Docs/Remove-DuoIntegrationFromAdminUnit.md)
   - [Update-DuoAdminUnit](./Docs/Update-DuoAdminUnit.md)
 - Administrators
   - [Clear-DuoAdminInactivity](./Docs/Clear-DuoAdminInactivity.md)
@@ -110,7 +109,7 @@ Get-DuoUsers
   - [Get-DuoCustomBranding](./Docs/Get-DuoCustomBranding.md)
   - [Get-DuoCustomMessaging](./Docs/Get-DuoCustomMessaging.md)
   - [Publish-DuoCustomBranding](./Docs/Publish-DuoCustomBranding.md)
-  - [Remove-DuoCustomBrandingDraftUser](./Docs/Remove-DuoCustomBrandingDraftUser.md)   
+  - [Remove-DuoCustomBrandingDraftUser](./Docs/Remove-DuoCustomBrandingDraftUser.md)
   - [Set-DuoCustomBranding](./Docs/Set-DuoCustomBranding.md)
   - [Set-DuoCustomMessaging](./Docs/Set-DuoCustomMessaging.md)
 - Endpoints
@@ -125,7 +124,7 @@ Get-DuoUsers
   - [Get-DuoAccountSummary](./Docs/Get-DuoAccountSummary.md)
   - [Get-DuoAuthenticationAttempts](./Docs/Get-DuoAuthenticationAttempts.md)
   - [Get-DuoTelephonyCreditsUsed](./Docs/Get-DuoTelephonyCreditsUsed.md)
-  - [Get-DuoUserAuthenticationAttempts](./Docs/Get-DuoUserAuthenticationAttempts.md)   
+  - [Get-DuoUserAuthenticationAttempts](./Docs/Get-DuoUserAuthenticationAttempts.md)
 - Integrations
   - [Get-DuoIntegrations](./Docs/Get-DuoIntegrations.md)
   - [New-DuoIntegration](./Docs/New-DuoIntegration.md)

@@ -1,18 +1,23 @@
 
-$Folders = Get-ChildItem .\DuoSecurity\Public
+$Readme = Get-Content .\README.md -Raw
+$NewReadme = ($Readme -split '# Cmdlet Help')[0]
 
+$Folders = Get-ChildItem .\DuoSecurity\Public
+$NewReadme = $NewReadme + "`n# Cmdlet Help"
 foreach ($Folder in $Folders) {
-    Write-Output ('## {0}' -f $Folder.BaseName)
+    $NewReadme = $NewReadme + ("`n## {0}" -f $Folder.BaseName)
     $Items = Get-ChildItem -Path $Folder
     foreach ($Item in $Items) {
         if ($item.Extension -eq '.ps1') {
-            Write-Output ('- [{0}](./Docs/{1}.md)' -f $Item.BaseName, $Item.BaseName)
+            $NewReadme = $NewReadme + ("`n- [{0}](./Docs/{1}.md)" -f $Item.BaseName, $Item.BaseName)
         }
         else {
-            Write-Output ('- {0}' -f $Item.BaseName)
+            $NewReadme = $NewReadme + ("`n- {0}" -f $Item.BaseName)
             $Item | Get-ChildItem | ForEach-Object {
-                 Write-Output ("  - [{0}](./Docs/{1}.md)" -f $_.BaseName, $_.BaseName)
+                 $NewReadme = $NewReadme +  ("`n  - [{0}](./Docs/{1}.md)" -f $_.BaseName, $_.BaseName)
             }
         }
     }
 }
+
+$NewReadme | Set-Content -Path .\README.md

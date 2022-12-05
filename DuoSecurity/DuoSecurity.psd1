@@ -12,7 +12,7 @@
     RootModule           = 'DuoSecurity.psm1'
 
     # Version number of this module.
-    ModuleVersion        = '1.1.0.1'
+    ModuleVersion        = '1.1.0.2'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
