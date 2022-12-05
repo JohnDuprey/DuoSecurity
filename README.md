@@ -76,8 +76,16 @@ Get-DuoUsers
 - [Set-DuoAccountTelephonyCredits](./Docs/Set-DuoAccountTelephonyCredits.md)
 ## Admin API
 - Administrative Units
+  - [Add-DuoAdminToAdminUnit](./Docs/Add-DuoAdminToAdminUnit.md)
+  - [Add-DuoGroupToAdminUnit](./Docs/Add-DuoGroupToAdminUnit.md)
+  - [Add-DuoIntegrationToAdminUnit](./Docs/Add-DuoIntegrationToAdminUnit.md)
   - [Get-DuoAdminUnits](./Docs/Get-DuoAdminUnits.md)
   - [New-DuoAdminUnit](./Docs/New-DuoAdminUnit.md)
+  - [Remove-DuoAdminFromAdminUnit](./Docs/Remove-DuoAdminFromAdminUnit.md)
+  - [Remove-DuoGroup](./Docs/Remove-DuoGroup.md)
+  - [Remove-DuoGroupFromAdminUnit](./Docs/Remove-DuoGroupFromAdminUnit.md)
+  - [Remove-DuoIntegrationFromAdminUnit](./Docs/Remove-DuoIntegrationFromAdminUnit.md) 
+  - [Update-DuoAdminUnit](./Docs/Update-DuoAdminUnit.md)
 - Administrators
   - [Clear-DuoAdminInactivity](./Docs/Clear-DuoAdminInactivity.md)
   - [Get-DuoAdminActivations](./Docs/Get-DuoAdminActivations.md)
@@ -98,6 +106,13 @@ Get-DuoUsers
   - [Get-DuoBypassCodes](./Docs/Get-DuoBypassCodes.md)
   - [Remove-DuoBypassCode](./Docs/Remove-DuoBypassCode.md)
 - Custom Branding
+  - [Add-DuoCustomBrandingDraftUser](./Docs/Add-DuoCustomBrandingDraftUser.md)
+  - [Get-DuoCustomBranding](./Docs/Get-DuoCustomBranding.md)
+  - [Get-DuoCustomMessaging](./Docs/Get-DuoCustomMessaging.md)
+  - [Publish-DuoCustomBranding](./Docs/Publish-DuoCustomBranding.md)
+  - [Remove-DuoCustomBrandingDraftUser](./Docs/Remove-DuoCustomBrandingDraftUser.md)   
+  - [Set-DuoCustomBranding](./Docs/Set-DuoCustomBranding.md)
+  - [Set-DuoCustomMessaging](./Docs/Set-DuoCustomMessaging.md)
 - Endpoints
   - [Get-DuoEndpoints](./Docs/Get-DuoEndpoints.md)
 - Groups
@@ -110,13 +125,17 @@ Get-DuoUsers
   - [Get-DuoAccountSummary](./Docs/Get-DuoAccountSummary.md)
   - [Get-DuoAuthenticationAttempts](./Docs/Get-DuoAuthenticationAttempts.md)
   - [Get-DuoTelephonyCreditsUsed](./Docs/Get-DuoTelephonyCreditsUsed.md)
-  - [Get-DuoUserAuthenticationAttempts](./Docs/Get-DuoUserAuthenticationAttempts.md)
+  - [Get-DuoUserAuthenticationAttempts](./Docs/Get-DuoUserAuthenticationAttempts.md)   
 - Integrations
   - [Get-DuoIntegrations](./Docs/Get-DuoIntegrations.md)
   - [New-DuoIntegration](./Docs/New-DuoIntegration.md)
   - [Remove-DuoIntegration](./Docs/Remove-DuoIntegration.md)
   - [Update-DuoIntegration](./Docs/Update-DuoIntegration.md)
 - Logs
+  - [Get-DuoAdminLogs](./Docs/Get-DuoAdminLogs.md)
+  - [Get-DuoAuthLogs](./Docs/Get-DuoAuthLogs.md)
+  - [Get-DuoOfflineEnrollmentLogs](./Docs/Get-DuoOfflineEnrollmentLogs.md)
+  - [Get-DuoTelephonyLogs](./Docs/Get-DuoTelephonyLogs.md)
 - Phones
   - [Get-DuoPhones](./Docs/Get-DuoPhones.md)
   - [New-DuoPhone](./Docs/New-DuoPhone.md)
@@ -128,12 +147,14 @@ Get-DuoUsers
   - [Update-DuoPhone](./Docs/Update-DuoPhone.md)
 - Settings
   - [Get-DuoSettings](./Docs/Get-DuoSettings.md)
+  - [Update-DuoSettings](./Docs/Update-DuoSettings.md)
 - Tokens
   - [Get-DuoTokens](./Docs/Get-DuoTokens.md)
   - [New-DuoToken](./Docs/New-DuoToken.md)
   - [Remove-DuoToken](./Docs/Remove-DuoToken.md)
   - [Sync-DuoToken](./Docs/Sync-DuoToken.md)
 - Trust Monitor
+  - [Get-DuoTrustMonitorEvents](./Docs/Get-DuoTrustMonitorEvents.md)
 - Users
   - [Add-DuoUserPhone](./Docs/Add-DuoUserPhone.md)
   - [Add-DuoUserToGroup](./Docs/Add-DuoUserToGroup.md)
