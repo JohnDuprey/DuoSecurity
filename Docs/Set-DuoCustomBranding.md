@@ -1,134 +1,46 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#modify-live-custom-branding
+online version: https://duo.com/docs/adminapi#modify-custom-messaging
 schema: 2.0.0
 ---
 
 # Set-DuoCustomBranding
 
 ## SYNOPSIS
-Modify Custom Branding
+Modify Custom Messaging
 
 ## SYNTAX
 
+### NoHelpText (Default)
 ```
-Set-DuoCustomBranding [-Draft] [[-BackgroundImg] <String>] [[-CardAccentColor] <String>] [[-Logo] <String>]
- [[-PageBackgroundColor] <String>] [-PoweredByDuo] [[-UserIds] <String[]>] [-WhatIf] [-Confirm]
+Set-DuoCustomBranding [-HelpLinks <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### HelpText
+```
+Set-DuoCustomBranding [-HelpLinks <String[]>] -HelpText <String> [-Locale <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Change effective or draft custom branding settings.
+Updates current custom messaging settings, shown to users in the Universal Prompt.
 These settings can also be viewed and set in the Duo Admin Panel.
+Supersedes the helpdesk_message Settings parameter.
 Requires "Grant settings" API permission.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Set-DuoCustomBranding -Draft -Logo c:\path\to\logo.png
+Set-DuoCustomMessaging -HelpLinks 'https://duo.com/docs/adminapi#modify-custom-messaging'
 ```
 
 ## PARAMETERS
 
-### -Draft
-Use this switch to modify the draft branding instead of live.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BackgroundImg
-A PNG file path or base64 encoded background image in PNG format, with maximum size less than 3MB and dimensions between 12 by 12 pixels and 3840 by 2160 pixels.
-Shown in Duo SSO and Duo Universal Prompt.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CardAccentColor
-A CSS hex color shown as the hash symbol (#) followed by three or six hexadecimal digits, which represents the colored line appearing at the top of the interactive user interface.
-Shown in Duo SSO and Universal Prompt.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Logo
-A PNG file path or base64 encoded logo image in PNG format, with maximum size less than 200KB and dimensions between 12 by 12 pixels and 500 by 500 pixels.
-Shown in Duo SSO, Duo Universal Prompt, and traditional prompt.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PageBackgroundColor
-A CSS hex color shown as the hash symbol (#) followed by three or six hexadecimal digits, which represents the color appearing behind the user interface and any transparent background image.
-Shown in Duo SSO and Universal Prompt.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PoweredByDuo
-If true, Duo SSO, Duo Universal Prompt, and traditional prompt show the "Secured by Duo" branding.
-Otherwise, false.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserIds
-A comma separated list of user IDs that will see saved draft branding in Duo SSO and Duo Universal Prompt.
+### -HelpLinks
+A comma-separated list of up to two custom external links shown to users in the Universal Prompt.
+Each URL must begin with http:// or https://.
 
 ```yaml
 Type: String[]
@@ -136,8 +48,43 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HelpText
+Customized text string associated with the specified locale.
+The user's browser's preferred language settings determine which language to show in the Universal Prompt.
+The first locale and message text in the list matches the default language specified in global Settings and is also shown in the traditional web prompt and in the Duo Device Health app.
+Up to 200 characters.
+No support for hyperlinks.
+
+```yaml
+Type: String
+Parameter Sets: HelpText
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Locale
+The language of the help text.
+One of: en_US (English), cs_CZ (Czech), de_DE (German), es_ES (Spanish - Spain), es_419 (Spanish - Latin America), fi_FI (Finnish), fr_FR (French), hi_IN (Hindi), id_ID (Indonesian), it_IT (Italian), ja_JP (Japanese), ko_KR (Korean), nb_NO (Norwegian - Bokmål), pl_PL (Polish), pt_BR (Portuguese - Brazil), sv_SE (Swedish), th_TH (Thai), tr_TR (Turkish), vi_VN (Vietnamese), or zh_hans_CN (Chinese - Simplified).
+
+```yaml
+Type: String
+Parameter Sets: HelpText
+Aliases:
+
+Required: False
+Position: Named
+Default value: En_US
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -181,13 +128,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### None
 ## OUTPUTS
 
-### PSCustomObject. Returns a Duo Response object.
+### PSCustomObject. Returns a Duo Custom Messaing object.
 ## NOTES
-This commandlet supports both Draft and Live branding options.
 
 ## RELATED LINKS
 
-[https://duo.com/docs/adminapi#modify-live-custom-branding](https://duo.com/docs/adminapi#modify-live-custom-branding)
-
-[https://duo.com/docs/adminapi#modify-draft-custom-branding](https://duo.com/docs/adminapi#modify-draft-custom-branding)
+[https://duo.com/docs/adminapi#modify-custom-messaging](https://duo.com/docs/adminapi#modify-custom-messaging)
 
