@@ -1,4 +1,5 @@
 # DuoSecurity Module
+[![DuoSecurityDownloads]][DuoSecurityGallery] ![DuoSecurityBuild]
 
 This module interacts with the Duo APIs.
 
@@ -180,3 +181,8 @@ Get-DuoUsers
 - [Set-DuoApiAuth](./Docs/Set-DuoApiAuth.md)
 ## Misc
 - [New-DuoTokenTotpSecret](./Docs/New-DuoTokenTotpSecret.md)
+
+<!-- References -->
+[DuoSecurityDownloads]: https://img.shields.io/powershellgallery/dt/DuoSecurity
+[DuoSecurityGallery]: https://www.powershellgallery.com/packages/DuoSecurity/
+[DuoSecurityBuild]: https://img.shields.io/github/workflow/status/johnduprey/DuoSecurity/Check%20and%20Publish/main
