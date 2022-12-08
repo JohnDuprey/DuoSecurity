@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: PowerShell script
         uses: Amadevus/pwsh-script@v2.0.3
         id: Build-Module
@@ -23,7 +23,7 @@ jobs:
         uses: natescherer/update-powershell-metadata-action@v2
         with:
           path: .\Output\DuoSecurity
-          version: $GITHUB_REF_NAME
+          version: ${{ env.GITHUB_REF_NAME }}
 
       - name: Publish PowerShell Module
         uses: pcgeek86/publish-powershell-module-action@v20
