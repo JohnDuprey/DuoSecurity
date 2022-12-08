@@ -1,5 +1,5 @@
 # DuoSecurity Module
-[![DuoSecurityDownloads]][DuoSecurityGallery] ![DuoSecurityBuild]
+[![DuoSecurityDownloads]][DuoSecurityGallery] ![DuoSecurityBuild] ![DuoSecurityPublish]
 
 This module interacts with the Duo APIs.
 
@@ -185,4 +185,5 @@ Get-DuoUsers
 <!-- References -->
 [DuoSecurityDownloads]: https://img.shields.io/powershellgallery/dt/DuoSecurity
 [DuoSecurityGallery]: https://www.powershellgallery.com/packages/DuoSecurity/
-[DuoSecurityBuild]: https://img.shields.io/github/workflow/status/johnduprey/DuoSecurity/Check%20and%20Publish/main
+[DuoSecurityBuild]: https://img.shields.io/github/workflow/status/johnduprey/DuoSecurity/Run%20PSScriptAnalyzer?label=PSScriptAnalyzer
+[DuoSecurityPublish]: https://img.shields.io/github/workflow/status/johnduprey/DuoSecurity/Publish%20New%20Version?label=PSGallery

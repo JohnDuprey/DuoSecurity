@@ -5,7 +5,10 @@ on:
     tags: '*'
 
 jobs:
-  publish:    
+  publish:   
+    name: Publish 
+    runs-on: ubuntu-latest
+    steps:
       - name: PowerShell script
         uses: Amadevus/pwsh-script@v2.0.3
         id: Build-Module
