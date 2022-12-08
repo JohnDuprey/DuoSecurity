@@ -23,7 +23,7 @@ jobs:
         uses: natescherer/update-powershell-metadata-action@v2
         with:
           path: .\Output\DuoSecurity
-          version: ${{ env.GITHUB_REF_NAME }}
+          version: ${{ github.ref_name }}
 
       - name: Publish PowerShell Module
         uses: pcgeek86/publish-powershell-module-action@v20
