@@ -1,0 +1,27 @@
+name: Publish New Version
+
+on:
+  push:
+    tags: '*'
+
+jobs:
+  publish:    
+      - name: PowerShell script
+        uses: Amadevus/pwsh-script@v2.0.3
+        id: Build-Module
+        with:
+          script: | 
+            Install-Module ModuleBuilder -Force
+            Build-Module
+
+      - name: Update Metadata
+        uses: natescherer/update-powershell-metadata-action@v2
+        with:
+          path: .\Output\DuoSecurity
+          version: $GITHUB_REF_NAME
+
+      - name: Publish PowerShell Module
+        uses: pcgeek86/publish-powershell-module-action@v20
+        with:
+          modulePath: .\Output\DuoSecurity
+          NuGetApiKey: ${{ secrets.PS_GALLERY_KEY }}

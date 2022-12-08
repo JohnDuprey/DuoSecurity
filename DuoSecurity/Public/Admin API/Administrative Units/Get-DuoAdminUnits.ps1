@@ -1,4 +1,4 @@
-function Get-DuoAdministrativeUnits {
+function Get-DuoAdminUnits {
     <#
     .SYNOPSIS
     Retrieve Administrative Units
