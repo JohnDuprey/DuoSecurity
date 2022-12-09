@@ -124,6 +124,10 @@ function Invoke-DuoRequest {
         'X-Duo-Date'    = $XDuoDate
         'Authorization' = $AuthString
     }
+    if ($Method -eq 'POST') {
+        $Headers.'Content-Type' = 'application/x-www-form-urlencoded'
+        $Body = $Request
+    }
 
     if ($NoAuth) {
         $Headers = @{}
@@ -131,9 +135,12 @@ function Invoke-DuoRequest {
 
     # Make API call URI
     $UriBuilder = [System.UriBuilder]('https://{0}{1}' -f $ApiHost, $Path)
-    $UriBuilder.Query = $Request
+
+    if ($Method -ne 'POST') {
+        $UriBuilder.Query = $Request
+    }
     
-    Write-Verbose ( '[{0}]' -f $UriBuilder.Uri )
+    Write-Verbose ( '{0} [{1}]' -f $Method, $UriBuilder.Uri )
 
     $RestMethod = @{
         Method             = $Method
@@ -142,10 +149,14 @@ function Invoke-DuoRequest {
         SkipHttpErrorCheck = $true
     }
 
+    if ($Body) {
+        $RestMethod.Body = $Body
+    }
+
     if ($FilePath) {
         $RestMethod.OutFile = $FilePath
     }
-    
+
     $Results = Invoke-RestMethod @RestMethod
 
     $Results

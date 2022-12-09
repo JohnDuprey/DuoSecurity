@@ -47,9 +47,6 @@ function Send-DuoAuth {
     .PARAMETER DisplayUsername
     String to display in Duo Mobile in place of the user's Duo username.
     
-    .PARAMETER PushInfo
-    A set of key/value pairs with additional contextual information associated with this authentication attempt. The Duo Mobile app will display this information to the user.
-    
     .PARAMETER Passcode
     Passcode entered by the user.
     
@@ -86,20 +83,16 @@ function Send-DuoAuth {
         [Parameter()]
         [switch]$Async,
 
-        [Parameter(ParameterSetName = 'Push')]
-        [Parameter(ParameterSetName = 'PhoneSms')]
+        [Parameter()]
         [string]$Device = 'auto',
 
-        [Parameter(ParameterSetName = 'Push')]
-        [switch]$Type,
+        [Parameter()]
+        [string]$Type,
 
-        [Parameter(ParameterSetName = 'Push')]
-        [hashtable]$PushInfo,
-
-        [Parameter(ParameterSetName = 'Push')]
+        [Parameter()]
         [string]$DisplayUsername,
 
-        [Parameter(Mandatory = $true, ParameterSetName = 'Passcode')]
+        [Parameter()]
         [switch]$Passcode
     )
 
@@ -112,10 +105,17 @@ function Send-DuoAuth {
         if ($IpAddr) { $Params.ipaddr = $IpAddr }
         if ($Hostname) { $Params.hostname = $Hostname }
         if ($Async.IsPresent) { $Params.async = 1 }
-        if ($Device) { $Params.device = $Device }
-        if ($Type) { $Params.type = $Type }
-        if ($PushInfo) { $Params.pushinfo = $PushInfo }
-        if ($Passcode) { $Params.passcode = $Passcode }
+        if ($Factor -eq 'Passcode') {
+            if ($Passcode) { $Params.passcode = $Passcode }
+        }
+        else {
+            if ($Device) { $Params.device = $Device }
+
+            if ($Factor -eq 'Push') {
+                if ($Type) { $Params.type = $Type }
+                if ($DisplayUsername) { $Params.display_username = $DisplayUsername }
+            }
+        }
         
         $DuoRequest = @{
             Method = 'POST'

@@ -15,31 +15,13 @@ Duo Auth
 ### Username (Default)
 ```
 Send-DuoAuth -Username <String> [-Factor <String>] [-IpAddr <String>] [-Hostname <String>] [-Async]
- [<CommonParameters>]
+ [-Device <String>] [-Type <String>] [-DisplayUsername <String>] [-Passcode] [<CommonParameters>]
 ```
 
 ### UserId
 ```
 Send-DuoAuth -UserId <String> [-Factor <String>] [-IpAddr <String>] [-Hostname <String>] [-Async]
- [<CommonParameters>]
-```
-
-### PhoneSms
-```
-Send-DuoAuth [-Factor <String>] [-IpAddr <String>] [-Hostname <String>] [-Async] [-Device <String>]
- [<CommonParameters>]
-```
-
-### Push
-```
-Send-DuoAuth [-Factor <String>] [-IpAddr <String>] [-Hostname <String>] [-Async] [-Device <String>] [-Type]
- [-PushInfo <Hashtable>] [-DisplayUsername <String>] [<CommonParameters>]
-```
-
-### Passcode
-```
-Send-DuoAuth [-Factor <String>] [-IpAddr <String>] [-Hostname <String>] [-Async] [-Passcode]
- [<CommonParameters>]
+ [-Device <String>] [-Type <String>] [-DisplayUsername <String>] [-Passcode] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -97,7 +79,8 @@ Currently, the following choices are supported:
 | auto     | Use the out-of-band factor (push or phone) recommended by Duo as the best for the user's devices.
 | push     | Authenticate the user with Duo Push.
 | passcode | Authenticate the user with a passcode (from Duo Mobile, SMS, hardware token, or bypass code).
-| sms	   | Send a new batch of SMS passcodes to the user. Note that this will not actually authenticate the user (it will automatically return "deny" Thus, if the user elects to do this then you should re-prompt to authenticate after the call has completed.
+| sms	   | Send a new batch of SMS passcodes to the user.
+Note that this will not actually authenticate the user (it will automatically return "deny" Thus, if the user elects to do this then you should re-prompt to authenticate after the call has completed.
 | phone    | Authenticate the user with phone callback.
 
 ```yaml
@@ -169,7 +152,7 @@ Default: auto
 
 ```yaml
 Type: String
-Parameter Sets: PhoneSms, Push
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -188,24 +171,8 @@ With type specified, the notification text changes to "Verify request" and shows
 Duo Mobile shows the equivalent localization in the languagues supported by the app, but does not attempt to localize your custom string or support multiple string values (for different languages).
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: Push
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PushInfo
-A set of key/value pairs with additional contextual information associated with this authentication attempt.
-The Duo Mobile app will display this information to the user.
-
-```yaml
-Type: Hashtable
-Parameter Sets: Push
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -220,7 +187,7 @@ String to display in Duo Mobile in place of the user's Duo username.
 
 ```yaml
 Type: String
-Parameter Sets: Push
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -235,10 +202,10 @@ Passcode entered by the user.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: Passcode
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
