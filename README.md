@@ -26,7 +26,7 @@ Install-Module DuoSecurity
 
 - [X] [Accounts API](https://duo.com/docs/accountsapi)
 - [X] [Admin API](https://duo.com/docs/adminapi)
-- [ ] [Auth API](https://duo.com/docs/authapi)
+- [X] [Auth API](https://duo.com/docs/authapi)
 
 # Examples
 
