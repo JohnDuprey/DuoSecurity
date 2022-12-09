@@ -20,7 +20,7 @@ function Send-DuoAuth {
     | auto     | Use the out-of-band factor (push or phone) recommended by Duo as the best for the user's devices.
     | push     | Authenticate the user with Duo Push.
     | passcode | Authenticate the user with a passcode (from Duo Mobile, SMS, hardware token, or bypass code).
-    | sms	   | Send a new batch of SMS passcodes to the user. Note that this will not actually authenticate the user (it will automatically return "deny"). Thus, if the user elects to do this then you should re-prompt to authenticate after the call has completed.
+    | sms	   | Send a new batch of SMS passcodes to the user. Note that this will not actually authenticate the user (it will automatically return "deny" Thus, if the user elects to do this then you should re-prompt to authenticate after the call has completed.
     | phone    | Authenticate the user with phone callback.
     
     .PARAMETER IpAddr
