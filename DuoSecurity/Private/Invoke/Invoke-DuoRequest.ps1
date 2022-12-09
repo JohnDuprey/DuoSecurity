@@ -14,6 +14,12 @@ function Invoke-DuoRequest {
     
     .PARAMETER Params
     Hashtable of parameters
+
+    .PARAMETER NoAuth
+    Do not send authorization header
+
+    .PARAMETER FilePath
+    Path to save output file to
     
     .EXAMPLE
     Invoke-DuoRequest -Path '/admin/v1/users' -Method GET
@@ -28,7 +34,13 @@ function Invoke-DuoRequest {
         [string]$Path,
 
         [Parameter()]
-        [hashtable]$Params = @{}
+        [hashtable]$Params = @{},
+
+        [Parameter()]
+        [switch]$NoAuth,
+
+        [Parameter()]
+        [string]$FilePath
     )
 
     # Get API credentials
@@ -113,13 +125,28 @@ function Invoke-DuoRequest {
         'Authorization' = $AuthString
     }
 
+    if ($NoAuth) {
+        $Headers = @{}
+    }
+
     # Make API call URI
     $UriBuilder = [System.UriBuilder]('https://{0}{1}' -f $ApiHost, $Path)
     $UriBuilder.Query = $Request
     
     Write-Verbose ( '[{0}]' -f $UriBuilder.Uri )
 
-    $Results = Invoke-RestMethod -Method $Method -Uri $UriBuilder.Uri -Headers $Headers -SkipHttpErrorCheck
+    $RestMethod = @{
+        Method             = $Method
+        Uri                = $UriBuilder.Uri
+        Headers            = $Headers
+        SkipHttpErrorCheck = $true
+    }
+
+    if ($FilePath) {
+        $RestMethod.OutFile = $FilePath
+    }
+    
+    $Results = Invoke-RestMethod @RestMethod
 
     $Results
 }

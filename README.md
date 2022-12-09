@@ -1,6 +1,12 @@
 # DuoSecurity Module
 [![DuoSecurityDownloads]][DuoSecurityGallery] ![DuoSecurityBuild] ![DuoSecurityPublish]
 
+<!-- References -->
+[DuoSecurityDownloads]: https://img.shields.io/powershellgallery/dt/DuoSecurity
+[DuoSecurityGallery]: https://www.powershellgallery.com/packages/DuoSecurity/
+[DuoSecurityBuild]: https://img.shields.io/github/workflow/status/johnduprey/DuoSecurity/Run%20PSScriptAnalyzer?label=PSScriptAnalyzer
+[DuoSecurityPublish]: https://img.shields.io/github/workflow/status/johnduprey/DuoSecurity/Publish%20New%20Version?label=PSGallery
+
 This module interacts with the Duo APIs.
 
 # Instructions
@@ -63,6 +69,7 @@ Set-DuoApiAuth @Auth
 # Retrieve user list
 Get-DuoUsers
 ```
+
 
 # Cmdlet Help
 ## Accounts API
@@ -177,13 +184,15 @@ Get-DuoUsers
   - [Get-DuoWebAuthnCredentials](./Docs/Get-DuoWebAuthnCredentials.md)
   - [Remove-DuoWebAuthnCredential](./Docs/Remove-DuoWebAuthnCredential.md)
 ## Auth API
+- [Get-DuoAuthEnrollmentStatus](./Docs/Get-DuoAuthEnrollmentStatus.md)
+- [Get-DuoAuthLogo](./Docs/Get-DuoAuthLogo.md)
+- [Get-DuoAuthStatus](./Docs/Get-DuoAuthStatus.md)
+- [New-DuoAuthEnrollment](./Docs/New-DuoAuthEnrollment.md)
+- [Send-DuoAuth](./Docs/Send-DuoAuth.md)
+- [Send-DuoAuthPing](./Docs/Send-DuoAuthPing.md)
+- [Send-DuoPreAuth](./Docs/Send-DuoPreAuth.md)
+- [Test-DuoAuthApi](./Docs/Test-DuoAuthApi.md)
 ## Authentication
 - [Set-DuoApiAuth](./Docs/Set-DuoApiAuth.md)
 ## Misc
 - [New-DuoTokenTotpSecret](./Docs/New-DuoTokenTotpSecret.md)
-
-<!-- References -->
-[DuoSecurityDownloads]: https://img.shields.io/powershellgallery/dt/DuoSecurity
-[DuoSecurityGallery]: https://www.powershellgallery.com/packages/DuoSecurity/
-[DuoSecurityBuild]: https://img.shields.io/github/workflow/status/johnduprey/DuoSecurity/Run%20PSScriptAnalyzer?label=PSScriptAnalyzer
-[DuoSecurityPublish]: https://img.shields.io/github/workflow/status/johnduprey/DuoSecurity/Publish%20New%20Version?label=PSGallery
