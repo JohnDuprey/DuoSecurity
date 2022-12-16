@@ -5,7 +5,7 @@
 [DuoSecurityDownloads]: https://img.shields.io/powershellgallery/dt/DuoSecurity
 [DuoSecurityGallery]: https://www.powershellgallery.com/packages/DuoSecurity/
 [DuoSecurityBuild]: https://img.shields.io/github/actions/workflow/status/johnduprey/DuoSecurity/psscriptanalyzer.yml?branch=main&label=PSScriptAnalyzer
-[DuoSecurityPublish]: https://img.shields.io/github/actions/workflow/status/johnduprey/DuoSecurity/publish.yml?branch=main&label=PSGallery
+[DuoSecurityPublish]: https://github.com/johnduprey/DuoSecurity/actions/workflows/publish.yml/badge.svg
 
 This module interacts with the Duo APIs.
 
