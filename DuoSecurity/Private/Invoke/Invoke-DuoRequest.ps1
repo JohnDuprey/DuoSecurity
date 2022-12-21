@@ -88,7 +88,7 @@ function Invoke-DuoRequest {
     }
     
     # Sort parameters
-    foreach ($Item in ($Params.GetEnumerator() | Sort-Object -Property Key)) {
+    foreach ($Item in ($Params.GetEnumerator() | Sort-Object -CaseSensitive -Property Key)) {
         $ParamCollection.Add($Item.Key, $Item.Value)
     }
 
@@ -127,6 +127,7 @@ function Invoke-DuoRequest {
     if ($Method -eq 'POST') {
         $Headers.'Content-Type' = 'application/x-www-form-urlencoded'
         $Body = $Request
+        Write-Verbose $Request
     }
 
     if ($NoAuth) {
