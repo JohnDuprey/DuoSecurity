@@ -37,9 +37,9 @@ function Set-DuoAccountEdition {
         Select-DuoAccount -AccountId $AccountId -Quiet
         
         $DuoRequest = @{
-            Method     = 'GET'
-            Path       = '/admin/v1/billing/edition'
-            Parameters = @{ edition = $Edition }
+            Method = 'GET'
+            Path   = '/admin/v1/billing/edition'
+            Params = @{ edition = $Edition }
         }
 
         if ($PSCmdlet.ShouldProcess($AccountId)) {

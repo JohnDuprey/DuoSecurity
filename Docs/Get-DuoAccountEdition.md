@@ -1,29 +1,29 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/accountsapi#set-telephony-credits
+online version: https://duo.com/docs/accountsapi#get-edition
 schema: 2.0.0
 ---
 
 # Get-DuoAccountEdition
 
 ## SYNOPSIS
-Set Telephony Credits
+Get Edition
 
 ## SYNTAX
 
 ```
-Get-DuoAccountEdition [-AccountId] <String> [-Credits] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-DuoAccountEdition [-AccountId] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Sets the telephony credits for a child account.
+Returns the edition for a child account.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Set-DuoAccountTelephonyCredits -AccountId SOMEACCOUNTID -Credits
+Get-DuoAccounts | Select-Object name,account_id, @{n='edition'; e={($_ | Get-DuoAccountEdition).edition}}
 ```
 
 ## PARAMETERS
@@ -40,21 +40,6 @@ Aliases: account_id
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Credits
-{{ Fill Credits Description }}
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: 0
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -95,13 +80,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### PSCustomObject. Duo Accounts object
 ## OUTPUTS
 
+### PSCustomObject. Returns a Duo Response object.
 ## NOTES
-Any additional credits added to the child account are transferred from the parent account.
-For example, if the child account has 100 credits and it is then set to 300 credits, then 200 credits are deducted from the parent's balance and added to the child's balance.
 
 ## RELATED LINKS
 
-[https://duo.com/docs/accountsapi#set-telephony-credits](https://duo.com/docs/accountsapi#set-telephony-credits)
+[https://duo.com/docs/accountsapi#get-edition](https://duo.com/docs/accountsapi#get-edition)
 

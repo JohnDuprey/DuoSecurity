@@ -97,7 +97,7 @@ function Send-DuoAuth {
     )
 
     process { 
-        $Params = @{
+        $Params = [ordered]@{
             factor = $Factor.ToLower()
         }
         if ($UserId) { $Params.user_id = $UserId }
@@ -108,6 +108,7 @@ function Send-DuoAuth {
         if ($Factor -eq 'Passcode') {
             if ($Passcode) { $Params.passcode = $Passcode }
         }
+
         else {
             if ($Device) { $Params.device = $Device }
 
@@ -127,6 +128,7 @@ function Send-DuoAuth {
         if ($Response.stat -eq 'OK') {
             $Response.response
         }
+        
         else { 
             $Response
         }
