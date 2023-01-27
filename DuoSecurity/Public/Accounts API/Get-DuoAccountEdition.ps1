@@ -37,7 +37,7 @@ function Get-DuoAccountEdition {
             Path   = '/admin/v1/billing/edition'
         }
 
-        if ($PSCmdlet.ShouldProcess()) {
+        if ($PSCmdlet.ShouldProcess($AccountId)) {
             $Response = Invoke-DuoRequest @DuoRequest
             if ($Response.stat -eq 'OK') {
                 $Response.response

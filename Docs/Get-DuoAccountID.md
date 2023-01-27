@@ -1,45 +1,45 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/accountsapi#retrieve-accounts
+online version: https://duo.com/docs/accountsapi#get-edition
 schema: 2.0.0
 ---
 
-# Get-DuoAccounts
+# Get-DuoAccountID
 
 ## SYNOPSIS
-Retrieve Accounts
+Get Account ID # from Duo API hostname
 
 ## SYNTAX
 
 ```
-Get-DuoAccounts [-IncludeEdition] [<CommonParameters>]
+Get-DuoAccountID [[-ApiHost] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns a list of child accounts.
+Converts hexidecimal hostname to decimal format
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-DuoAccounts
+Get-DuoAccountID -ApiHost api-01ab23cd.duosecurity.com
 ```
 
 ## PARAMETERS
 
-### -IncludeEdition
-{{ Fill IncludeEdition Description }}
+### -ApiHost
+API hostname to get Account ID # for
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: api_hostname
 
 Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -48,13 +48,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
 ## OUTPUTS
 
-### PSCustomObject. Returns a Duo Response object.
 ## NOTES
 
 ## RELATED LINKS
-
-[https://duo.com/docs/accountsapi#retrieve-accounts](https://duo.com/docs/accountsapi#retrieve-accounts)
-

@@ -71,6 +71,8 @@ Get-DuoUsers
 ```
 
 
+
+
 # Cmdlet Help
 ## Accounts API
 - [Get-DuoAccountEdition](./Docs/Get-DuoAccountEdition.md)
@@ -183,6 +185,12 @@ Get-DuoUsers
 - WebAuthn
   - [Get-DuoWebAuthnCredentials](./Docs/Get-DuoWebAuthnCredentials.md)
   - [Remove-DuoWebAuthnCredential](./Docs/Remove-DuoWebAuthnCredential.md)
+## Apps
+- Authentication Proxy
+  - [Get-DuoAuthProxyLogs](./Docs/Get-DuoAuthProxyLogs.md)
+- Install & Upgrade
+  - [Get-DuoInstallFileInfo](./Docs/Get-DuoInstallFileInfo.md)
+  - [Install-DuoAuthProxy](./Docs/Install-DuoAuthProxy.md)
 ## Auth API
 - [Get-DuoAuthEnrollmentStatus](./Docs/Get-DuoAuthEnrollmentStatus.md)
 - [Get-DuoAuthLogo](./Docs/Get-DuoAuthLogo.md)
@@ -195,4 +203,5 @@ Get-DuoUsers
 ## Authentication
 - [Set-DuoApiAuth](./Docs/Set-DuoApiAuth.md)
 ## Misc
+- [Get-DuoAccountID](./Docs/Get-DuoAccountID.md)
 - [New-DuoTokenTotpSecret](./Docs/New-DuoTokenTotpSecret.md)

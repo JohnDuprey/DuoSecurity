@@ -1,44 +1,46 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/accountsapi#retrieve-accounts
+online version: https://duo.com/docs/adminapi#get-group-info
 schema: 2.0.0
 ---
 
-# Get-DuoAccounts
+# Get-DuoInstallFileInfo
 
 ## SYNOPSIS
-Retrieve Accounts
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
 ```
-Get-DuoAccounts [-IncludeEdition] [<CommonParameters>]
+Get-DuoInstallFileInfo [[-Url] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns a list of child accounts.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
 ```
-Get-DuoAccounts
-```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
-### -IncludeEdition
-{{ Fill IncludeEdition Description }}
+### -Url
+{{ Fill Url Description }}
 
 ```yaml
-Type: SwitchParameter
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: False
+Position: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -49,12 +51,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 ## OUTPUTS
 
-### PSCustomObject. Returns a Duo Response object.
+### System.Object
 ## NOTES
 
 ## RELATED LINKS
-
-[https://duo.com/docs/accountsapi#retrieve-accounts](https://duo.com/docs/accountsapi#retrieve-accounts)
-

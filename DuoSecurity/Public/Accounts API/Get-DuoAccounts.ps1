@@ -20,7 +20,9 @@ function Get-DuoAccounts {
     
     #>
     [CmdletBinding()]
-    Param()
+    Param(
+        [switch]$IncludeEdition
+    )
 
     $DuoRequest = @{
         Method = 'POST'
@@ -28,8 +30,16 @@ function Get-DuoAccounts {
     }
     $Response = Invoke-DuoRequest @DuoRequest
     if ($Response.stat -eq 'OK') {
-        $script:DuoAccountsList = $Response.response
-        $Response.response
+
+        if ($IncludeEdition.IsPresent) {
+            $Accounts = $Response.response | Select-Object *, @{n = 'account_id_num'; e = { $_ | Get-DuoAccountID } }, @{ n = 'edition'; e = { ($_ | Get-DuoAccountEdition).edition } }
+        }
+
+        else {
+            $Accounts = $Response.response | Select-Object *, @{n = 'account_id_num'; e = { $_ | Get-DuoAccountID } }
+        }
+        $script:DuoAccountsList = $Accounts
+        $Accounts
     }
     else { 
         $Response

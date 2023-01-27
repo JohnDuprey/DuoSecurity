@@ -1,4 +1,4 @@
-function Get-DuoAccountEdition {
+function Set-DuoAccountTelephonyCredits {
     <#
     .SYNOPSIS
     Set Telephony Credits
