@@ -37,8 +37,8 @@ function Get-DuoAuthProxyLogs {
     }
 
     elseif ($IsWindows) {
-        $ProxyBin = 'C:\Program Files\Duo Security Authentication Proxy\bin\authproxyctl.exe'
-        $DuoPath = 'C:\Program Files\Duo Security Authentication Proxy'
+        $ProxyBin = '{0}\Duo Security Authentication Proxy\bin\authproxyctl.exe' -f $env:ProgramFiles
+        $DuoPath = '{0}\Duo Security Authentication Proxy' -f $env:ProgramFiles
     }
 
     else {
@@ -46,7 +46,7 @@ function Get-DuoAuthProxyLogs {
     }
 
     if (-not (Test-Path $ProxyBin)) {
-        $DuoPath = 'C:\Program Files (x86)\Duo Security Authentication Proxy'
+        $DuoPath = '{0}\Duo Security Authentication Proxy' -f ${env:ProgramFiles(x86)}
         if (Test-Path $DuoPath) {
             Write-Warning 'You are not running a v5.1.0 or higher version of Duo Security Authentication Proxy, please update at your earliest convenience'
         }
