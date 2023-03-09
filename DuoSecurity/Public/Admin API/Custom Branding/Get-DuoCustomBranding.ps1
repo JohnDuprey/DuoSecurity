@@ -2,10 +2,10 @@ function Get-DuoCustomBranding {
     <#
     .SYNOPSIS
     Retrieve Draft Custom Branding
-    
+
     .DESCRIPTION
     Returns custom branding settings. These settings can also be viewed and set in the Duo Admin Panel. Requires "Grant settings" API permission.
-    
+
     .PARAMETER Draft
     Use this switch to retreieve the draft branding instead of live.
 
@@ -41,8 +41,7 @@ function Get-DuoCustomBranding {
 
     if ($Draft) {
         $Path = '/admin/v1/branding/draft'
-    }
-    else {
+    } else {
         $Path = '/admin/v1/branding'
     }
 
@@ -69,8 +68,7 @@ function Get-DuoCustomBranding {
                 ConvertFrom-Base64 -Base64 $Request.logo -Path $ImageFile
             }
         }
-    }
-    else {
+    } else {
         $Request.response
     }
-} 
+}

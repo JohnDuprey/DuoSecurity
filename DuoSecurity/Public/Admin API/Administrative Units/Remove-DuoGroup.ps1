@@ -2,19 +2,19 @@ function Remove-DuoAdminUnit {
     <#
     .SYNOPSIS
     Delete Administrative Unit
-    
+
     .DESCRIPTION
     Delete the administrative unit with admin_unit_id from the system. Requires "Grant administrators" API permission.
-    
+
     .PARAMETER AdminUnitId
     Admin Unit Id to remove
-    
+
     .EXAMPLE
     Remove-DuoAdminUnit -AdminUnitId SOMEDUOID
 
     .LINK
     https://duo.com/docs/adminapi#delete-administrative-unit
-    
+
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(

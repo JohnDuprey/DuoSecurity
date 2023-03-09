@@ -2,13 +2,13 @@ function Remove-DuoAdmin {
     <#
     .SYNOPSIS
     Delete Administrator
-    
+
     .DESCRIPTION
     Delete the administrator with administrator ID admin_id from the system. Administrators managed by directory sync can not be deleted via API. Requires "Grant administrators" API permission.
-    
+
     .PARAMETER AdminId
     The ID of the Administrator
-    
+
     .EXAMPLE
     Remove-DuoAdmin -AdminId SOMEADMINID
 

@@ -2,19 +2,19 @@ function Set-DuoApiAuth {
     <#
     .SYNOPSIS
     Sets credentials for Duo
-    
+
     .DESCRIPTION
     Saves credentials as script scoped variables for use in the module
-    
+
     .PARAMETER ApiHost
-    Hostname (excluding https:\\)
-    
+    Hostname (excluding https://)
+
     .PARAMETER IntegrationKey
     Integration key
-    
+
     .PARAMETER SecretKey
     Secret key
-    
+
     .PARAMETER Type
     Type of credential
     #>

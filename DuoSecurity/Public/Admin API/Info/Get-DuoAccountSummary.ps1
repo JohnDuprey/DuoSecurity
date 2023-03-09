@@ -2,10 +2,10 @@ function Get-DuoAccountSummary {
     <#
     .SYNOPSIS
     Retrieve Summary
-    
+
     .DESCRIPTION
     Returns a summary of account utilization information. Requires "Grant read information" API permission.
-    
+
     .EXAMPLE
     Get-DuoAccountSummary
 
@@ -22,12 +22,11 @@ function Get-DuoAccountSummary {
     }
 
     $Request = Invoke-DuoRequest @DuoRequest
-    
+
     if ($Request.stat -ne 'OK') {
         $Request
-    }
-    else {
+    } else {
         $Request.response
     }
-    
-} 
+
+}

@@ -2,22 +2,22 @@ function Select-DuoAccount {
     <#
     .SYNOPSIS
     Select Duo Account to use for Admin API
-    
+
     .DESCRIPTION
     Takes values from the account list and creates API credentials for sub account
-    
+
     .PARAMETER AccountId
     Duo Account Id
-    
+
     .PARAMETER Name
     Duo Account name
-    
+
     .PARAMETER Clear
     Clear credentials
-    
+
     .PARAMETER Quiet
     Suppress output
-    
+
     .EXAMPLE
     Select-DuoAccount -Name 'Some Company Name'
 
@@ -38,8 +38,8 @@ function Select-DuoAccount {
         [Parameter()]
         [switch]$Quiet
     )
-    
-    if ($Clear) { 
+
+    if ($Clear) {
         $script:DuoApiHost = $script:DuoAccountsApiHost
         $script:DuoAccountId = $null
     }
@@ -62,10 +62,9 @@ function Select-DuoAccount {
         $script:DuoSecretKey = $script:DuoAccountsSecretKey
         $script:DuoAccountId = $Account.account_id
         if (!$Quiet) {
-            Write-Host "Account: $($Account.name) ($($Account.account_id))" 
+            Write-Information "Account: $($Account.name) ($($Account.account_id))"
         }
-    }
-    else {
-        Write-Error "Invalid Account specified"
+    } else {
+        Write-Error 'Invalid Account specified'
     }
 }

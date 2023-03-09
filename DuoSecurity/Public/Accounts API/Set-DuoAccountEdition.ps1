@@ -2,7 +2,7 @@ function Set-DuoAccountEdition {
     <#
     .SYNOPSIS
     Set Edition
-    
+
     .DESCRIPTION
     Sets the edition for a child account.
 
@@ -14,13 +14,13 @@ function Set-DuoAccountEdition {
     ENTERPRISE
     PLATFORM
     BEYOND
-    
+
     .EXAMPLE
     Set-DuoAccountEdition -AccountId SOMEACCOUNTID -Edition 'BEYOND'
 
     .LINK
     https://duo.com/docs/accountsapi#set-edition
-    
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(
@@ -35,7 +35,7 @@ function Set-DuoAccountEdition {
 
     process {
         Select-DuoAccount -AccountId $AccountId -Quiet
-        
+
         $DuoRequest = @{
             Method = 'GET'
             Path   = '/admin/v1/billing/edition'
@@ -46,8 +46,7 @@ function Set-DuoAccountEdition {
             $Response = Invoke-DuoRequest @DuoRequest
             if ($Response.stat -eq 'OK') {
                 $Response.response
-            }
-            else { 
+            } else {
                 $Response
             }
         }

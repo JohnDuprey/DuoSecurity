@@ -2,13 +2,13 @@ function Get-DuoGroupUsers {
     <#
     .SYNOPSIS
     Retrieve Group Members
-    
+
     .DESCRIPTION
     Returns a paged list of members of a specified group.
-    
+
     .PARAMETER GroupId
     Group Id to get member list for
-    
+
     .EXAMPLE
     Get-DuoGroupUsers -GroupId SOMEDUOID
 
@@ -23,10 +23,10 @@ function Get-DuoGroupUsers {
         [string]$GroupId
     )
 
-    process { 
+    process {
         $DuoRequest = @{
             Method = 'GET'
-            Path   = '/admin/v2/groups/{0}/users' -f $GroupId 
+            Path   = '/admin/v2/groups/{0}/users' -f $GroupId
             Params = @{ offset = 0 }
         }
         Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest

@@ -2,7 +2,7 @@ function Add-DuoCustomBrandingDraftUser {
     <#
     .SYNOPSIS
     Add Draft Custom Branding User by ID
-    
+
     .DESCRIPTION
     Add a single user with ID user_id to the list of draft branding test users. Requires "Grant settings" API permission.
 
@@ -19,7 +19,7 @@ function Add-DuoCustomBrandingDraftUser {
     https://duo.com/docs/adminapi#add-draft-custom-branding-user-by-id
 
     .NOTES
-    
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(
@@ -27,7 +27,7 @@ function Add-DuoCustomBrandingDraftUser {
         [Alias('user_id')]
         [string]$UserId
     )
-    
+
     $DuoRequest = @{
         Method = 'POST'
         Path   = '/admin/v1/branding/draft/users/{0}' -f $UserId
@@ -37,9 +37,8 @@ function Add-DuoCustomBrandingDraftUser {
         $Request = Invoke-DuoRequest @DuoRequest
         if ($Request.stat -ne 'OK') {
             $Request
-        }
-        else {
+        } else {
             $Request.response
         }
     }
-} 
+}

@@ -2,16 +2,16 @@ function Get-DuoAccountID {
     <#
     .SYNOPSIS
     Get Account ID # from Duo API hostname
-    
+
     .DESCRIPTION
     Converts hexidecimal hostname to decimal format
-    
+
     .PARAMETER ApiHost
     API hostname to get Account ID # for
-    
+
     .EXAMPLE
     Get-DuoAccountID -ApiHost api-01ab23cd.duosecurity.com
-    
+
     #>
     [CmdletBinding()]
     Param(

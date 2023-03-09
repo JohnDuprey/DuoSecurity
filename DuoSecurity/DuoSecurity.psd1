@@ -9,31 +9,31 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule           = 'DuoSecurity.psm1'
+    RootModule        = 'DuoSecurity.psm1'
 
     # Version number of this module.
-    ModuleVersion        = '1.1.0.2'
+    ModuleVersion     = '1.1.0.2'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
 
     # ID used to uniquely identify this module
-    GUID                 = '6fb1dd3c-fb6d-4a45-8d9b-7648047d440c'
+    GUID              = '6fb1dd3c-fb6d-4a45-8d9b-7648047d440c'
 
     # Author of this module
-    Author               = 'John Duprey'
+    Author            = 'John Duprey'
 
     # Company or vendor of this module
-    CompanyName          = ''
+    CompanyName       = ''
 
     # Copyright statement for this module
-    Copyright            = '2022 John Duprey'
+    Copyright         = '2022 John Duprey'
 
     # Description of the functionality provided by this module
-    Description          = 'Duo Security REST module'
+    Description       = 'Duo Security REST module'
 
     # Minimum version of the PowerShell engine required by this module
-    PowerShellVersion    = '7.0'
+    PowerShellVersion = '7.0'
 
     # Name of the PowerShell host required by this module
     # PowerShellHostName = ''
@@ -57,7 +57,7 @@
     # RequiredAssemblies = @()
 
     # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-    ScriptsToProcess     = @()
+    ScriptsToProcess  = @()
 
     # Type files (.ps1xml) to be loaded when importing this module
     # TypesToProcess = @()
@@ -69,7 +69,7 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport    = '*'
+    FunctionsToExport = '*'
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
     #CmdletsToExport = '*'
@@ -90,7 +90,7 @@
     # FileList = @()
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
-    PrivateData          = @{
+    PrivateData       = @{
 
         PSData = @{
 

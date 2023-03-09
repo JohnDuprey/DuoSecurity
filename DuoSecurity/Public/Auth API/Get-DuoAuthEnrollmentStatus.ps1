@@ -2,24 +2,24 @@ function Get-DuoAuthEnrollmentStatus {
     <#
     .SYNOPSIS
     Duo Auth Enrollment Status
-    
+
     .DESCRIPTION
     Check whether a user has completed enrollment.
-    
+
     .PARAMETER UserId
     ID of the user.
-    
+
     .PARAMETER ActivationCode
     Activation code, as returned from /enroll.
-    
+
     .EXAMPLE
     Get-DuoAuthEnrollmentStatus -UserId SOMEUSERID -ActivationCode SOMEACTIVATIONCODE
 
     .LINK
     https://duo.com/docs/authapi#/enroll_status
-    
+
     .NOTES
-    
+
     #>
     [CmdletBinding()]
     Param(
@@ -32,12 +32,12 @@ function Get-DuoAuthEnrollmentStatus {
         [string]$ActivationCode
     )
 
-    process { 
+    process {
         $Params = @{
             user_id         = $UserId
             activation_code = $ActivationCode
         }
-        
+
         $DuoRequest = @{
             Method = 'POST'
             Path   = '/auth/v2/enroll_status'
@@ -47,8 +47,7 @@ function Get-DuoAuthEnrollmentStatus {
         $Response = Invoke-DuoRequest @DuoRequest
         if ($Response.stat -eq 'OK') {
             $Response.response
-        }
-        else { 
+        } else {
             $Response
         }
     }

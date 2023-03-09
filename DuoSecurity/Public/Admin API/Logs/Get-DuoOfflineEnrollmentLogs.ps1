@@ -2,7 +2,7 @@ function Get-DuoOfflineEnrollmentLogs {
     <#
     .SYNOPSIS
     Offline Enrollment Logs
-    
+
     .DESCRIPTION
     Returns a list of Duo Authentication for Windows Logon offline enrollment events ranging from the last 180 days up to as recently as two minutes before the API request. There is an intentional two minute delay in availability of new authentications in the API response. Duo operates a large scale distributed system, and this two minute buffer period ensures that calls will return consistent results. Querying for results more recent than two minutes will return as empty. Requires "Grant read log" API permission.
 
@@ -10,10 +10,10 @@ function Get-DuoOfflineEnrollmentLogs {
 
     .PARAMETER MinTime
     Only return records that have a Unix timestamp in seconds of mintime or later. Use mintime+1 to avoid receiving duplicate data.
-    
+
     .EXAMPLE
     Get-DuoOfflineEnrollmentLogs
-    
+
     .LINK
     https://duo.com/docs/adminapi#offline-enrollment-logs
 
@@ -21,14 +21,14 @@ function Get-DuoOfflineEnrollmentLogs {
     We recommend requesting logs no more than once per minute.
 
     #>
-    [CmdletBinding(DefaultParameterSetName='None')]
+    [CmdletBinding(DefaultParameterSetName = 'None')]
     Param(
         [Parameter(ParameterSetName = 'UnixTime')]
         [string]$MinTime,
 
         [Parameter(ParameterSetName = 'DateTime')]
         [string]$StartDate,
-        
+
         [Parameter(ParameterSetName = 'Days')]
         [int]$Days,
 
@@ -61,12 +61,11 @@ function Get-DuoOfflineEnrollmentLogs {
     }
 
     $Request = Invoke-DuoRequest @DuoRequest
-    
+
     if ($Request.stat -ne 'OK') {
         $Request
-    }
-    else {
+    } else {
         $Request.response
     }
-    
-} 
+
+}

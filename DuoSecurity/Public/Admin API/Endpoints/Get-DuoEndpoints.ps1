@@ -2,7 +2,7 @@ function Get-DuoEndpoints {
     <#
     .SYNOPSIS
     Retrieve Endpoints
-    
+
     .DESCRIPTION
     Returns a single endpoint or a paged list of endpoints. Requires "Grant read resource" API permission.
 
@@ -12,7 +12,7 @@ function Get-DuoEndpoints {
 
     .PARAMETER EndpointKey
     The key for the endpoint
-   
+
     .EXAMPLE
     Get-DuoEndpoints
 
@@ -21,7 +21,7 @@ function Get-DuoEndpoints {
 
     .LINK
     https://duo.com/docs/adminapi#retrieve-endpoint-by-id
-    
+
     #>
     [CmdletBinding()]
     Param(
@@ -33,11 +33,10 @@ function Get-DuoEndpoints {
     process {
         if ($BypassCodeId) {
             $Path = '/admin/v1/bypass_codes/{0}' -f $BypassCodeId
-        }
-        else {
+        } else {
             $Path = '/admin/v1/bypass_codes'
         }
-    
+
         $DuoRequest = @{
             Method = 'GET'
             Path   = $Path
@@ -47,15 +46,13 @@ function Get-DuoEndpoints {
             $Request = Invoke-DuoRequest @DuoRequest
             if ($Request.stat -ne 'OK') {
                 $Request
-            }
-            else {
+            } else {
                 $Request.response
-            } 
+            }
+        } else {
+            Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest
         }
-        else { 
-            Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest 
-        }  
     }
-} 
+}
 
 Set-Alias -Name Get-DuoEndpoint -Value Get-DuoEndpoints
