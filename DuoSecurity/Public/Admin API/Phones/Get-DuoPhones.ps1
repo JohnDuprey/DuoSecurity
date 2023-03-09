@@ -2,10 +2,10 @@ function Get-DuoPhones {
     <#
     .SYNOPSIS
     Retrieve Phones
-    
+
     .DESCRIPTION
     Returns a single phone or a paged list of phones. If no number or extension parameters are provided, the list will contain all phones. Otherwise, the list will contain either single phone (if a match was found), or no phones. Requires "Grant read resource" API permission.
-    
+
     .PARAMETER PhoneId
     Id of phone
 
@@ -14,7 +14,7 @@ function Get-DuoPhones {
 
     .PARAMETER Extension
     The extension, if necessary.
-    
+
     .EXAMPLE
     Get-DuoPhones
 
@@ -41,14 +41,13 @@ function Get-DuoPhones {
     process {
         if ($GroupId) {
             $Path = '/admin/v2/phones/{0}' -f $PhoneId
-        }
-        else {
+        } else {
             $Path = '/admin/v1/phones'
             $Params = @{}
             if ($Number) { $Params.number = $Number }
             if ($Extension) { $Params.extension = $Extension }
         }
-    
+
         $DuoRequest = @{
             Method = 'GET'
             Path   = $Path
@@ -56,17 +55,15 @@ function Get-DuoPhones {
         if ($Params) {
             $DuoRequest.Params = $Params
             Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest
-        }
-        else {
+        } else {
             $Request = Invoke-DuoRequest @DuoRequest
             if ($Request.stat -ne 'OK') {
                 $Request
-            }
-            else {
+            } else {
                 $Request.response
             }
         }
     }
-} 
+}
 
 Set-Alias -Name Get-DuoPhone -Value Get-DuoPhones

@@ -2,16 +2,16 @@ function Remove-DuoAdminFromAdminUnit {
     <#
     .SYNOPSIS
     Remove Administrator from Administrative Unit
-    
+
     .DESCRIPTION
     Unassign the administrator with admin_id from the administrative unit with admin_unit_id. The administrator user will still have restricted_by_admin_units set to true, and if the admin is not assigned to any other admin unit they will not be able to view any users or integrations. Be sure to change the value of restricted_by_admin_units to false to permit that admin to view all users and integrations. Requires "Grant administrators" API permission.
-    
+
     .PARAMETER AdminUnitId
     The ID of the Administrative Unit
-    
+
     .PARAMETER AdminId
     The ID of the Administrator
-    
+
     .EXAMPLE
     Remove-DuoAdminFromAdminUnit -AdminUnitId SOMEADMINUNITID -AdminId SOMEADMINID
 

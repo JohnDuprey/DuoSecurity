@@ -2,28 +2,28 @@ function Send-DuoPhoneActivationSms {
     <#
     .SYNOPSIS
     Send Activation Code via SMS
-    
+
     .DESCRIPTION
     Generate a Duo Mobile activation code and send it to the phone via SMS, optionally sending an additional message with a URL to install Duo Mobile. This method will fail if the phone's type or platform are Unknown. Requires "Grant write resource" API permission.
-    
+
     .PARAMETER PhoneId
     Parameter description
-    
+
     .PARAMETER ValidSecs
     The number of seconds this activation code remains valid. Default: 86400 (one day).
-    
+
     .PARAMETER Install
     Specify 1 to cause an installation SMS message to be sent before the activation message, or 0 to not send an installation SMS message. Default: 0.
-    
+
     .PARAMETER InstallationMsg
     A custom installation message to send to the user. Only valid if installation was requested. Must contain the phrase "<insturl>", which is replaced with the installation URL.
-    
+
     .PARAMETER ActivationMsg
     A custom activation message to send to the user. Must contain "<acturl>", which is replaced with the activation URL.
-    
+
     .EXAMPLE
     Send-DuoPhoneActivationSms -PhoneId SOMEDUOID -ValidSecs 3600 -Install 1
-    
+
     .LINK
     https://duo.com/docs/adminapi#send-activation-code-via-sms
 
@@ -55,8 +55,8 @@ function Send-DuoPhoneActivationSms {
     process {
         $Params = @{}
         if ($ValidSecs) { $Params.valid_secs = $ValidSecs }
-        if ($Install) { 
-            $Params.install = $Install 
+        if ($Install) {
+            $Params.install = $Install
             if ($InstallationMsg) {
                 if ($InstallationMsg -notmatch '<insturl>') {
                     Write-Error 'Installation message must contain <insturl>'
@@ -82,8 +82,7 @@ function Send-DuoPhoneActivationSms {
         $Request = Invoke-DuoRequest @DuoRequest
         if ($Request.stat -ne 'OK') {
             $Request
-        }
-        else {
+        } else {
             $Request.response
         }
     }

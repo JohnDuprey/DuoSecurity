@@ -70,9 +70,6 @@ Set-DuoApiAuth @Auth
 Get-DuoUsers
 ```
 
-
-
-
 # Cmdlet Help
 ## Accounts API
 - [Get-DuoAccountEdition](./Docs/Get-DuoAccountEdition.md)
@@ -110,6 +107,7 @@ Get-DuoUsers
   - [Reset-DuoAdminAuthAttempts](./Docs/Reset-DuoAdminAuthAttempts.md)
   - [Send-DuoAdminActivationEmail](./Docs/Send-DuoAdminActivationEmail.md)
   - [Set-DuoAdminAuthFactors](./Docs/Set-DuoAdminAuthFactors.md)
+  - [Sync-DuoAdminFromDirectory](./Docs/Sync-DuoAdminFromDirectory.md)
   - [Update-DuoAdmin](./Docs/Update-DuoAdmin.md)
 - Bypass Codes
   - [Get-DuoBypassCodes](./Docs/Get-DuoBypassCodes.md)
@@ -181,6 +179,7 @@ Get-DuoUsers
   - [Remove-DuoUserFromGroup](./Docs/Remove-DuoUserFromGroup.md)
   - [Remove-DuoUserPhone](./Docs/Remove-DuoUserPhone.md)
   - [Remove-DuoUserToken](./Docs/Remove-DuoUserToken.md)
+  - [Sync-DuoUserFromDirectory](./Docs/Sync-DuoUserFromDirectory.md)
   - [Update-DuoUser](./Docs/Update-DuoUser.md)
 - WebAuthn
   - [Get-DuoWebAuthnCredentials](./Docs/Get-DuoWebAuthnCredentials.md)

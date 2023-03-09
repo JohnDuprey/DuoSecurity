@@ -2,19 +2,19 @@ function Send-DuoPhoneInstallationSms {
     <#
     .SYNOPSIS
     Send Installation URL via SMS
-    
+
     .DESCRIPTION
     Send a message via SMS describing how to install Duo Mobile. This method will fail if the phone's type or platform are Unknown. Requires "Grant write resource" API permission.
-    
+
     .PARAMETER PhoneId
     Id of phone
-    
+
     .PARAMETER InstallationMsg
     A custom installation message to send to the user. Must contain the phrase "<insturl>", which is replaced with the installation URL.
-    
+
     .EXAMPLE
     Send-DuoPhoneInstallationSms -PhoneId SOMEDUOID -InstallationMsg 'Install Duo Mobile! <insturl> - Your friendly IT department'
-    
+
     .LINK
     https://duo.com/docs/adminapi#send-installation-url-via-sms
 
@@ -53,8 +53,7 @@ function Send-DuoPhoneInstallationSms {
         $Request = Invoke-DuoRequest @DuoRequest
         if ($Request.stat -ne 'OK') {
             $Request
-        }
-        else {
+        } else {
             $Request.response
         }
     }

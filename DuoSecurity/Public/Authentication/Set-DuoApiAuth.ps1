@@ -2,29 +2,29 @@ function Set-DuoApiAuth {
     <#
     .SYNOPSIS
     Sets credentials for Duo
-    
+
     .DESCRIPTION
     Saves credentials as script scoped variables for use in the module
-    
+
     .PARAMETER ApiHost
-    Hostname (excluding https:\\)
-    
+    Hostname (excluding https://)
+
     .PARAMETER IntegrationKey
     Integration key
-    
+
     .PARAMETER SecretKey
     Secret key
-    
+
     .PARAMETER Type
     Type of credential
     #>
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('api_hostname')]
         [string]$ApiHost,
 
-        [Parameter(ValueFromPipelineByPropertyName=$true, Mandatory = $true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [Alias('integration_key')]
         [string]$IntegrationKey,
 
@@ -36,21 +36,23 @@ function Set-DuoApiAuth {
         [string]$Type = 'Admin'
     )
     process {
-        switch ($Type) {
-            'Accounts' {
-                $script:DuoAccountsApiHost = $ApiHost
-                $script:DuoAccountsIntegrationKey = $IntegrationKey
-                $script:DuoAccountsSecretKey = $SecretKey
-            }
-            'Admin' {
-                $script:DuoApiHost = $ApiHost
-                $script:DuoIntegrationKey = $IntegrationKey
-                $script:DuoSecretKey = $SecretKey
-            }
-            'Auth' {
-                $script:DuoAuthApiHost = $ApiHost
-                $script:DuoAuthIntegrationKey = $IntegrationKey
-                $script:DuoAuthSecretKey = $SecretKey
+        if ($PSCmdlet.ShouldProcess($Type)) {
+            switch ($Type) {
+                'Accounts' {
+                    $script:DuoAccountsApiHost = $ApiHost
+                    $script:DuoAccountsIntegrationKey = $IntegrationKey
+                    $script:DuoAccountsSecretKey = $SecretKey
+                }
+                'Admin' {
+                    $script:DuoApiHost = $ApiHost
+                    $script:DuoIntegrationKey = $IntegrationKey
+                    $script:DuoSecretKey = $SecretKey
+                }
+                'Auth' {
+                    $script:DuoAuthApiHost = $ApiHost
+                    $script:DuoAuthIntegrationKey = $IntegrationKey
+                    $script:DuoAuthSecretKey = $SecretKey
+                }
             }
         }
     }

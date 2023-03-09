@@ -2,19 +2,19 @@ function New-DuoAccount {
     <#
     .SYNOPSIS
     Create Account
-    
+
     .DESCRIPTION
     Create a new child account.
-    
+
     .PARAMETER Name
     Name for the new customer.
-    
+
     .EXAMPLE
     New-DuoAccount -Name 'Some Company'
 
     .INPUTS
     None
-    
+
     .OUTPUTS
     PSCustomObject. Returns a Duo Response object.
 

@@ -2,28 +2,28 @@ function Sync-DuoToken {
     <#
     .SYNOPSIS
     Resync Hardware Token
-    
+
     .DESCRIPTION
     Resynchronize the hardware token with ID token_id by providing three successive codes from the token. Only HOTP and Duo-D100 tokens can be resynchronized. YubiKey tokens operating in their native AES mode do not need resynchronization. Requires "Grant write resource" API permission.
-    
+
     .PARAMETER TokenId
     Id of token
-    
+
     .PARAMETER Code1
     The first code from the token.
-    
+
     .PARAMETER Code2
     The second code from the token.
-    
+
     .PARAMETER Code3
     The third code from the token.
-    
+
     .EXAMPLE
     Sync-DuoToken -TokenId SOMEDUOID -Code1 123456 -Code2 789012 -Code3 345678
 
     .LINK
     https://duo.com/docs/adminapi#resync-hardware-token
-    
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(
@@ -58,8 +58,7 @@ function Sync-DuoToken {
             $Request = Invoke-DuoRequest @DuoRequest
             if ($Request.stat -ne 'OK') {
                 $Request
-            }
-            else {
+            } else {
                 $Request.response
             }
         }

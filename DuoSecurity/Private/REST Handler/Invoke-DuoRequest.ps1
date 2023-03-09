@@ -2,16 +2,16 @@ function Invoke-DuoRequest {
     <#
     .SYNOPSIS
     Main Duo API function
-    
+
     .DESCRIPTION
     Calls Duo API with signed token for request
-    
+
     .PARAMETER Method
     GET,POST,DELETE
-    
+
     .PARAMETER Path
     Path to API endpoint
-    
+
     .PARAMETER Params
     Hashtable of parameters
 
@@ -20,7 +20,7 @@ function Invoke-DuoRequest {
 
     .PARAMETER FilePath
     Path to save output file to
-    
+
     .EXAMPLE
     Invoke-DuoRequest -Path '/admin/v1/users' -Method GET
     #>
@@ -48,7 +48,7 @@ function Invoke-DuoRequest {
         $ApiHost = $script:DuoApiHost
         $IntegrationKey = $script:DuoIntegrationKey
         $SecretKey = $script:DuoSecretKey
-        
+
         if ($script:DuoAccountId) {
             $AccountId = $script:DuoAccountId
         }
@@ -78,7 +78,7 @@ function Invoke-DuoRequest {
 
     # RFC 2822 date format in UTC
     $XDuoDate = (Get-Date).ToUniversalTime().ToString('ddd, dd MMM yyyy HH:mm:ss -0000')
-    
+
     # Assemble parameters
     $ParamCollection = [System.Web.HttpUtility]::ParseQueryString([String]::Empty)
 
@@ -86,7 +86,7 @@ function Invoke-DuoRequest {
         Write-Verbose "account_id = $AccountId"
         $ParamCollection.Add('account_id', $AccountId)
     }
-    
+
     # Sort parameters
     foreach ($Item in ($Params.GetEnumerator() | Sort-Object -CaseSensitive -Property Key)) {
         $ParamCollection.Add($Item.Key, $Item.Value)
@@ -94,20 +94,22 @@ function Invoke-DuoRequest {
 
     # Query string
     $Request = $ParamCollection.ToString() -replace '%7E', '~' -replace '\+', '%20'
+    $Request = [regex]::Replace($Request, '(%[0-9A-Fa-f][0-9A-Fa-f])', { $args[0].Value.ToUpperInvariant() })
+    $Request = [regex]::Replace($Request, "([!'()*])", { '%' + [System.Convert]::ToByte($args[0].Value[0]).ToString('X') })
 
     # Build Duo signature body linefeed separated
-    $SigantureParts = @(
+    $SignatureParts = @(
         $XDuoDate
         $Method.ToUpper()
         $ApiHost.ToLower()
         $Path
         $Request
     )
-    $SignatureBody = $SigantureParts -join "`n"
+    $SignatureBody = $SignatureParts -join "`n"
 
     # Encode signature with secretbytes
-    [byte[]]$KeyBytes = [System.Text.Encoding]::UTF8.GetBytes($SecretKey)
-    [byte[]]$DataBytes = [System.Text.Encoding]::UTF8.GetBytes($SignatureBody)
+    [byte[]]$KeyBytes = [System.Text.Encoding]::UTF8.GetBytes($SecretKey.ToCharArray())
+    [byte[]]$DataBytes = [System.Text.Encoding]::UTF8.GetBytes($SignatureBody.ToCharArray())
 
     # Generate an HMAC SHA1 hash
     $HmacSha1 = New-Object System.Security.Cryptography.HMACSHA1
@@ -140,7 +142,7 @@ function Invoke-DuoRequest {
     if ($Method -ne 'POST') {
         $UriBuilder.Query = $Request
     }
-    
+
     Write-Verbose ( '{0} [{1}]' -f $Method, $UriBuilder.Uri )
 
     $RestMethod = @{

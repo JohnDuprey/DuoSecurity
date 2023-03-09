@@ -2,13 +2,13 @@ function Get-DuoIntegrations {
     <#
     .SYNOPSIS
     Retrieve Integrations
-    
+
     .DESCRIPTION
     Returns a single integration or a paged list of integrations. Requires "Grant read resource" API permission.
-    
+
     .PARAMETER IntegrationKey
     Integration Key to retrieve
-    
+
     .EXAMPLE
     Get-DuoIntegrations
 
@@ -27,8 +27,7 @@ function Get-DuoIntegrations {
 
     if ($IntegrationKey) {
         $Path = '/admin/v1/integrations/{0}' -f $IntegrationKey
-    }
-    else {
+    } else {
         $Path = '/admin/v1/integrations'
     }
 
@@ -40,10 +39,9 @@ function Get-DuoIntegrations {
     $Response = Invoke-DuoRequest @DuoRequest
     if ($Response.stat -eq 'OK') {
         $Response.response
-    }
-    else {
+    } else {
         $Response
     }
-} 
+}
 
 Set-Alias -Name Get-DuoIntegration -Value Get-DuoIntegrations

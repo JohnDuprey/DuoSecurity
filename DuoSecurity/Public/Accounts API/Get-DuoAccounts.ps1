@@ -2,10 +2,10 @@ function Get-DuoAccounts {
     <#
     .SYNOPSIS
     Retrieve Accounts
-    
+
     .DESCRIPTION
     Returns a list of child accounts.
-    
+
     .EXAMPLE
     Get-DuoAccounts
 
@@ -17,7 +17,7 @@ function Get-DuoAccounts {
 
     .LINK
     https://duo.com/docs/accountsapi#retrieve-accounts
-    
+
     #>
     [CmdletBinding()]
     Param(
@@ -40,8 +40,7 @@ function Get-DuoAccounts {
         }
         $script:DuoAccountsList = $Accounts
         $Accounts
-    }
-    else { 
+    } else {
         $Response
     }
 }

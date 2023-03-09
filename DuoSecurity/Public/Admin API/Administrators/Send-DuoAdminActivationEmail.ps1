@@ -2,13 +2,13 @@ function Send-DuoAdminActivationEmail {
     <#
     .SYNOPSIS
     Email Activation Link to Administrator Pending Activation
-    
+
     .DESCRIPTION
     Email the current activation link to the administrator pending activation with the administrator ID admin_id. Requires "Grant administrators" API permission.
 
     .PARAMETER AdminId
     The ID of the Administrator
-    
+
     .EXAMPLE
     Send-DuoAdminActivationEmail -AdminId SOMEADMINID
 
@@ -31,8 +31,7 @@ function Send-DuoAdminActivationEmail {
         $Request = Invoke-DuoRequest @DuoRequest
         if ($Request.stat -ne 'OK') {
             $Request
-        }
-        else {
+        } else {
             $Request.response
         }
     }

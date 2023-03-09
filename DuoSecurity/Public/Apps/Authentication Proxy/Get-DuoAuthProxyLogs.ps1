@@ -2,22 +2,22 @@ function Get-DuoAuthProxyLogs {
     <#
     .SYNOPSIS
     This script reads Duo Auth Proxy log files
-    
+
     .DESCRIPTION
     Reads in log files from the designated log path and parses the entries from the standard log file format or json in the case of ssoevents
-    
+
     .PARAMETER ListLogs
     List available log files
-    
+
     .PARAMETER LogName
     Name of log to get
-    
+
     .PARAMETER Search
     Search object for string
-    
+
     .EXAMPLE
     Get-DuoAuthProxyLogs -LogName ssoevents -Search test
-    
+
     #>
     [CmdletBinding()]
     Param(
@@ -37,8 +37,8 @@ function Get-DuoAuthProxyLogs {
     }
 
     elseif ($IsWindows) {
-        $ProxyBin = 'C:\Program Files\Duo Security Authentication Proxy\bin\authproxyctl.exe'
-        $DuoPath = 'C:\Program Files\Duo Security Authentication Proxy'
+        $ProxyBin = '{0}\Duo Security Authentication Proxy\bin\authproxyctl.exe' -f $env:ProgramFiles
+        $DuoPath = '{0}\Duo Security Authentication Proxy' -f $env:ProgramFiles
     }
 
     else {
@@ -46,11 +46,11 @@ function Get-DuoAuthProxyLogs {
     }
 
     if (-not (Test-Path $ProxyBin)) {
-        $DuoPath = 'C:\Program Files (x86)\Duo Security Authentication Proxy'
+        $DuoPath = '{0}\Duo Security Authentication Proxy' -f ${env:ProgramFiles(x86)}
         if (Test-Path $DuoPath) {
             Write-Warning 'You are not running a v5.1.0 or higher version of Duo Security Authentication Proxy, please update at your earliest convenience'
         }
-        
+
         else {
             throw 'Duo Security Authentication Proxy not detected'
         }
@@ -67,7 +67,7 @@ function Get-DuoAuthProxyLogs {
 
         switch ($LogName) {
             'ssoevents' {
-                $ParsedLogs = foreach ($Log in $Logs) { 
+                $ParsedLogs = foreach ($Log in $Logs) {
                     $Log | ConvertFrom-Json
                 }
             }

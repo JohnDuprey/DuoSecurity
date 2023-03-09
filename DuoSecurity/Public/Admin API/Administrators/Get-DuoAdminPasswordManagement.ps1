@@ -2,7 +2,7 @@ function Get-DuoAdminPasswordManagement {
     <#
     .SYNOPSIS
     Retrieve Admin External Password Management Status
-    
+
     .DESCRIPTION
     Returns a paged list of administrators indicating whether they have been configured for external password management. Requires "Grant administrators" API permission.
 
@@ -23,8 +23,7 @@ function Get-DuoAdminPasswordManagement {
     process {
         if ($AdminId) {
             $Path = '/admin/v1/admins/{0}/password_mgmt' -f $AdminId
-        }
-        else {
+        } else {
             $Path = '/admin/v1/password_mgmt'
         }
         $DuoRequest = @{
@@ -36,14 +35,12 @@ function Get-DuoAdminPasswordManagement {
             $Request = Invoke-DuoRequest @DuoRequest
             if ($Request.stat -ne 'OK') {
                 $Request
-            }
-            else {
+            } else {
                 $Request.response
-            } 
+            }
+        } else {
+            Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest
         }
-        else { 
-            Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest 
-        }  
     }
-} 
+}
 

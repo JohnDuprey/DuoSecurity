@@ -2,10 +2,10 @@ function Remove-DuoWebAuthnCredential {
     <#
     .SYNOPSIS
     Delete WebAuthn Credential
-    
+
     .DESCRIPTION
     Delete the WebAuthn credential with key webauthnkey from the system. Requires "Grant write resource" API permission.
-    
+
     .PARAMETER WebAuthnKey
     WebAuthn Key
 

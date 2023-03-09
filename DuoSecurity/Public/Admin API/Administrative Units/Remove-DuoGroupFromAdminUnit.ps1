@@ -2,16 +2,16 @@ function Remove-DuoGroupFromAdminUnit {
     <#
     .SYNOPSIS
     Remove Group from Administrative Unit
-    
+
     .DESCRIPTION
     Unassign the group with group_id from the administrative unit with admin_unit_id. Requires "Grant administrators" API permission.
-    
+
     .PARAMETER AdminUnitId
     The ID of the Administrative Unit
-    
+
     .PARAMETER GroupId
     The ID of the Group
-    
+
     .EXAMPLE
     Remove-DuoAdminFromAdminUnit -AdminUnitId SOMEADMINUNITID -AdminId SOMEADMINID
 

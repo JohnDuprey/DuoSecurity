@@ -2,19 +2,19 @@ function New-DuoAdminActivationLink {
     <#
     .SYNOPSIS
     Create Activation Link for Administrator Pending Activation
-    
+
     .DESCRIPTION
     Creates an activation link for the administrator pending activation with the administrator ID admin_id. There must not already be an existing activation link for the admin. Requires "Grant administrators" API permission.
-    
+
     .PARAMETER AdminId
     The ID of the Administrator
-    
+
     .EXAMPLE
     New-DuoAdminActivationLink -AdminId SOMEADMINID
 
     .LINK
     https://duo.com/docs/adminapi#create-activation-link-for-administrator-pending-activation
-    
+
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(
@@ -32,8 +32,7 @@ function New-DuoAdminActivationLink {
         $Request = Invoke-DuoRequest @DuoRequest
         if ($Request.stat -ne 'OK') {
             $Request
-        }
-        else {
+        } else {
             $Request.response
         }
     }

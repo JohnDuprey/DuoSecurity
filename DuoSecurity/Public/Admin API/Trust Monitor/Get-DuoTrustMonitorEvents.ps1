@@ -2,7 +2,7 @@ function Get-DuoTrustMonitorEvents {
     <#
     .SYNOPSIS
     Retrieve Trust Monitor Events
-    
+
     .DESCRIPTION
     Returns a paged list of events surfaced by Trust Monitor from the last 180 days. To fetch all results, call repeatedly with the next_offset paging parameter as long as the result metadata has next_offset values. Requires "Grant read log" API permission.
 
@@ -17,22 +17,22 @@ function Get-DuoTrustMonitorEvents {
 
     .PARAMETER EndDate
     The end date for log enties
-    
+
     .PARAMETER MinTime
     Return records that have a 13 character Unix timestamp in milliseconds of mintime or later. This value must be strictly less then maxtime.
-    
+
     .PARAMETER MaxTime
     Return records that have a 13 character Unix timestamp in milliseconds of maxtime or earlier. This value must be strictly greater then mintime.
-    
+
     .LINK
     https://duo.com/docs/adminapi#retrieve-events
 
     .EXAMPLE
-    Get-DuoTrustMonitorEvents -Days 30 
-    
+    Get-DuoTrustMonitorEvents -Days 30
+
     .NOTES
     We recommend requesting Trust Monitor events no more than once per minute.
-    
+
     #>
     [CmdletBinding()]
     Param(
@@ -96,7 +96,7 @@ function Get-DuoTrustMonitorEvents {
     if ($Response.stat -eq 'OK') {
         $Response.response.events
     }
-    else { 
+    else {
         $Response
     }
 }

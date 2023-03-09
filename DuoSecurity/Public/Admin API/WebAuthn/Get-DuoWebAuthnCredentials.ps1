@@ -2,10 +2,10 @@ function Get-DuoWebAuthnCredentials {
     <#
     .SYNOPSIS
     Retrieve WebAuthn Credentials by Key
-    
+
     .DESCRIPTION
     Return the single WebAuthn credential with webauthnkey. Requires "Grant read resource" API permission.
-    
+
     .PARAMETER WebAuthnKey
     WebAuthn Key
 
@@ -19,9 +19,9 @@ function Get-DuoWebAuthnCredentials {
     https://duo.com/docs/adminapi#retrieve-webauthn-credentials-by-key
 
     #>
-    [CmdletBinding(DefaultParameterSetName='List')]
+    [CmdletBinding(DefaultParameterSetName = 'List')]
     Param(
-        [Parameter(ValueFromPipelineByPropertyName = $true, ParameterSetName='Single')]
+        [Parameter(ValueFromPipelineByPropertyName = $true, ParameterSetName = 'Single')]
         [string]$WebAuthnKey
     )
 
@@ -37,17 +37,16 @@ function Get-DuoWebAuthnCredentials {
                 $Request = Invoke-DuoRequest @DuoRequest
                 if ($Request.stat -ne 'OK') {
                     $Request
-                }
-                else {
+                } else {
                     $Request.response
-                } 
+                }
             }
             'List' {
                 $DuoRequest.Path = '/admin/v1/webauthncredentials'
-                Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest 
+                Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest
             }
         }
     }
-} 
+}
 
 Set-Alias -Name Get-DuoWebAuthnCredential -Value Get-DuoTokens

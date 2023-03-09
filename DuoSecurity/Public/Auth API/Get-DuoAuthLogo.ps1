@@ -2,21 +2,21 @@ function Get-DuoAuthLogo {
     <#
     .SYNOPSIS
     Duo Auth Logo
-    
+
     .DESCRIPTION
     The /logo endpoint provides a programmatic way to retrieve your stored logo.
-    
+
     .PARAMETER FilePath
     Where to save the logo
-    
+
     .EXAMPLE
     Get-DuoAuthLogo -FilePath ./logo.png
 
     .LINK
     https://duo.com/docs/authapi#/logo
-    
+
     .NOTES
-    
+
     #>
     [CmdletBinding()]
     Param(
@@ -24,7 +24,7 @@ function Get-DuoAuthLogo {
         [string]$FilePath
     )
 
-    process {        
+    process {
         $DuoRequest = @{
             Method = 'GET'
             Path   = '/auth/v2/logo'
@@ -36,8 +36,7 @@ function Get-DuoAuthLogo {
         $Response = Invoke-DuoRequest @DuoRequest
         if ($Response.stat -eq 'OK') {
             $Response.response
-        }
-        else { 
+        } else {
             $Response
         }
     }
