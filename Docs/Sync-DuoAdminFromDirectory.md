@@ -1,63 +1,64 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#add-administrative-unit
+online version: https://duo.com/docs/adminapi#synchronize-admin-from-directory
 schema: 2.0.0
 ---
 
-# New-DuoAuthEnrollment
+# Sync-DuoAdminFromDirectory
 
 ## SYNOPSIS
-Duo Auth Enrollment
+Synchronize Admin from Directory
 
 ## SYNTAX
 
 ```
-New-DuoAuthEnrollment [[-Username] <String>] [[-ValidSecs] <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Sync-DuoAdminFromDirectory [-DirectoryKey] <String> [-Email] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The /enroll endpoint provides a programmatic way to enroll new users with Duo two-factor authentication.
-It creates the user in Duo and returns a code (as a QR code) that Duo Mobile can scan with its built-in camera.
-Scanning the QR code adds the user's account to the app so that they receive and respond to Duo Push login requests.
+Initiate a sync to create, update, or mark for deletion the administrator specified by email against the directory specified by the directory_key.
+The directory_key for a directory can be found by navigating to Administrators -\> Admin Directory Sync in the Duo Admin Panel, and then clicking on the configured directory.
+Learn more about syncing individual admins from Active Directory, OpenLDAP, or Azure Active Directory.
+Requires "Grant administrators" API permission.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-New-DuoAuthEnrollment
+Sync-DuoAdminFromDirectory -DirectoryKey 123456 -Email admin@domain.com
 ```
 
 ## PARAMETERS
 
-### -Username
-Username for the created user.
-If not given, a random username will be assigned and returned.
+### -DirectoryKey
+The directory key to sync from
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: directory_key
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ValidSecs
-Seconds for which the activation code will remain valid.
-Default: 86400 (one day).
+### -Email
+Email address of the admin to update or create via directory sync.
+This should be the same as the value for the admin's email attribute in the source directory as configured in the sync.
+Administrators with "Owner" role may not be synced.
 
 ```yaml
-Type: Int32
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -101,6 +102,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-General notes
 
 ## RELATED LINKS
+
+[https://duo.com/docs/adminapi#synchronize-admin-from-directory](https://duo.com/docs/adminapi#synchronize-admin-from-directory)
+

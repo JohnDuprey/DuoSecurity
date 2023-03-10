@@ -14,7 +14,8 @@ Create User
 
 ```
 New-DuoUser [-Username] <String> [[-Aliases] <Hashtable>] [[-FullName] <String>] [[-Email] <String>]
- [[-Status] <String>] [[-Notes] <String>] [[-FirstName] <String>] [[-LastName] <String>] [<CommonParameters>]
+ [[-Status] <String>] [[-Notes] <String>] [[-FirstName] <String>] [[-LastName] <String>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,6 +159,37 @@ Aliases:
 
 Required: False
 Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

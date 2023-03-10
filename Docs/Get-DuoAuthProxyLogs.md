@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#authentication-logs
+online version: https://duo.com/docs/authapi#/logo
 schema: 2.0.0
 ---
 

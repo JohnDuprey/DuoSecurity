@@ -40,7 +40,7 @@ Set-DuoCustomMessaging -HelpLinks 'https://duo.com/docs/adminapi#modify-custom-m
 
 ### -HelpLinks
 A comma-separated list of up to two custom external links shown to users in the Universal Prompt.
-Each URL must begin with http:// or https://.
+Each URL must begin with http:// or https://
 
 ```yaml
 Type: String[]
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 
 ### -Locale
 The language of the help text.
-One of: en_US (English), cs_CZ (Czech), de_DE (German), es_ES (Spanish - Spain), es_419 (Spanish - Latin America), fi_FI (Finnish), fr_FR (French), hi_IN (Hindi), id_ID (Indonesian), it_IT (Italian), ja_JP (Japanese), ko_KR (Korean), nb_NO (Norwegian - Bokmål), pl_PL (Polish), pt_BR (Portuguese - Brazil), sv_SE (Swedish), th_TH (Thai), tr_TR (Turkish), vi_VN (Vietnamese), or zh_hans_CN (Chinese - Simplified).
+One of: en_US (English), cs_CZ (Czech), de_DE (German), es_ES (Spanish - Spain), es_419 (Spanish - Latin America), fi_FI (Finnish), fr_FR (French), hi_IN (Hindi), id_ID (Indonesian), it_IT (Italian), ja_JP (Japanese), ko_KR (Korean), nb_NO (Norwegian - Bokmal), pl_PL (Polish), pt_BR (Portuguese - Brazil), sv_SE (Swedish), th_TH (Thai), tr_TR (Turkish), vi_VN (Vietnamese), or zh_hans_CN (Chinese - Simplified).
 
 ```yaml
 Type: String

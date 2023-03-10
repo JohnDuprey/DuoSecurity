@@ -14,8 +14,8 @@ Create Administrator
 
 ```
 New-DuoAdmin [-Email] <String> [-Name] <String> [[-Phone] <String>] [[-Role] <String>]
- [-RestrictedByAdminUnits] [[-SendEmail] <Int32>] [[-TokenId] <String>] [[-ValidDays] <Int32>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-RestrictedByAdminUnits] [-SendEmail] [[-TokenId] <String>] [[-ValidDays] <Int32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,13 +126,13 @@ If set to 0, no email is sent, and the link is returned to the API method's call
 Default: 0.
 
 ```yaml
-Type: Int32
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
-Default value: 0
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -146,7 +146,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -162,7 +162,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 7
+Position: 6
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
