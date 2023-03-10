@@ -28,15 +28,17 @@ function Remove-DuoAccount {
         [string]$AccountId
     )
 
-    $DuoRequest = @{
-        Method = 'POST'
-        Path   = '/accounts/v1/account/delete'
-        Params = @{
-            account_id = $AccountId
+    process {
+        $DuoRequest = @{
+            Method = 'POST'
+            Path   = '/accounts/v1/account/delete'
+            Params = @{
+                account_id = $AccountId
+            }
         }
-    }
 
-    if ($PSCmdlet.ShouldProcess($AccountId)) {
-        Invoke-DuoRequest @DuoRequest
+        if ($PSCmdlet.ShouldProcess($AccountId)) {
+            Invoke-DuoRequest @DuoRequest
+        }
     }
 }

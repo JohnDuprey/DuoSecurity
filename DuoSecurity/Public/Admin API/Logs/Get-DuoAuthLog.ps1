@@ -1,4 +1,4 @@
-function Get-DuoAuthLogs {
+function Get-DuoAuthLog {
     <#
     .SYNOPSIS
     Authentication Logs
@@ -151,7 +151,7 @@ function Get-DuoAuthLogs {
     https://duo.com/docs/adminapi#authentication-logs
 
     .EXAMPLE
-    Get-DuoAuthLogs -Days 30 -EventTypes authentication -Factors duo_push -Results denied
+    Get-DuoAuthLog -Days 30 -EventTypes authentication -Factors duo_push -Results denied
 
     .NOTES
     There is an intentional two minute delay in availability of new authentications in the API response. Duo operates a large scale distributed system, and this two minute buffer period ensures that calls will return consistent results. Querying for results more recent than two minutes will return as empty.
@@ -258,3 +258,5 @@ function Get-DuoAuthLogs {
         $Response
     }
 }
+
+Set-Alias -Name Get-DuoAuthLogs -Value Get-DuoAuthLog

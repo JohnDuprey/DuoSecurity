@@ -1,4 +1,4 @@
-function Update-DuoSettings {
+function Update-DuoSetting {
     <#
     .SYNOPSIS
     Modify Settings
@@ -82,7 +82,7 @@ function Update-DuoSettings {
     The maximum number of telephony credits a user may consume in a single authentication event. This excludes Duo administrators authenticating to the Duo administration panel. If you know the countries from which your users expect to authenticate with phone callback we recommend adjusting this down from the default to match the most expensive expected country to help avoid misuse, using the values from the Telephony Credits documentation. Default: 20.
 
     .EXAMPLE
-    Update-DuoSettings -FraudEmail helpdesk@domain.com
+    Update-DuoSetting -FraudEmail helpdesk@domain.com
 
     .LINK
     https://duo.com/docs/adminapi#modify-settings
@@ -227,3 +227,5 @@ function Update-DuoSettings {
         }
     }
 }
+
+Set-Alias -Name Update-DuoSettings -Value Update-DuoSetting

@@ -4,7 +4,7 @@ function Sync-DuoUserFromDirectory {
     Synchronize User from Directory
 
     .DESCRIPTION
-    Initiate a sync to create, update, or mark for deletion the user specified by username against the directory specified by the directory_key. The directory_key for a directory can be found by navigating to Users → Directory Sync in the Duo Admin Panel, and then clicking on the configured directory. Learn more about syncing individual users from Active Directory, OpenLDAP, or Azure Active Directory. Requires "Grant write resource" API permission.
+    Initiate a sync to create, update, or mark for deletion the user specified by username against the directory specified by the directory_key. The directory_key for a directory can be found by navigating to Users -> Directory Sync in the Duo Admin Panel, and then clicking on the configured directory. Learn more about syncing individual users from Active Directory, OpenLDAP, or Azure Active Directory. Requires "Grant write resource" API permission.
 
     .PARAMETER DirectoryKey
     The directory key to sync from
