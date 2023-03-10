@@ -1,4 +1,4 @@
-function Get-DuoOfflineEnrollmentLogs {
+function Get-DuoOfflineEnrollmentLog {
     <#
     .SYNOPSIS
     Offline Enrollment Logs
@@ -12,7 +12,7 @@ function Get-DuoOfflineEnrollmentLogs {
     Only return records that have a Unix timestamp in seconds of mintime or later. Use mintime+1 to avoid receiving duplicate data.
 
     .EXAMPLE
-    Get-DuoOfflineEnrollmentLogs
+    Get-DuoOfflineEnrollmentLog
 
     .LINK
     https://duo.com/docs/adminapi#offline-enrollment-logs
@@ -69,3 +69,5 @@ function Get-DuoOfflineEnrollmentLogs {
     }
 
 }
+
+Set-Alias -Name Get-DuoOfflineEnrollmentLogs -Value Get-DuoOfflineEnrollmentLog

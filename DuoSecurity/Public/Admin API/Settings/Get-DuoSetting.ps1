@@ -1,4 +1,4 @@
-function Get-DuoSettings {
+function Get-DuoSetting {
     <#
     .SYNOPSIS
     Retrieve Settings
@@ -28,3 +28,5 @@ function Get-DuoSettings {
         $Request.response
     }
 }
+
+Set-Alias -Name Get-DuoSettings -Value Get-DuoSetting

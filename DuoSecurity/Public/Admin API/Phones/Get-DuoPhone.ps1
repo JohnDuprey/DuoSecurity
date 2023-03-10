@@ -1,4 +1,4 @@
-function Get-DuoPhones {
+function Get-DuoPhone {
     <#
     .SYNOPSIS
     Retrieve Phones
@@ -66,4 +66,4 @@ function Get-DuoPhones {
     }
 }
 
-Set-Alias -Name Get-DuoPhone -Value Get-DuoPhones
+Set-Alias -Name Get-DuoPhones -Value Get-DuoPhone

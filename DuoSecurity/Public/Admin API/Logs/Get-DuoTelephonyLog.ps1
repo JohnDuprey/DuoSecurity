@@ -1,19 +1,19 @@
-function Get-DuoAdminLogs {
+function Get-DuoTelephonyLog {
     <#
     .SYNOPSIS
-    Administrator Logs
+    Telephony Logs
 
     .DESCRIPTION
-    Returns a list of administrator log events. Only the 1000 earliest events will be returned; you may need to call this multiple times with mintime to page through the entire log. Requires "Grant read log" API permission.
+    Returns a list of telephony log events. Only the 1000 earliest events will be returned; you may need to call this multiple times with mintime to page through the entire log. Requires "Grant read log" API permission.
 
     .PARAMETER MinTime
     Limit report to events after this Unix timestamp.
 
     .EXAMPLE
-    Get-DuoUserAuthenticationAttempts
+    Get-DuoTelephonyLog
 
     .LINK
-    https://duo.com/docs/adminapi#administrator-logs
+    https://duo.com/docs/adminapi#telephony-logs
 
     .NOTES
     We recommend requesting logs no more than once per minute.
@@ -54,7 +54,7 @@ function Get-DuoAdminLogs {
 
     $DuoRequest = @{
         Method = 'GET'
-        Path   = '/admin/v1/logs/administrator'
+        Path   = '/admin/v1/logs/telephony'
         Params = $Params
     }
 
@@ -67,3 +67,5 @@ function Get-DuoAdminLogs {
     }
 
 }
+
+Set-Alias -Name Get-DuoTelephonyLogs -Value Get-DuoTelephonyLog

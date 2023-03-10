@@ -4,7 +4,7 @@ function Sync-DuoAdminFromDirectory {
     Synchronize Admin from Directory
 
     .DESCRIPTION
-    Initiate a sync to create, update, or mark for deletion the administrator specified by email against the directory specified by the directory_key. The directory_key for a directory can be found by navigating to Administrators → Admin Directory Sync in the Duo Admin Panel, and then clicking on the configured directory. Learn more about syncing individual admins from Active Directory, OpenLDAP, or Azure Active Directory. Requires "Grant administrators" API permission.
+    Initiate a sync to create, update, or mark for deletion the administrator specified by email against the directory specified by the directory_key. The directory_key for a directory can be found by navigating to Administrators -> Admin Directory Sync in the Duo Admin Panel, and then clicking on the configured directory. Learn more about syncing individual admins from Active Directory, OpenLDAP, or Azure Active Directory. Requires "Grant administrators" API permission.
 
     .PARAMETER DirectoryKey
     The directory key to sync from

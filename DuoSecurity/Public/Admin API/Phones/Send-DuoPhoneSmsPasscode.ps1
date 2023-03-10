@@ -1,4 +1,4 @@
-function Send-DuoPhoneSmsPasscodes {
+function Send-DuoPhoneSmsPasscode {
     <#
     .SYNOPSIS
     Send Passcodes via SMS
@@ -10,7 +10,7 @@ function Send-DuoPhoneSmsPasscodes {
     Id of phone
 
     .EXAMPLE
-    Send-DuoPhoneSmsPasscodes -PhoneId SOMEDUOID
+    Send-DuoPhoneSmsPasscode -PhoneId SOMEDUOID
 
     .LINK
     https://duo.com/docs/adminapi#send-passcodes-via-sms
@@ -37,3 +37,5 @@ function Send-DuoPhoneSmsPasscodes {
         }
     }
 }
+
+Set-Alias -Name Send-DuoPhoneSmsPasscodes -Value Send-DuoPhoneSmsPasscode
