@@ -15,13 +15,15 @@ Duo Auth
 ### Username (Default)
 ```
 Send-DuoAuth -Username <String> [-Factor <String>] [-IpAddr <String>] [-Hostname <String>] [-Async]
- [-Device <String>] [-Type <String>] [-DisplayUsername <String>] [-Passcode] [<CommonParameters>]
+ [-Device <String>] [-Type <String>] [-DisplayUsername <String>] [-Passcode] [-PushInfo <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ### UserId
 ```
 Send-DuoAuth -UserId <String> [-Factor <String>] [-IpAddr <String>] [-Hostname <String>] [-Async]
- [-Device <String>] [-Type <String>] [-DisplayUsername <String>] [-Passcode] [<CommonParameters>]
+ [-Device <String>] [-Type <String>] [-DisplayUsername <String>] [-Passcode] [-PushInfo <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -208,6 +210,26 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PushInfo
+A set of URL-encoded key/value pairs with additional contextual information associated with this authentication attempt.
+The Duo Mobile app will display this information to the user.
+
+For example: from=login%20portal&domain=example.com
+
+The URL-encoded string's total length must be less than 20,000 bytes.
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
