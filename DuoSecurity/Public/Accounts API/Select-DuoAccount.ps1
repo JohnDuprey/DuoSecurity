@@ -50,6 +50,9 @@ function Select-DuoAccount {
 
     if ($Name) {
         $Account = $script:DuoAccountsList | Where-Object { $_.name -eq $Name }
+        if (@($Account).Count -gt 1) {
+            Write-Error 'More then one account found, use AccountId.' -ErrorAction Stop
+        }
     }
 
     if ($AccountId) {
