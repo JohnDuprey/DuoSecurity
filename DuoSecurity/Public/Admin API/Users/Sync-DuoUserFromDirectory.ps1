@@ -16,7 +16,7 @@ function Sync-DuoUserFromDirectory {
     Sync-DuoUserFromDirectory -DirectoryKey 123456 -Username mbolton
 
     .LINK
-    https://duo.com/docs/adminapi#synchronize-admin-from-directory
+    https://duo.com/docs/adminapi#synchronize-user-from-directory
 
     #>
     [CmdletBinding(SupportsShouldProcess)]
