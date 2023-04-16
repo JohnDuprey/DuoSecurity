@@ -1,4 +1,4 @@
-function Set-DuoAdminAuthFactors {
+function Set-DuoAdminAuthFactor {
     <#
     .SYNOPSIS
     Restrict Administrator Authentication Factors
@@ -78,3 +78,5 @@ function Set-DuoAdminAuthFactors {
         }
     }
 }
+
+Set-Alias -Name Set-DuoAdminAuthFactors -Value Set-DuoAdminAuthFactor

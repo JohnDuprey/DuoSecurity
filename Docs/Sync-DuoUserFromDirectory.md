@@ -1,7 +1,7 @@
 ---
 external help file: DuoSecurity-help.xml
 Module Name: DuoSecurity
-online version: https://duo.com/docs/adminapi#synchronize-admin-from-directory
+online version: https://duo.com/docs/adminapi#synchronize-user-from-directory
 schema: 2.0.0
 ---
 
@@ -105,5 +105,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://duo.com/docs/adminapi#synchronize-admin-from-directory](https://duo.com/docs/adminapi#synchronize-admin-from-directory)
+[https://duo.com/docs/adminapi#synchronize-user-from-directory](https://duo.com/docs/adminapi#synchronize-user-from-directory)
 
