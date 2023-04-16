@@ -28,17 +28,19 @@ function Remove-DuoCustomBrandingDraftUser {
         [string]$UserId
     )
 
-    $DuoRequest = @{
-        Method = 'DELETE'
-        Path   = '/admin/v1/branding/draft/users/{0}' -f $UserId
-    }
+    process {
+        $DuoRequest = @{
+            Method = 'DELETE'
+            Path   = '/admin/v1/branding/draft/users/{0}' -f $UserId
+        }
 
-    if ($PSCmdlet.ShouldProcess($UserId)) {
-        $Request = Invoke-DuoRequest @DuoRequest
-        if ($Request.stat -ne 'OK') {
-            $Request
-        } else {
-            $Request.response
+        if ($PSCmdlet.ShouldProcess($UserId)) {
+            $Request = Invoke-DuoRequest @DuoRequest
+            if ($Request.stat -ne 'OK') {
+                $Request
+            } else {
+                $Request.response
+            }
         }
     }
 }
