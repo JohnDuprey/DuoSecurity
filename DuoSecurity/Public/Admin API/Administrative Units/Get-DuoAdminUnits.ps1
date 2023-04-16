@@ -29,7 +29,7 @@ function Get-DuoAdminUnits {
 
     process {
         if ($AdminId) {
-            $Path = '/admin/v1/administrative_units/{0}' -f $AdminId
+            $Path = '/admin/v1/administrative_units/{0}' -f $AdminUnitId
         } else {
             $Path = '/admin/v1/administrative_units'
         }

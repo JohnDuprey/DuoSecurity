@@ -1,4 +1,4 @@
-function Get-DuoBypassCodes {
+function Get-DuoBypassCode {
     <#
     .SYNOPSIS
     Retrieve Bypass Codes
@@ -10,7 +10,7 @@ function Get-DuoBypassCodes {
     Bypass Code Id to retrieve
 
     .EXAMPLE
-    Get-DuoBypassCodes
+    Get-DuoBypassCode
 
     .LINK
     https://duo.com/docs/adminapi#retrieve-bypass-codes
@@ -51,4 +51,4 @@ function Get-DuoBypassCodes {
     }
 }
 
-Set-Alias -Name Get-DuoBypassCode -Value Get-DuoBypassCodes
+Set-Alias -Name Get-DuoBypassCodes -Value Get-DuoBypassCode

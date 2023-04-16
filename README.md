@@ -139,6 +139,7 @@ Get-DuoUsers
   - [Remove-DuoIntegration](./Docs/Remove-DuoIntegration.md)
   - [Update-DuoIntegration](./Docs/Update-DuoIntegration.md)
 - Logs
+  - [Get-DuoActivityLog](./Docs/Get-DuoActivityLog.md)
   - [Get-DuoAdminLog](./Docs/Get-DuoAdminLog.md)
   - [Get-DuoAuthLog](./Docs/Get-DuoAuthLog.md)
   - [Get-DuoOfflineEnrollmentLog](./Docs/Get-DuoOfflineEnrollmentLog.md)
