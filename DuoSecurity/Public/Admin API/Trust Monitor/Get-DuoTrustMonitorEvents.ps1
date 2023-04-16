@@ -36,13 +36,13 @@ function Get-DuoTrustMonitorEvents {
     #>
     [CmdletBinding()]
     Param(
-        [Parameter(Mandatory=$true,ParameterSetName='Days')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'Days')]
         [int]$Days,
 
         [Parameter(Mandatory = $true, ParameterSetName = 'Hours')]
         [int]$Hours,
 
-        [Parameter(Mandatory=$true,ParameterSetName='MinMaxTime')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'MinMaxTime')]
         [string]$MinTime,
 
         [Parameter(Mandatory = $true, ParameterSetName = 'MinMaxTime')]
@@ -55,7 +55,7 @@ function Get-DuoTrustMonitorEvents {
         [datetime]$EndDate,
 
         [Parameter()]
-        [ValidateSet('auth','bypass_status_enabled')]
+        [ValidateSet('auth', 'bypass_status_enabled')]
         [string]$Type
     )
 
@@ -72,8 +72,7 @@ function Get-DuoTrustMonitorEvents {
     if ($StartDate) {
         if ($EndDate) {
             $MaxTime = $EndDate | Get-Date -UFormat '%s000'
-        }
-        else {
+        } else {
             $MaxTime = Get-Date -UFormat '%s000'
         }
         $MinTime = $StartDate | Get-Date -UFormat '%s000'
@@ -84,7 +83,7 @@ function Get-DuoTrustMonitorEvents {
         maxtime = $MaxTime.ToString()
     }
 
-    if ($types) { $Params.types = $Types }
+    if ($Type) { $Params.type = $Type }
 
 
     $DuoRequest = @{
@@ -95,8 +94,7 @@ function Get-DuoTrustMonitorEvents {
     $Response = Invoke-DuoRequest @DuoRequest
     if ($Response.stat -eq 'OK') {
         $Response.response.events
-    }
-    else {
+    } else {
         $Response
     }
 }

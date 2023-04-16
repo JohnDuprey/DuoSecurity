@@ -155,6 +155,7 @@ function Update-DuoIntegration {
     if ($PolicyKey) { $Params.policy_key = $PolicyKey }
     if ($PromptV4Enabled) { $Params.prompt_v4_enabled = $PromptV4Enabled }
     if ($ResetSecretKey) { $Params.reset_secret_key = $ResetSecretKey }
+    if ($SelfServiceAllowed) { $Params.self_service_allowed = $SelfServiceAllowed }
     if ($UsernameNormalizationPolicy) { $Params.username_normalization_policy = $UsernameNormalizationPolicy }
 
     $DuoRequest = @{

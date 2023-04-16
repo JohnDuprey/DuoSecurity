@@ -140,6 +140,7 @@ function New-DuoIntegration {
     if ($Greeting) { $Params.greeting = $Greeting }
     if ($GroupsAllowed) { $Params.groups_allowed = ($GroupsAllowed -join ',') }
     if ($Notes) { $Params.notes = $Notes }
+    if ($SelfServiceAllowed) { $Params.self_service_allowed = $SelfServiceAllowed }
     if ($UsernameNormalizationPolicy) { $Params.username_normalization_policy = $UsernameNormalizationPolicy }
 
     $DuoRequest = @{
