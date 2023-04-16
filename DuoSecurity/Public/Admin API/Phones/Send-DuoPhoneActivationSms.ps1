@@ -59,16 +59,14 @@ function Send-DuoPhoneActivationSms {
             $Params.install = $Install
             if ($InstallationMsg) {
                 if ($InstallationMsg -notmatch '<insturl>') {
-                    Write-Error 'Installation message must contain <insturl>'
-                    return $false
+                    throw 'Installation message must contain <insturl>'
                 }
                 $Params.installation_msg = $InstallationMsg
             }
         }
         if ($ActivationMsg) {
             if ($ActivationMsg -notmatch '<acturl>') {
-                Write-Error 'Activation message must contain <acturl>'
-                return $false
+                throw 'Activation message must contain <acturl>'
             }
             $Params.activation_msg = $ActivationMsg
         }

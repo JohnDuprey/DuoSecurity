@@ -86,8 +86,7 @@ function Set-DuoCustomBranding {
                 if (Test-PngFile -Path $BackgroundImg) {
                     $BackgroundImg = ConvertTo-Base64 -Path $BackgroundImg
                 } else {
-                    Write-Error "$BackgroundImg is not a PNG file"
-                    return $false
+                    throw "$BackgroundImg is not a PNG file"
                 }
             }
             $Params.background_img = $BackgroundImg
@@ -100,8 +99,7 @@ function Set-DuoCustomBranding {
                 if (Test-PngFile -Path $Logo) {
                     $Logo = ConvertTo-Base64 -Path $Logo
                 } else {
-                    Write-Error "$Logo is not a PNG file"
-                    return $false
+                    throw "$Logo is not a PNG file"
                 }
             }
             $Params.background_img = $BackgroundImg

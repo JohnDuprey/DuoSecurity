@@ -38,8 +38,7 @@ function Send-DuoPhoneInstallationSms {
         $Params = @{}
         if ($InstallationMsg) {
             if ($InstallationMsg -notmatch '<insturl>') {
-                Write-Error 'Installation message must contain <insturl>'
-                return $false
+                throw 'Installation message must contain <insturl>'
             }
             $Params.installation_msg = $InstallationMsg
         }

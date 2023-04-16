@@ -8,10 +8,10 @@ function ConvertFrom-Base64 {
 
     .PARAMETER Base64
     File contents in Base64 string
-    
+
     .PARAMETER Path
     Path to the file
-    
+
     .EXAMPLE
     ConvertTo-Base64 -Path path/to/file.png
     #>
