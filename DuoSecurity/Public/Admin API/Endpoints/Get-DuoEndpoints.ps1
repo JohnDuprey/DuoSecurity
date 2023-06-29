@@ -32,9 +32,9 @@ function Get-DuoEndpoints {
 
     process {
         if ($BypassCodeId) {
-            $Path = '/admin/v1/bypass_codes/{0}' -f $BypassCodeId
+            $Path = '/admin/v1/endpoints/{0}' -f $BypassCodeId
         } else {
-            $Path = '/admin/v1/bypass_codes'
+            $Path = '/admin/v1/endpoints'
         }
 
         $DuoRequest = @{
