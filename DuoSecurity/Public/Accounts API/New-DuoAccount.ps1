@@ -36,6 +36,11 @@ function New-DuoAccount {
     }
 
     if ($PSCmdlet.ShouldProcess($Name)) {
-        Invoke-DuoRequest @DuoRequest
+        $Response = Invoke-DuoRequest @DuoRequest
+        if ($Response.stat -eq 'OK') {
+            $Response.response
+        } else {
+            $Response
+        }
     }
 }
