@@ -40,7 +40,16 @@ function Invoke-DuoRequest {
         [switch]$NoAuth,
 
         [Parameter()]
-        [string]$FilePath
+        [string]$FilePath,
+
+        [Parameter()]
+        $AdditionalHeaders = @{},
+
+        [Parameter()]
+        [string]$SignatureVersion = 2,
+
+        [Parameter()]
+        $Body = ''
     )
 
     # Get API credentials
@@ -97,25 +106,59 @@ function Invoke-DuoRequest {
     $Request = [regex]::Replace($Request, "([!'()*])", { '%' + [System.Convert]::ToByte($args[0].Value[0]).ToString('X') })
 
     # Build Duo signature body linefeed separated
-    $SignatureParts = @(
-        $XDuoDate
-        $Method.ToUpper()
-        $ApiHost.ToLower()
-        $Path
-        $Request
-    )
+    if ($SignatureVersion -eq 5) {
+        $HeaderCollection = [System.Collections.Generic.List[string]]::new()
+        $AdditionalHeaderString = ''
+        $AdditionalHeaders.'x-duo-date' = $XDuoDate
+        if ($AdditionalHeaders) {
+            foreach ($Header in ($AdditionalHeaders.GetEnumerator() | Sort-Object -Property Key)) {
+                $HeaderCollection.Add($Header.Key.ToLower()) | Out-Null
+                $HeaderCollection.Add($Header.Value) | Out-Null
+            }
+        }
+        $AdditionalHeaderString = $HeaderCollection -join "`0"
+
+        $SignatureParts = @(
+            $XDuoDate
+            $Method.ToUpper()
+            $ApiHost.ToLower()
+            $Path
+            $Request
+            (Get-Sha512HexDigest -String $Body)
+            (Get-Sha512HexDigest -String $AdditionalHeaderString)
+        )
+    } else {
+        $SignatureParts = @(
+            $XDuoDate
+            $Method.ToUpper()
+            $ApiHost.ToLower()
+            $Path
+            $Request
+        )
+    }
+
     $SignatureBody = $SignatureParts -join "`n"
+
+    Write-Verbose "`n---Canon signature---`n$SignatureBody`n-------"
 
     # Encode signature with secretbytes
     [byte[]]$KeyBytes = [System.Text.Encoding]::UTF8.GetBytes($SecretKey.ToCharArray())
     [byte[]]$DataBytes = [System.Text.Encoding]::UTF8.GetBytes($SignatureBody.ToCharArray())
 
     # Generate an HMAC SHA1 hash
-    $HmacSha1 = New-Object System.Security.Cryptography.HMACSHA1
-    $HmacSha1.Key = $KeyBytes
-    $null = $HmacSha1.ComputeHash($DataBytes)
-    $HashHex = [System.BitConverter]::ToString($HmacSha1.Hash)
+
+    if ($SignatureVersion -eq 5) {
+        $HashLib = New-Object System.Security.Cryptography.HMACSHA512
+    } else {
+        $HashLib = New-Object System.Security.Cryptography.HMACSHA1
+    }
+    $HashLib.Key = $KeyBytes
+    $null = $HashLib.ComputeHash($DataBytes)
+    $HashHex = [System.BitConverter]::ToString($HashLib.Hash)
+
     $Signature = $HashHex.Replace('-', '').ToLower()
+
+    Write-Verbose "Signature: $signature"
 
     # Build base64 encoded auth string with IntegrationKey and Signature
     $AuthString = 'Basic ' + [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(('{0}:{1}' -f $IntegrationKey, $Signature)))
@@ -143,6 +186,7 @@ function Invoke-DuoRequest {
     }
 
     Write-Verbose ( '{0} [{1}]' -f $Method, $UriBuilder.Uri )
+    Write-Verbose ( 'Headers: {0}' -f ($Headers | ConvertTo-Json) )
 
     $RestMethod = @{
         Method             = $Method
