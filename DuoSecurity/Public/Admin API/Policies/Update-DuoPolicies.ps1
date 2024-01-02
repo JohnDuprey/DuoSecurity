@@ -16,7 +16,7 @@ function Update-DuoPolicies {
     edit_list	
     An array of policy keys to apply the changes to. Ignored if edit_all_policies is true.
 
-    .PARAMETER policy_changes	Required	
+    .PARAMETER policy_changes
     The list of changes to apply to the policies specified in policies_to_update.
 
     Key/Value

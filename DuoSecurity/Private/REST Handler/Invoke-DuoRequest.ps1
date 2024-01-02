@@ -180,7 +180,6 @@ function Invoke-DuoRequest {
         Write-Verbose $Body
     }
 
-
     if ($NoAuth) {
         $Headers = @{}
     }
