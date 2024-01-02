@@ -29,7 +29,8 @@ function Get-DuoPolicies {
     process {
         if ($PolicyKey) {
             $Path = '/admin/v2/policies/{0}' -f $PolicyKey
-        } else {
+        }
+        else {
             $Path = '/admin/v2/policies'
         }
 
@@ -39,17 +40,19 @@ function Get-DuoPolicies {
             SignatureVersion = 5
         }
 
-        if ($EndpointKey) {
+        if ($PolicyKey) {
             $Request = Invoke-DuoRequest @DuoRequest
             if ($Request.stat -ne 'OK') {
                 $Request
-            } else {
+            }
+            else {
                 $Request.response
             }
-        } else {
+        }
+        else {
             Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest
         }
     }
 }
 
-Set-Alias -Name Get-DuoEndpoint -Value Get-DuoEndpoints
+Set-Alias -Name Get-DuoPolicy -Value Get-DuoPolicies

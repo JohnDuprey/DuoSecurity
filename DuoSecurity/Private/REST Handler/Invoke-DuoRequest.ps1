@@ -127,7 +127,8 @@ function Invoke-DuoRequest {
             (Get-Sha512HexDigest -String $Body)
             (Get-Sha512HexDigest -String $AdditionalHeaderString)
         )
-    } else {
+    }
+    else {
         $SignatureParts = @(
             $XDuoDate
             $Method.ToUpper()
@@ -149,7 +150,8 @@ function Invoke-DuoRequest {
 
     if ($SignatureVersion -eq 5) {
         $HashLib = New-Object System.Security.Cryptography.HMACSHA512
-    } else {
+    }
+    else {
         $HashLib = New-Object System.Security.Cryptography.HMACSHA1
     }
     $HashLib.Key = $KeyBytes
@@ -173,6 +175,11 @@ function Invoke-DuoRequest {
         $Body = $Request
         Write-Verbose $Request
     }
+    if ($Method -eq 'PUT') {
+        $Headers.'Content-Type' = 'application/json'
+        Write-Verbose $Body
+    }
+
 
     if ($NoAuth) {
         $Headers = @{}
