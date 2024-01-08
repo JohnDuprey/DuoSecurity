@@ -39,7 +39,7 @@ function Get-DuoPolicies {
             SignatureVersion = 5
         }
 
-        if ($EndpointKey) {
+        if ($PolicyKey) {
             $Request = Invoke-DuoRequest @DuoRequest
             if ($Request.stat -ne 'OK') {
                 $Request
@@ -52,4 +52,4 @@ function Get-DuoPolicies {
     }
 }
 
-Set-Alias -Name Get-DuoEndpoint -Value Get-DuoEndpoints
+Set-Alias -Name Get-DuoPolicy -Value Get-DuoPolicies
