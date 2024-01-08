@@ -37,7 +37,7 @@ function Set-DuoAccountEdition {
         Select-DuoAccount -AccountId $AccountId -Quiet
 
         $DuoRequest = @{
-            Method = 'GET'
+            Method = 'POST'
             Path   = '/admin/v1/billing/edition'
             Params = @{ edition = $Edition }
         }

@@ -173,6 +173,10 @@ function Invoke-DuoRequest {
         $Body = $Request
         Write-Verbose $Request
     }
+    if ($Method -eq 'PUT') {
+        $Headers.'Content-Type' = 'application/json'
+        Write-Verbose $Body
+    }
 
     if ($NoAuth) {
         $Headers = @{}

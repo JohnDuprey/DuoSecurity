@@ -26,7 +26,8 @@ function Select-DuoAccount {
     #>
     [CmdletBinding()]
     Param(
-        [Parameter(Mandatory = $true, ParameterSetName = 'AccountId')]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true, ParameterSetName = 'AccountId')]
+        [Alias('account_id')]
         [string]$AccountId,
 
         [Parameter(Mandatory = $true, ParameterSetName = 'AccountName')]
