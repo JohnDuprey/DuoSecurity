@@ -29,8 +29,7 @@ function Get-DuoPolicies {
     process {
         if ($PolicyKey) {
             $Path = '/admin/v2/policies/{0}' -f $PolicyKey
-        }
-        else {
+        } else {
             $Path = '/admin/v2/policies'
         }
 
@@ -44,12 +43,10 @@ function Get-DuoPolicies {
             $Request = Invoke-DuoRequest @DuoRequest
             if ($Request.stat -ne 'OK') {
                 $Request
-            }
-            else {
+            } else {
                 $Request.response
             }
-        }
-        else {
+        } else {
             Invoke-DuoPaginatedRequest -DuoRequest $DuoRequest
         }
     }
