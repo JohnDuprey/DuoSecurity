@@ -84,6 +84,12 @@ function Invoke-DuoRequest {
         throw 'API Credentials not set, run Set-DuoApiAuth'
     }
 
+    # Set localization to en-US
+    [System.Threading.Thread]::CurrentThread.CurrentUICulture = 'en-US'
+    [System.Threading.Thread]::CurrentThread.CurrentCulture = 'en-US'
+    Write-Debug "CurrentUICulture: $([System.Threading.Thread]::CurrentThread.CurrentUICulture)"
+    Write-Debug "CurrentCulture: $([System.Threading.Thread]::CurrentThread.CurrentCulture)"
+
     # RFC 2822 date format in UTC
     $XDuoDate = (Get-Date).ToUniversalTime().ToString('ddd, dd MMM yyyy HH:mm:ss -0000')
 
@@ -139,7 +145,7 @@ function Invoke-DuoRequest {
 
     $SignatureBody = $SignatureParts -join "`n"
 
-    Write-Verbose "`n---Canon signature---`n$SignatureBody`n-------"
+    Write-Debug "`n---Canon signature---`n$SignatureBody`n-------"
 
     # Encode signature with secretbytes
     [byte[]]$KeyBytes = [System.Text.Encoding]::UTF8.GetBytes($SecretKey.ToCharArray())
@@ -158,7 +164,7 @@ function Invoke-DuoRequest {
 
     $Signature = $HashHex.Replace('-', '').ToLower()
 
-    Write-Verbose "Signature: $signature"
+    Write-Debug "Signature: $signature"
 
     # Build base64 encoded auth string with IntegrationKey and Signature
     $AuthString = 'Basic ' + [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(('{0}:{1}' -f $IntegrationKey, $Signature)))
@@ -190,7 +196,7 @@ function Invoke-DuoRequest {
     }
 
     Write-Verbose ( '{0} [{1}]' -f $Method, $UriBuilder.Uri )
-    Write-Verbose ( 'Headers: {0}' -f ($Headers | ConvertTo-Json) )
+    Write-Debug ( 'Headers: {0}' -f ($Headers | ConvertTo-Json) )
 
     $RestMethod = @{
         Method             = $Method
