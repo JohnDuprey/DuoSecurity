@@ -26,14 +26,15 @@ function Get-DuoIntegrations {
     )
 
     if ($IntegrationKey) {
-        $Path = '/admin/v1/integrations/{0}' -f $IntegrationKey
+        $Path = '/admin/v2/integrations/{0}' -f $IntegrationKey
     } else {
-        $Path = '/admin/v1/integrations'
+        $Path = '/admin/v2/integrations'
     }
 
     $DuoRequest = @{
         Method = 'GET'
         Path   = $Path
+        SignatureVersion = 5
     }
 
     $Response = Invoke-DuoRequest @DuoRequest
