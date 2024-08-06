@@ -202,7 +202,11 @@ function Invoke-DuoRequest {
         Method             = $Method
         Uri                = $UriBuilder.Uri
         Headers            = $Headers
-        SkipHttpErrorCheck = $true
+    }
+
+    if ($PSVersionTable.PSVersion.Major -ge 7) {
+        $RestMethod += @{
+            SkipHttpErrorCheck = $true}
     }
 
     if ($Body) {

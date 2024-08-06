@@ -26,10 +26,12 @@ function Register-DuoUser {
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(
-        [Parameter(Mandatory = $true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$Username,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$Email,
 
         [Parameter()]
