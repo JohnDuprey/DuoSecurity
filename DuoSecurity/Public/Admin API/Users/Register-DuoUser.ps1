@@ -26,32 +26,34 @@ function Register-DuoUser {
     #>
     [CmdletBinding(SupportsShouldProcess)]
     Param(
-        [Parameter(Mandatory = $true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [string]$Username,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true, Mandatory = $true)]
         [string]$Email,
 
         [Parameter()]
         [int]$ValidSecs = 2592000
     )
 
-    $DuoRequest = @{
-        Method = 'POST'
-        Path   = '/admin/v1/users/enroll'
-        Params = @{
-            username   = $Username
-            email      = $Email
-            valid_secs = $ValidSecs
+    process {
+        $DuoRequest = @{
+            Method = 'POST'
+            Path   = '/admin/v1/users/enroll'
+            Params = @{
+                username   = $Username
+                email      = $Email
+                valid_secs = $ValidSecs
+            }
         }
-    }
 
-    if ($PSCmdlet.ShouldProcess($Email)) {
-        $Request = Invoke-DuoRequest @DuoRequest
-        if ($Request.stat -ne 'OK') {
-            $Request
-        } else {
-            $Request.response
+        if ($PSCmdlet.ShouldProcess($Email)) {
+            $Request = Invoke-DuoRequest @DuoRequest
+            if ($Request.stat -ne 'OK') {
+                $Request
+            } else {
+                $Request.response
+            }
         }
     }
 }
