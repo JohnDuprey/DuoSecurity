@@ -76,12 +76,11 @@ function Update-DuoUser {
         $Params = @{}
         if ($Aliases) {
             $x = 1
-            $AliasList = foreach ($Alias in $Aliases) {
-                if ($x -gt 8) { break }
-                @{ "alias$x" = $Alias }
+            $AliasList = $Aliases | ForEach-Object {
+                'alias{0}={1}' -f $x, [System.Uri]::EscapeDataString($_)
                 $x++
             }
-            $Params.aliases = $AliasList
+            $Params.aliases = $AliasList -join '&'
         }
 
         if ($Username) { $Params.username = $Username }
