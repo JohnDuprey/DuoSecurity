@@ -10,7 +10,7 @@ function New-DuoUser {
     The name of the user to create.
 
     .PARAMETER Aliases
-    Username aliases for the user. Up to eight aliases may be specified with this parameter as a set of URL-encoded key-value pairs e.g. alias1=joe.smith&alias2=jsmith@example.com. Ignores alias position values not specified. Aliases must be unique amongst users.
+    Username aliases for the user. Up to eight aliases may be specified with this parameter. Aliases must be unique amongst users.
 
     .PARAMETER FullName
     The real name (or full name) of this user.
@@ -72,13 +72,13 @@ function New-DuoUser {
     )
 
     if ($Aliases) {
-        $AliasCollection = [System.Web.HttpUtility]::ParseQueryString([String]::Empty)
-        foreach ($Item in ($Aliases.GetEnumerator() | Sort-Object -CaseSensitive -Property Key)) {
-            $AliasCollection.Add($Item.Key, $Item.Value)
+        $x = 1
+        $AliasList = $Aliases | ForEach-Object {
+            'alias{0}={1}' -f $x, [System.Uri]::EscapeDataString($_)
+            $x++
         }
-        $AliasString = [System.Web.HttpUtility]::UrlDecode($AliasCollection.ToString())
+        $Params.aliases = $AliasList -join '&'
     }
-
     $Params = @{
         username = $Username
     }
