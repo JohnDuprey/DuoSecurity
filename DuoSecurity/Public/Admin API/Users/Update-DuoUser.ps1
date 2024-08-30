@@ -13,7 +13,7 @@ function Update-DuoUser {
     The new username.
 
     .PARAMETER Aliases
-    Username aliases for the user. Up to eight aliases may be specified with this parameter as a set of URL-encoded key-value pairs e.g. alias1=joe.smith&alias2=jsmith@example.com. Ignores alias position values not specified. Remove the value for an existing alias by specifying a blank value e.g. alias1=. Aliases must be unique amongst users.
+    Username aliases for the user. Up to eight aliases may be specified with this parameter. Aliases must be unique amongst users.
 
     .PARAMETER FullName
     The new real name (or full name).
@@ -76,12 +76,11 @@ function Update-DuoUser {
         $Params = @{}
         if ($Aliases) {
             $x = 1
-            $AliasList = foreach ($Alias in $Aliases) {
-                if ($x -gt 8) { break }
-                @{ "alias$x" = $Alias }
+            $AliasList = $Aliases | ForEach-Object {
+                'alias{0}={1}' -f $x, [System.Uri]::EscapeDataString($_)
                 $x++
             }
-            $Params.aliases = $AliasList
+            $Params.aliases = $AliasList -join '&'
         }
 
         if ($Username) { $Params.username = $Username }
