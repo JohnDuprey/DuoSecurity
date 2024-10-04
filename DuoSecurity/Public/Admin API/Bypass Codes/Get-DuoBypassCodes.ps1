@@ -1,4 +1,4 @@
-function Get-DuoBypassCode {
+function Get-DuoBypassCodes {
     <#
     .SYNOPSIS
     Retrieve Bypass Codes
@@ -51,4 +51,4 @@ function Get-DuoBypassCode {
     }
 }
 
-Set-Alias -Name Get-DuoBypassCodes -Value Get-DuoBypassCode
+Set-Alias -Name Get-DuoBypassCode -Value Get-DuoBypassCodes
