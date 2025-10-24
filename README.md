@@ -14,7 +14,7 @@ This module interacts with the Duo APIs.
 ### Prerequisites
 
 - PowerShell 7 or later
-- Duo MFA license or higher
+- Duo Essentials license or higher
 
 #### Module Installation ([PowerShell Gallery](https://www.powershellgallery.com/packages/DuoSecurity))
 
@@ -163,6 +163,9 @@ Get-DuoUsers
   - [Sync-DuoToken](./Docs/Sync-DuoToken.md)
 - Trust Monitor
   - [Get-DuoTrustMonitorEvents](./Docs/Get-DuoTrustMonitorEvents.md)
+- Passport
+  - [Get-DuoPassportConfig](./Docs/Get-DuoPassportConfig.md)
+  - [Set-DuoPassportConfig](./Docs/Set-DuoPassportConfig.md)
 - Users
   - [Add-DuoUserPhone](./Docs/Add-DuoUserPhone.md)
   - [Add-DuoUserToGroup](./Docs/Add-DuoUserToGroup.md)
